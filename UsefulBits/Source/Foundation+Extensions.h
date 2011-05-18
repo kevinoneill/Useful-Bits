@@ -33,3 +33,6 @@
 //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import <UsefulBits/NSArray+Blocks.h>
+#import <UsefulBits/NSSet+Intersection.h>
+#import <UsefulBits/NSLock+Blocks.h>
+#import <UsefulBits/NSArray+Access.h>

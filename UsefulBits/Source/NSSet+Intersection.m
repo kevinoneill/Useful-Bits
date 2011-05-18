@@ -28,26 +28,25 @@
   //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   //
 
-#import <Foundation/Foundation.h>
+#import "NSSet+Intersection.h"
 
-@interface NSArray (Blocks)
+@implementation NSSet (Intersection)
 
-- (void)each:(void (^)(id item))block;
-- (void)eachWithIndex:(void (^)(id item, int index))block;
+- (NSSet *)intersection:(NSSet*)other
+{
+  NSMutableSet *copy = [[self mutableCopy] autorelease];
+  [copy intersectSet:other];
 
-- (NSArray *)filter:(BOOL (^)(id item))block;
-- (NSArray *)pick:(BOOL (^)(id item))block;
+	return [NSSet setWithSet:copy];
+}
 
-- (id)first:(BOOL (^)(id))block;
-- (NSUInteger)indexOfFirst:(BOOL (^)(id item))block;
+- (NSSet *)difference:(NSSet *)other
+{
+  NSMutableSet *copy = [[self mutableCopy] autorelease];
+  [copy minusSet:other];
 
-- (id)last:(BOOL (^)(id))block;
-- (NSUInteger)indexOfLast:(BOOL (^)(id item))block;
+	return [NSSet setWithSet:copy];
+}
 
-- (NSArray *)map:(id<NSObject> (^)(id<NSObject> item))block;
-- (id)reduce:(id (^)(id current, id item))block initial:(id)initial;
-
-- (BOOL)any:(BOOL (^)(id))block;
-- (BOOL)all:(BOOL (^)(id))block;
 
 @end

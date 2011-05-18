@@ -28,26 +28,43 @@
   //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   //
 
-#import <Foundation/Foundation.h>
+#import "NSArray+Access.h"
 
-@interface NSArray (Blocks)
+@implementation NSArray (Access)
 
-- (void)each:(void (^)(id item))block;
-- (void)eachWithIndex:(void (^)(id item, int index))block;
+- (id)first;
+{
+  return [self count] > 0 ? [self objectAtIndex:0] : nil;
+}
 
-- (NSArray *)filter:(BOOL (^)(id item))block;
-- (NSArray *)pick:(BOOL (^)(id item))block;
+- (id)last;
+{
+  return [self lastObject];
+}
+          
+- (NSArray *)rest;
+{
+  return [self count] > 1 ? [self subarrayWithRange:NSMakeRange(1, [self count] - 1)] : [NSArray array];
+}
 
-- (id)first:(BOOL (^)(id))block;
-- (NSUInteger)indexOfFirst:(BOOL (^)(id item))block;
+- (NSArray *)trunk;
+{
+  return [self take:([self count] - 1)];
+}
 
-- (id)last:(BOOL (^)(id))block;
-- (NSUInteger)indexOfLast:(BOOL (^)(id item))block;
+- (NSArray *)take:(NSInteger)count;
+{
+	return [self subarrayWithRange:NSMakeRange(0, [self count] >= count ? count : [self count])];
+}
 
-- (NSArray *)map:(id<NSObject> (^)(id<NSObject> item))block;
-- (id)reduce:(id (^)(id current, id item))block initial:(id)initial;
+- (BOOL)isEmpty;
+{
+  return [self count] == 0;
+}
 
-- (BOOL)any:(BOOL (^)(id))block;
-- (BOOL)all:(BOOL (^)(id))block;
+- (BOOL)isNotEmpty;
+{
+  return ![self isEmpty];
+}
 
 @end

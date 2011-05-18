@@ -67,6 +67,12 @@
 		0A97652613826F1300EEE537 /* UsefulBits.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A97652513826F0E00EEE537 /* UsefulBits.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0A97652A1382702C00EEE537 /* CustomNavigationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A9765281382702C00EEE537 /* CustomNavigationController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0A97652B1382702C00EEE537 /* CustomNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9765291382702C00EEE537 /* CustomNavigationController.m */; };
+		0AFB0B811383BC9F004FD246 /* NSSet+Intersection.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AFB0B7F1383BC9F004FD246 /* NSSet+Intersection.h */; };
+		0AFB0B821383BC9F004FD246 /* NSSet+Intersection.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AFB0B801383BC9F004FD246 /* NSSet+Intersection.m */; };
+		0AFB0B881383BCB2004FD246 /* NSLock+Blocks.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AFB0B841383BCB2004FD246 /* NSLock+Blocks.h */; };
+		0AFB0B891383BCB2004FD246 /* NSLock+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AFB0B851383BCB2004FD246 /* NSLock+Blocks.m */; };
+		0AFB0B8E1383BCE0004FD246 /* NSArray+Access.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AFB0B8C1383BCE0004FD246 /* NSArray+Access.h */; };
+		0AFB0B8F1383BCE0004FD246 /* NSArray+Access.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AFB0B8D1383BCE0004FD246 /* NSArray+Access.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -121,6 +127,12 @@
 		0A97652513826F0E00EEE537 /* UsefulBits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = UsefulBits.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		0A9765281382702C00EEE537 /* CustomNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CustomNavigationController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		0A9765291382702C00EEE537 /* CustomNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CustomNavigationController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		0AFB0B7F1383BC9F004FD246 /* NSSet+Intersection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSet+Intersection.h"; sourceTree = "<group>"; };
+		0AFB0B801383BC9F004FD246 /* NSSet+Intersection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSSet+Intersection.m"; sourceTree = "<group>"; };
+		0AFB0B841383BCB2004FD246 /* NSLock+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLock+Blocks.h"; sourceTree = "<group>"; };
+		0AFB0B851383BCB2004FD246 /* NSLock+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLock+Blocks.m"; sourceTree = "<group>"; };
+		0AFB0B8C1383BCE0004FD246 /* NSArray+Access.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Access.h"; sourceTree = "<group>"; };
+		0AFB0B8D1383BCE0004FD246 /* NSArray+Access.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Access.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +214,12 @@
 				0A976516138265E600EEE537 /* Foundation+Extensions.h */,
 				0A97650E138263B300EEE537 /* NSArray+Blocks.h */,
 				0A97650F138263B300EEE537 /* NSArray+Blocks.m */,
+				0AFB0B7F1383BC9F004FD246 /* NSSet+Intersection.h */,
+				0AFB0B801383BC9F004FD246 /* NSSet+Intersection.m */,
+				0AFB0B841383BCB2004FD246 /* NSLock+Blocks.h */,
+				0AFB0B851383BCB2004FD246 /* NSLock+Blocks.m */,
+				0AFB0B8C1383BCE0004FD246 /* NSArray+Access.h */,
+				0AFB0B8D1383BCE0004FD246 /* NSArray+Access.m */,
 			);
 			name = "Foundation Extensions";
 			sourceTree = "<group>";
@@ -305,6 +323,9 @@
 				0A97652A1382702C00EEE537 /* CustomNavigationController.h in Headers */,
 				0A9532DF138275740054F95B /* Layout.h in Headers */,
 				0A9532E213827FE60054F95B /* UIView+Actions.h in Headers */,
+				0AFB0B811383BC9F004FD246 /* NSSet+Intersection.h in Headers */,
+				0AFB0B881383BCB2004FD246 /* NSLock+Blocks.h in Headers */,
+				0AFB0B8E1383BCE0004FD246 /* NSArray+Access.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +428,9 @@
 				0A97652413826E8300EEE537 /* UBAlertView.m in Sources */,
 				0A97652B1382702C00EEE537 /* CustomNavigationController.m in Sources */,
 				0A9532E313827FE60054F95B /* UIView+Actions.m in Sources */,
+				0AFB0B821383BC9F004FD246 /* NSSet+Intersection.m in Sources */,
+				0AFB0B891383BCB2004FD246 /* NSLock+Blocks.m in Sources */,
+				0AFB0B8F1383BCE0004FD246 /* NSArray+Access.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

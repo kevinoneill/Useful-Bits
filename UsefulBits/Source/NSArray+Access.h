@@ -30,24 +30,17 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSArray (Blocks)
+@interface NSArray (Access)
 
-- (void)each:(void (^)(id item))block;
-- (void)eachWithIndex:(void (^)(id item, int index))block;
+- (NSArray *)take:(NSInteger)count;
 
-- (NSArray *)filter:(BOOL (^)(id item))block;
-- (NSArray *)pick:(BOOL (^)(id item))block;
+- (id)first;
+- (id)last;
 
-- (id)first:(BOOL (^)(id))block;
-- (NSUInteger)indexOfFirst:(BOOL (^)(id item))block;
+- (NSArray *)rest;
+- (NSArray *)trunk;
 
-- (id)last:(BOOL (^)(id))block;
-- (NSUInteger)indexOfLast:(BOOL (^)(id item))block;
-
-- (NSArray *)map:(id<NSObject> (^)(id<NSObject> item))block;
-- (id)reduce:(id (^)(id current, id item))block initial:(id)initial;
-
-- (BOOL)any:(BOOL (^)(id))block;
-- (BOOL)all:(BOOL (^)(id))block;
+- (BOOL)isNotEmpty;
+- (BOOL)isEmpty;
 
 @end
