@@ -32,7 +32,7 @@
 
 @implementation NSLock (Blocks)
 
-- (void)execute:(void (^) (void))block;
+- (void)withLock:(void (^) (void))block;
 {
   [self lock];
   
@@ -41,17 +41,17 @@
   [self unlock];
 }
 
-- (BOOL)tryExecute:(void (^) (void))block;
+- (BOOL)tryWithLock:(void (^) (void))block;
 {
-  BOOL locked = [self tryLock];
+  BOOL got_lock = [self tryLock];
 
-  if (locked)
+  if (got_lock)
   {  
     block();
     [self unlock];
   }
   
-  return locked;
+  return got_lock;
 }
 
 

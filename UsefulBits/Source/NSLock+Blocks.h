@@ -32,7 +32,7 @@
 
 @interface NSLock (Blocks)
 
-- (void)execute:(void (^) (void))block;
-- (BOOL)tryExecute:(void (^) (void))block;
+- (void)withLock:(void (^) (void))block;
+- (BOOL)tryWithLock:(void (^) (void))block;
 
 @end
