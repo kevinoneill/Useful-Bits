@@ -45,7 +45,7 @@
 
 - (NSArray *)filter:(BOOL (^)(id))block;
 {
-  NSMutableArray *result = [NSMutableArray array];
+  NSMutableArray *result = [NSMutableArray arrayWithCapacity:[self count]];
   
   for (id obj in self)
   {
@@ -55,12 +55,12 @@
     }
   }
   
-  return result;
+  return [NSArray arrayWithArray:result];
 }
 
 - (NSArray *)pick:(BOOL (^)(id))block;
 {
-  NSMutableArray *result = [NSMutableArray array];
+  NSMutableArray *result = [NSMutableArray arrayWithCapacity:[self count]];
   
   for (id obj in self)
   {
@@ -70,7 +70,7 @@
     }
   }
   
-  return result;
+  return [NSArray arrayWithArray:result];
 }
 
 - (id)first:(BOOL (^)(id))block;
@@ -162,7 +162,7 @@
 
 - (BOOL)all:(BOOL (^)(id))block;
 {
-  return NSNotFound == [self indexOfFirst:block];
+  return NSNotFound == [self indexOfFirst:^ BOOL (id item) { return !block(item); }];
 }
 
 @end
