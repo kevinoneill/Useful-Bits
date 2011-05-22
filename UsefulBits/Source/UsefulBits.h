@@ -1,10 +1,3 @@
-//
-//  UsefulBits.h
-//  UsefulBits
-//
-//  Created by Kevin O'Neill on 17/05/11.
-//
-//
 //  Copyright (c) 2011, Kevin O'Neill
 //  All rights reserved.
 //

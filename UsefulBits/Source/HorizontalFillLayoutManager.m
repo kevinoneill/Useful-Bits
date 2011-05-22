@@ -1,9 +1,3 @@
-//
-//  HorizontalFillLayoutManager.m
-//  Quickie
-//
-//  Created by Kevin O'Neill on 24/04/11.
-//
 //  Copyright (c) 2011, Kevin O'Neill
 //  All rights reserved.
 //
@@ -56,7 +50,7 @@
 
   CGSize requested_subview_size = CGSizeMake(subview_width, subview_height);
   
-  [[view subviews] eachWithIndex:^ (id subview, int position) {
+  [[view subviews] eachWithIndex:^ (id subview, NSUInteger position) {
     if (resizeSubviews_)
     {
       CGSize subview_size = [subview sizeThatFits:requested_subview_size];

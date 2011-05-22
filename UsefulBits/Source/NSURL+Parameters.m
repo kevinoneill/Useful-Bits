@@ -26,52 +26,21 @@
 //  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#import "UIView+Actions.h"
+#import "NSURL+Parameters.h"
 
-#import "UIGestureRecognizer+Blocks.h"
-#import "NSArray+Blocks.h"
+#import "NSDictionary+URLParams.h"
 
-@implementation UIView (Gestures)
+@implementation NSURL (Parameters)
 
-- (void)onTap:(void (^) (id sender))action;
++ (id)URLWithString:(NSString *)URLString parameters:(NSDictionary *)parameters;
 {
-  [self onTaps:1 touches:1 action:action];
-}
-
-- (void)onDoubleTap:(void (^) (id sender))action;
-{
-  [self onTaps:2 touches:1 action:action];
-}
-
-- (void)onTaps:(NSUInteger)taps touches:(NSUInteger)touches action:(void (^) (id sender))action; 
-{
-  UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithActionBlock:^(UIGestureRecognizer* gesture) {
-    action([gesture view]);
-  }];
+  if ([parameters count] == 0)
+  {
+    return [NSURL URLWithString:URLString];
+  }
   
-  [gesture setNumberOfTapsRequired:taps];
-  [gesture setNumberOfTouchesRequired:touches];
+  return [NSURL URLWithString:[NSString stringWithFormat:@"%@?%@", URLString, [parameters asURLParameters]]];
 
-  [[[self gestureRecognizers] filter:^BOOL(id gesture_recognizer) {
-    return [gesture_recognizer isKindOfClass:[UITapGestureRecognizer class]]
-            && [gesture_recognizer numberOfTouchesRequired] == touches
-            && [gesture_recognizer numberOfTapsRequired] < taps;
-  }] each:^(id tap_gesture_recognizer) {
-    [gesture requireGestureRecognizerToFail:tap_gesture_recognizer];
-  }];
-
-  [self addGestureRecognizer:gesture];
-  [gesture release];
-}
-
-- (void)onTap:(void (^) (id sender))action touches:(NSUInteger)touches; 
-{
-  [self onTaps:1 touches:touches action:action];
-}
-
-- (void)onDoubleTap:(void (^) (id sender))action touches:(NSUInteger)touches;
-{
-  [self onTaps:2 touches:touches action:action];
 }
 
 @end

@@ -1,9 +1,3 @@
-//
-//  CustomNavigationBar.h
-//  Quickie
-//
-//  Created by Kevin O'Neill on 12/03/11.
-//
 //  Copyright (c) 2011, Kevin O'Neill
 //  All rights reserved.
 //

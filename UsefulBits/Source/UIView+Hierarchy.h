@@ -1,9 +1,3 @@
-//
-//  UIView+Hierarchy.h
-//  Quickie
-//
-//  Created by Kevin O'Neill on 8/05/11.
-//
 //  Copyright (c) 2011, Kevin O'Neill
 //  All rights reserved.
 //

@@ -1,9 +1,3 @@
-//
-//  Foundation+Extensions.h
-//  UsefulBits
-//
-//  Created by Kevin O'Neill on 17/05/11.
-//
 //  Copyright (c) 2011, Kevin O'Neill
 //  All rights reserved.
 //
@@ -38,4 +32,8 @@
 #import <UsefulBits/NSLock+Blocks.h>
 #import <UsefulBits/NSArray+Access.h>
 #import <UsefulBits/NSObject+Blocks.h>
-
+#import <UsefulBits/NSDictionary+URLParams.h>
+#import <UsefulBits/NSObject+Creation.h>
+#import <UsefulBits/NSOperationQueue+WorkerQueue.h>
+#import <UsefulBits/NSString+URLEncode.h>
+#import <UsefulBits/NSURL+Parameters.h>

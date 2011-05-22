@@ -1,9 +1,3 @@
-//
-//  UIView+Positioning.m
-//  Quickie
-//
-//  Created by Kevin O'Neill on 23/04/11.
-//
 //  Copyright (c) 2011, Kevin O'Neill
 //  All rights reserved.
 //
