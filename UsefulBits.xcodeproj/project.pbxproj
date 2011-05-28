@@ -138,7 +138,7 @@
 		0A97651E13826DD500EEE537 /* CustomNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CustomNavigationBar.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		0A97652113826E8200EEE537 /* UBAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = UBAlertView.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		0A97652213826E8300EEE537 /* UBAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = UBAlertView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		0A97652513826F0E00EEE537 /* UsefulBits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = UsefulBits.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		0A97652513826F0E00EEE537 /* UsefulBits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = UsefulBits.h; path = ../UsefulBits.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		0A9765281382702C00EEE537 /* CustomNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = CustomNavigationController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		0A9765291382702C00EEE537 /* CustomNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CustomNavigationController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		0A98F9681390B00B00FF504A /* NSDictionary+URLParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "NSDictionary+URLParams.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -204,11 +204,11 @@
 			isa = PBXGroup;
 			children = (
 				0A97652513826F0E00EEE537 /* UsefulBits.h */,
-				0A97650D1382638400EEE537 /* Foundation Extensions */,
+				0A97650D1382638400EEE537 /* Foundation */,
 				0A3F6E5513825B17001D960B /* UIKit */,
 			);
 			name = UsefulBits;
-			path = UsefulBits/Source;
+			path = UsefulBits/Foundation;
 			sourceTree = "<group>";
 		};
 		0A3F6E4713825AEA001D960B /* Supporting Files */ = {
@@ -237,7 +237,7 @@
 			path = ../UIKit;
 			sourceTree = "<group>";
 		};
-		0A97650D1382638400EEE537 /* Foundation Extensions */ = {
+		0A97650D1382638400EEE537 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
 				0A98F9681390B00B00FF504A /* NSDictionary+URLParams.h */,
@@ -264,7 +264,7 @@
 				0AFC77561382A5EB002E4852 /* NSObject+Blocks.h */,
 				0AFC77571382A5EB002E4852 /* NSObject+Blocks.m */,
 			);
-			name = "Foundation Extensions";
+			name = Foundation;
 			sourceTree = "<group>";
 		};
 		0A976518138266A700EEE537 /* Views */ = {
