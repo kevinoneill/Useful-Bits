@@ -234,6 +234,7 @@
 				0A3F887813825CC7001D960B /* ViewDecorators.m */,
 			);
 			name = UIKit;
+			path = ../UIKit;
 			sourceTree = "<group>";
 		};
 		0A97650D1382638400EEE537 /* Foundation Extensions */ = {
