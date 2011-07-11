@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		0A24DDB013CB17B300A6642F /* UBMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A24DDAF13CB17B300A6642F /* UBMacros.h */; };
 		0A3F889A13825D92001D960B /* DecoratedView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A3F885813825CC7001D960B /* DecoratedView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0A3F889B13825DA9001D960B /* HorizontalFillLayoutManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A3F885A13825CC7001D960B /* HorizontalFillLayoutManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0A3F889C13825DA9001D960B /* LayoutManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A3F885C13825CC7001D960B /* LayoutManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -90,7 +91,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0A3F6E3F13825AEA001D960B /* UsefulBits.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework.static; includeInIndex = 0; path = UsefulBits.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A24DDAF13CB17B300A6642F /* UBMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBMacros.h; sourceTree = "<group>"; };
+		0A3F6E3F13825AEA001D960B /* UsefulBits.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework.static; includeInIndex = 0; name = UsefulBits.framework; path = UsefulBits; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A3F6E4213825AEA001D960B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0A3F6E4813825AEA001D960B /* UsefulBits-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UsefulBits-Info.plist"; sourceTree = "<group>"; };
 		0A3F6E4A13825AEA001D960B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 				0AFB0B8D1383BCE0004FD246 /* NSArray+Access.m */,
 				0AFC77561382A5EB002E4852 /* NSObject+Blocks.h */,
 				0AFC77571382A5EB002E4852 /* NSObject+Blocks.m */,
+				0A24DDAF13CB17B300A6642F /* UBMacros.h */,
 			);
 			name = "Foundation Extensions";
 			sourceTree = "<group>";
@@ -375,6 +378,7 @@
 				0A98F9761390B00B00FF504A /* NSOperationQueue+WorkerQueue.h in Headers */,
 				0A98F9781390B00B00FF504A /* NSString+URLEncode.h in Headers */,
 				0A98F97A1390B00B00FF504A /* NSURL+Parameters.h in Headers */,
+				0A24DDB013CB17B300A6642F /* UBMacros.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
