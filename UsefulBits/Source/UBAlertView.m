@@ -28,7 +28,6 @@
 
 #import "UBAlertView.h"
 
-
 @implementation UBAlertView
 
 - (id)initWithTitle:(NSString*)title message:(NSString*)msg
