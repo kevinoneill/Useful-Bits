@@ -30,12 +30,14 @@
 
 @interface UIView (Gestures)
 
-- (void)onTaps:(NSUInteger)taps touches:(NSUInteger)touches action:(void (^) (id sender))action; 
+- (void)onTaps:(NSUInteger)taps touches:(NSUInteger)touches action:(void (^) (id sender))action exclusive:(BOOL)exclusive; 
 
 - (void)onTap:(void (^) (id sender))action;
 - (void)onDoubleTap:(void (^) (id sender))action;
+- (void)onDoubleTap:(void (^) (id sender))action exclusive:(BOOL)exclusive;
 
 - (void)onTap:(void (^) (id sender))action touches:(NSUInteger)touches; 
 - (void)onDoubleTap:(void (^) (id sender))action touches:(NSUInteger)touches;
+- (void)onDoubleTap:(void (^) (id sender))action touches:(NSUInteger)touches exclusive:(BOOL)exclusive;
 
 @end

@@ -35,43 +35,56 @@
 
 - (void)onTap:(void (^) (id sender))action;
 {
-  [self onTaps:1 touches:1 action:action];
+  [self onTaps:1 touches:1 action:action exclusive:YES];
 }
 
 - (void)onDoubleTap:(void (^) (id sender))action;
 {
-  [self onTaps:2 touches:1 action:action];
+  [self onDoubleTap:action exclusive:YES];
 }
 
-- (void)onTaps:(NSUInteger)taps touches:(NSUInteger)touches action:(void (^) (id sender))action; 
+- (void)onDoubleTap:(void (^) (id sender))action exclusive:(BOOL)exclusive;
 {
-  UITapGestureRecognizer *gesture = [[UITapGestureRecognizer alloc] initWithActionBlock:^(UIGestureRecognizer* gesture) {
+  [self onTaps:2 touches:1 action:action exclusive:exclusive];
+}
+
+- (void)onTaps:(NSUInteger)taps touches:(NSUInteger)touches action:(void (^) (id sender))action exclusive:(BOOL)exclusive; 
+{
+  UITapGestureRecognizer *tap_gesture = [[UITapGestureRecognizer alloc] initWithActionBlock:^(UIGestureRecognizer* gesture) {
     action([gesture view]);
   }];
   
-  [gesture setNumberOfTapsRequired:taps];
-  [gesture setNumberOfTouchesRequired:touches];
+  [tap_gesture setNumberOfTapsRequired:taps];
+  [tap_gesture setNumberOfTouchesRequired:touches];
 
-  [[[self gestureRecognizers] filter:^BOOL(id gesture_recognizer) {
-    return [gesture_recognizer isKindOfClass:[UITapGestureRecognizer class]]
-            && [gesture_recognizer numberOfTouchesRequired] == touches
-            && [gesture_recognizer numberOfTapsRequired] < taps;
-  }] each:^(id tap_gesture_recognizer) {
-    [gesture requireGestureRecognizerToFail:tap_gesture_recognizer];
-  }];
+  if (exclusive)
+  {
+    [[[self gestureRecognizers] pick:^BOOL(id gesture_recognizer) {
+      return [gesture_recognizer isKindOfClass:[UITapGestureRecognizer class]]
+              && [gesture_recognizer numberOfTouchesRequired] == touches
+              && [gesture_recognizer numberOfTapsRequired] < taps;
+    }] each:^(id tap_gesture_recognizer) {
+      [tap_gesture_recognizer requireGestureRecognizerToFail:tap_gesture];
+    }];
+  }
 
-  [self addGestureRecognizer:gesture];
-  [gesture release];
+  [self addGestureRecognizer:tap_gesture];
+  RELEASE(tap_gesture);
 }
 
 - (void)onTap:(void (^) (id sender))action touches:(NSUInteger)touches; 
 {
-  [self onTaps:1 touches:touches action:action];
+  [self onTaps:1 touches:touches action:action exclusive:YES];
 }
 
 - (void)onDoubleTap:(void (^) (id sender))action touches:(NSUInteger)touches;
 {
-  [self onTaps:2 touches:touches action:action];
+  [self onDoubleTap:action exclusive:YES];
+}
+
+- (void)onDoubleTap:(void (^) (id sender))action touches:(NSUInteger)touches exclusive:(BOOL)exclusive;
+{
+  [self onTaps:2 touches:touches action:action exclusive:exclusive];
 }
 
 @end
