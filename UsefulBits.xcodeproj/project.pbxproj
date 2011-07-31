@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A352A8213E6103A008D4A82 /* NSObject+Marker.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A352A8013E6103A008D4A82 /* NSObject+Marker.h */; };
+		0A352A8313E6103A008D4A82 /* NSObject+Marker.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A352A8113E6103A008D4A82 /* NSObject+Marker.m */; };
 		0A39B90A13E4E81100D0B638 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A39B90913E4E81100D0B638 /* Foundation.framework */; };
 		0A39B91013E4E81100D0B638 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0A39B90E13E4E81100D0B638 /* InfoPlist.strings */; };
 		0A39B95D13E4E96B00D0B638 /* Foundation+Extensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B91B13E4E96B00D0B638 /* Foundation+Extensions.h */; };
@@ -79,6 +81,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A352A8013E6103A008D4A82 /* NSObject+Marker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Marker.h"; sourceTree = "<group>"; };
+		0A352A8113E6103A008D4A82 /* NSObject+Marker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Marker.m"; sourceTree = "<group>"; };
 		0A39B90613E4E81100D0B638 /* UsefulBits.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework.static; includeInIndex = 0; path = UsefulBits.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A39B90913E4E81100D0B638 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0A39B90D13E4E81100D0B638 /* UsefulBits-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UsefulBits-Info.plist"; sourceTree = "<group>"; };
@@ -240,6 +244,8 @@
 				0A39B92F13E4E96B00D0B638 /* NSString+URLEncode.m */,
 				0A39B93013E4E96B00D0B638 /* NSURL+Parameters.h */,
 				0A39B93113E4E96B00D0B638 /* NSURL+Parameters.m */,
+				0A352A8013E6103A008D4A82 /* NSObject+Marker.h */,
+				0A352A8113E6103A008D4A82 /* NSObject+Marker.m */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -335,6 +341,7 @@
 				0A39B99B13E4E96B00D0B638 /* ViewDecorators.h in Headers */,
 				0A39B99D13E4E96B00D0B638 /* UsefulBits.h in Headers */,
 				0AAF05E513E4F5D800FD753A /* UBMacros.h in Headers */,
+				0A352A8213E6103A008D4A82 /* NSObject+Marker.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,6 +465,7 @@
 				0A39B99813E4E96B00D0B638 /* UIView+Positioning.m in Sources */,
 				0A39B99A13E4E96B00D0B638 /* UIView+Size.m in Sources */,
 				0A39B99C13E4E96B00D0B638 /* ViewDecorators.m in Sources */,
+				0A352A8313E6103A008D4A82 /* NSObject+Marker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
