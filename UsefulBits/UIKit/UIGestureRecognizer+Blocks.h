@@ -28,13 +28,11 @@
 
 #import <UIKit/UIGestureRecognizer.h>
 
-typedef void (^GestureActionBlock) (id);
-
 @interface UIGestureRecognizer (Blocks)
 
-+ (id)instanceWithActionBlock:(GestureActionBlock)action;
++ (id)instanceWithActionBlock:(void (^) (UIGestureRecognizer* gesture))action;
 
-- (id)initWithActionBlock:(GestureActionBlock)action;
+- (id)initWithActionBlock:(void (^) (UIGestureRecognizer* gesture))action;
 
 
 @end

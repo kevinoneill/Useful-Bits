@@ -32,7 +32,7 @@
 
 @interface UIGestureRecognizer (Blocks_Internal)
 
-@property (nonatomic, copy) GestureActionBlock actionBlock;
+@property (nonatomic, copy) void (^actionBlock) (UIGestureRecognizer* gesture);
 
 - (void)handleAction:(UIGestureRecognizer *)recognizer;
 
@@ -42,14 +42,14 @@
 
 static char block_key; 
 
-+ (id)instanceWithActionBlock:(GestureActionBlock)action;
++ (id)instanceWithActionBlock:(void (^) (UIGestureRecognizer* gesture))action;
 {
   id instance = [[[self class] alloc] initWithActionBlock:action];
   
   return [instance autorelease];
 }
 
-- (id)initWithActionBlock:(GestureActionBlock)action;
+- (id)initWithActionBlock:(void (^) (UIGestureRecognizer* gesture))action;
 {
   if (self == [self initWithTarget:self action:@selector(handleAction:)])
   {
@@ -61,19 +61,19 @@ static char block_key;
 
 - (void)handleAction:(UIGestureRecognizer *)recognizer;
 {
-  GestureActionBlock block = [self actionBlock];
-  if(nil != block)
+  void (^action) (UIGestureRecognizer* gesture) = [self actionBlock];
+  if(nil != action)
   {
-    block(recognizer);
+    action(recognizer);
   }
 }
 
-- (GestureActionBlock)actionBlock;
+- (void (^) (UIGestureRecognizer* gesture))actionBlock;
 {
   return objc_getAssociatedObject(self, &block_key);
 }
 
-- (void)setActionBlock:(GestureActionBlock)block;
+- (void)setActionBlock:(void (^) (UIGestureRecognizer* gesture))block;
 {
   objc_setAssociatedObject(self, &block_key, block, OBJC_ASSOCIATION_COPY);
 }
