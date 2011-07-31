@@ -55,7 +55,7 @@
   return [self objectsPassingTest:^ BOOL (id item, BOOL *stop) { return block(item); }];
 }
 
-- (NSArray *)map:(id<NSObject> (^)(id<NSObject> item))block;
+- (NSSet *)map:(id<NSObject> (^)(id<NSObject> item))block;
 {
   NSMutableSet *result = [NSMutableSet setWithCapacity:[self count]];
   

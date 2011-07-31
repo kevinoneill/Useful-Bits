@@ -28,10 +28,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class UBAlertView;
+
 @interface UBAlertView : UIAlertView<UIAlertViewDelegate>
 {
   void(^cancel_)(UBAlertView* alertView);
-
   NSMutableArray* buttonBlocks_;
 }
 
