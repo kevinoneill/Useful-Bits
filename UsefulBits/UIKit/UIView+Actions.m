@@ -30,6 +30,7 @@
 
 #import "UIGestureRecognizer+Blocks.h"
 #import "NSArray+Blocks.h"
+#import "UBMacros.h"
 
 @implementation UIView (Gestures)
 
@@ -69,7 +70,7 @@
   }
 
   [self addGestureRecognizer:tap_gesture];
-  RELEASE(tap_gesture);
+  UBRELEASE(tap_gesture);
 }
 
 - (void)onTap:(void (^) (id sender))action touches:(NSUInteger)touches; 

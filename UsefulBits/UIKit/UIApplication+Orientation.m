@@ -33,12 +33,12 @@
 
 - (BOOL)isStatusBarLandscape;
 {
-  return UIDeviceOrientationIsLandscape([self statusBarOrientation]);
+  return UIInterfaceOrientationIsLandscape([self statusBarOrientation]);
 }
 
 - (BOOL)isStatusBarPortrait;
 {
-  return UIDeviceOrientationIsPortrait([self statusBarOrientation]);
+  return UIInterfaceOrientationIsPortrait([self statusBarOrientation]);
 }
 
 @end

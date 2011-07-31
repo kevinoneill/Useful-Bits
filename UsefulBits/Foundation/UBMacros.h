@@ -26,15 +26,35 @@
   //  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
   //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#import <UsefulBits/UBMacros.h>
-#import <UsefulBits/NSArray+Blocks.h>
-#import <UsefulBits/NSSet+Blocks.h>
-#import <UsefulBits/NSSet+Intersection.h>
-#import <UsefulBits/NSLock+Blocks.h>
-#import <UsefulBits/NSArray+Access.h>
-#import <UsefulBits/NSObject+Blocks.h>
-#import <UsefulBits/NSDictionary+URLParams.h>
-#import <UsefulBits/NSObject+Creation.h>
-#import <UsefulBits/NSOperationQueue+WorkerQueue.h>
-#import <UsefulBits/NSString+URLEncode.h>
-#import <UsefulBits/NSURL+Parameters.h>
+#ifdef DEBUG
+#define IS_DEBUG   1
+#define IS_RELEASE 0
+#else
+#define IS_DEBUG   0
+#define IS_RELEASE 1
+#endif
+
+
+#define UBRELEASE_NIL(INSTANCE__)      { [INSTANCE__ release]; INSTANCE__ = nil; }
+#define UBRELEASE_DEADBABE(INSTANCE__) { [INSTANCE__ release]; *((uint *) &INSTANCE__) = 0xDEADBABE; }
+
+#if IS_DEBUG
+#define UBRELEASE(INSTANCE__) UBRELEASE_DEADBABE(INSTANCE__)
+#else
+#define UBRELEASE(INSTANCE__) UBRELEASE_NIL(INSTANCE__)
+#endif
+
+
+#define UBSWAP_INSTANCE_RETAIN(DESTINATION__, SOURCE__) \
+{                                                   \
+  id old_value__ = DESTINATION__;                   \
+  DESTINATION__ = [SOURCE__ retain];                \
+  [old_value__ release];                            \
+}
+
+#define UBSWAP_INSTANCE_COPY(DESTINATION__, SOURCE__) \
+{                                                 \
+  id old_value__ = DESTINATION__;                 \
+  DESTINATION__ = [SOURCE__ copy];                \
+  [old_value__ release];                          \
+}
