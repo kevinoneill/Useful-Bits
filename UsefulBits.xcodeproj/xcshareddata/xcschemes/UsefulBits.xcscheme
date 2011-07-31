@@ -13,9 +13,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0A3F6E4513825AEA001D960B"
-               BuildableName = "Universal_Framework"
-               BlueprintName = "Universal_Framework"
+               BlueprintIdentifier = "0A39B90513E4E81100D0B638"
+               BuildableName = "UsefulBits.framework"
+               BlueprintName = "UsefulBits"
                ReferencedContainer = "container:UsefulBits.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,8 +32,6 @@
    <LaunchAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
-      displayScaleIsEnabled = "NO"
-      displayScale = "1.00"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Debug">
@@ -41,8 +39,6 @@
       </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
-      displayScaleIsEnabled = "NO"
-      displayScale = "1.00"
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
