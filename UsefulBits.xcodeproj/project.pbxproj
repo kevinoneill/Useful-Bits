@@ -77,7 +77,7 @@
 		0A39B99C13E4E96B00D0B638 /* ViewDecorators.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B95B13E4E96B00D0B638 /* ViewDecorators.m */; };
 		0A39B99D13E4E96B00D0B638 /* UsefulBits.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B95C13E4E96B00D0B638 /* UsefulBits.h */; };
 		0A39B9A013E4EA4A00D0B638 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A39B99F13E4EA4A00D0B638 /* UIKit.framework */; };
-		0AAF05E513E4F5D800FD753A /* UBMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AAF05E413E4F5D800FD753A /* UBMacros.h */; };
+		0AAF05E513E4F5D800FD753A /* UBMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AAF05E413E4F5D800FD753A /* UBMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */

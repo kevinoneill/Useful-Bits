@@ -26,37 +26,24 @@
   //  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
   //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#ifdef DEBUG
-#define IS_DEBUG   1
-#define IS_RELEASE 0
-#else
-#define IS_DEBUG   0
-#define IS_RELEASE 1
-#endif
+#import <UIKit/UIKit.h>
 
-#define UBRELEASE_NIL(INSTANCE__)      { [INSTANCE__ release]; INSTANCE__ = nil; }
-#define UBRELEASE_DEADBABE(INSTANCE__) { [INSTANCE__ release]; *((uint *) &INSTANCE__) = 0xDEADBABE; }
+#import <UsefulBits/UBMacros.h>
 
-#if IS_DEBUG
-#define UBRELEASE(INSTANCE__) UBRELEASE_DEADBABE(INSTANCE__)
-#else
-#define UBRELEASE(INSTANCE__) UBRELEASE_NIL(INSTANCE__)
-#endif
-
-
-#define UBSWAP_INSTANCE_RETAIN(DESTINATION__, SOURCE__) \
-{                                                   \
-  id old_value__ = DESTINATION__;                   \
-  DESTINATION__ = [(SOURCE__) retain];              \
-  [old_value__ release];                            \
+CGSize CGSizeNoSmaller(CGSize size, CGSize min);
+inline CGSize CGSizeNoSmaller(CGSize size, CGSize min)
+{
+  return CGSizeMake(MAX(size.width, min.width), MAX(size.height, min.height));
 }
 
-#define UBSWAP_INSTANCE_COPY(DESTINATION__, SOURCE__) \
-{                                                 \
-  id old_value__ = DESTINATION__;                 \
-  DESTINATION__ = [(SOURCE__) copy];              \
-  [old_value__ release];                          \
+CGSize CGSizeNoLarger(CGSize size, CGSize max);
+inline CGSize CGSizeNoLarger(CGSize size, CGSize max)
+{
+  return CGSizeMake(MIN(size.width, max.width), MIN(size.height, max.height));
 }
 
-#define CLAMP(VALUE__, MIN__, MAX__) \
-MIN((MAX__), MAX((MIN__), (VALUE__)))
+CGSize CGSizeBoundedBy(CGSize size, CGSize min, CGSize max);
+CGSize CGSizeBoundedBy(CGSize size, CGSize min, CGSize max)
+{
+  return CGSizeMake(CLAMP(size.width, min.width, max.width), CLAMP(size.height, min.height, max.height));
+}
