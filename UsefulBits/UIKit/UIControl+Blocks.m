@@ -86,7 +86,6 @@
   ActionWrapper *target = [ActionWrapper instanceWithAction:handler];
   [actions addObject:target];
   [self addTarget:target action:@selector(invokeAction:) forControlEvents:controlEvents];
-  [target release];  
 }
 
 @end
