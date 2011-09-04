@@ -28,22 +28,6 @@
 
 #import <UIKit/UIKit.h>
 
-#import <UsefulBits/UBMacros.h>
-
-CGSize CGSizeNoSmaller(CGSize size, CGSize min);
-inline CGSize CGSizeNoSmaller(CGSize size, CGSize min)
-{
-  return CGSizeMake(MAX(size.width, min.width), MAX(size.height, min.height));
-}
-
-CGSize CGSizeNoLarger(CGSize size, CGSize max);
-inline CGSize CGSizeNoLarger(CGSize size, CGSize max)
-{
-  return CGSizeMake(MIN(size.width, max.width), MIN(size.height, max.height));
-}
-
-CGSize CGSizeBoundedBy(CGSize size, CGSize min, CGSize max);
-CGSize CGSizeBoundedBy(CGSize size, CGSize min, CGSize max)
-{
-  return CGSizeMake(CLAMP(size.width, min.width, max.width), CLAMP(size.height, min.height, max.height));
-}
+extern CGSize CGSizeNoSmaller(CGSize size, CGSize min);
+extern CGSize CGSizeNoLarger(CGSize size, CGSize max);
+extern CGSize CGSizeBoundedBy(CGSize size, CGSize min, CGSize max);

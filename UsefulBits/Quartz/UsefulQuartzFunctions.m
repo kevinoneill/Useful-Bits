@@ -28,4 +28,19 @@
 
 #import "UsefulQuartzFunctions.h"
 
+#import <UsefulBits/UBMacros.h>
 
+CGSize CGSizeNoSmaller(CGSize size, CGSize min)
+{
+  return CGSizeMake(MAX(size.width, min.width), MAX(size.height, min.height));
+}
+
+CGSize CGSizeNoLarger(CGSize size, CGSize max)
+{
+  return CGSizeMake(MIN(size.width, max.width), MIN(size.height, max.height));
+}
+
+CGSize CGSizeBoundedBy(CGSize size, CGSize min, CGSize max)
+{
+  return CGSizeMake(UBCLAMP(size.width, min.width, max.width), UBCLAMP(size.height, min.height, max.height));
+}

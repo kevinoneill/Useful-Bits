@@ -57,5 +57,5 @@
   [old_value__ release];                          \
 }
 
-#define CLAMP(VALUE__, MIN__, MAX__) \
+#define UBCLAMP(VALUE__, MIN__, MAX__) \
 MIN((MAX__), MAX((MIN__), (VALUE__)))

@@ -28,4 +28,4 @@
 
 #import <UsefulBits/LayoutManager.h>
 #import <UsefulBits/HorizontalFillLayoutManager.h>
-#import <UsefulBits/LayoutView.h>
+#import <UsefulBits/ManagedLayoutView.h>

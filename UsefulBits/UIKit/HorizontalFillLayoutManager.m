@@ -31,12 +31,11 @@
 #import "UIView+Positioning.h"
 #import "UIView+Size.h"
 
-
   // Size isn't perfect (remainder is padded to the right hand edge)
 
 @implementation HorizontalFillLayoutManager
 
-@synthesize resizeSubviews = resizeSubviews_;
+@synthesize resizeOption = resizeOption_;
 
 - (CGSize)sizeThatFits:(CGSize)size;
 {
@@ -51,13 +50,28 @@
   CGSize requested_subview_size = CGSizeMake(subview_width, subview_height);
   
   [[view subviews] eachWithIndex:^ (id subview, NSUInteger position) {
-    if (resizeSubviews_)
+    CGRect cell_frame = CGRectMake(subview_width * position, 0, requested_subview_size.width, requested_subview_size.height);
+
+    switch (resizeOption_)
     {
-      CGSize subview_size = [subview sizeThatFits:requested_subview_size];
-      [subview setFrame:CGRectMake(0, 0, subview_size.width, subview_size.height)];
+      case HorizontalFillLayoutManagerResizeOptionFit:
+      {
+        CGSize subview_size = [subview sizeThatFits:requested_subview_size];
+        [subview setFrame:CGRectMake(0, 0, subview_size.width, subview_size.height)];
+        break;
+      }
+        
+      case HorizontalFillLayoutManagerResizeOptionSize:
+      {
+        [subview setFrame:cell_frame];
+        break;
+      }
+
+      case HorizontalFillLayoutManagerResizeOptionNone:
+      default:
+        break;
     }
     
-    CGRect cell_frame = CGRectMake(subview_width * position, 0, requested_subview_size.width, requested_subview_size.height);
     [subview centerInRect:cell_frame];
   }];
 }

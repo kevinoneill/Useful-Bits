@@ -30,11 +30,17 @@
 
 #import <UsefulBits/LayoutManager.h>
 
+enum  HorizontalFillLayoutManagerResizeOption {
+  HorizontalFillLayoutManagerResizeOptionNone = 0,
+  HorizontalFillLayoutManagerResizeOptionSize = 1,
+  HorizontalFillLayoutManagerResizeOptionFit = 2,
+};
+typedef enum HorizontalFillLayoutManagerResizeOption HorizontalFillLayoutManagerResizeOption;
+
 @interface HorizontalFillLayoutManager : NSObject <LayoutManager>
 {
-  BOOL resizeSubviews_;
 }
 
-@property (nonatomic, assign) BOOL resizeSubviews;
+@property (nonatomic, assign) HorizontalFillLayoutManagerResizeOption resizeOption;
 
 @end

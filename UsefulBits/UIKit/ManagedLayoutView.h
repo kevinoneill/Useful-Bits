@@ -30,7 +30,7 @@
 
 #import <UsefulBits/LayoutManager.h>
 
-@interface LayoutView : UIView
+@interface ManagedLayoutView : UIView
 {
   id<LayoutManager> layoutManager_;
 }
