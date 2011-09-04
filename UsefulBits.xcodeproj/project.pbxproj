@@ -16,7 +16,7 @@
 		0A39B95F13E4E96B00D0B638 /* NSArray+Access.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B91D13E4E96B00D0B638 /* NSArray+Access.m */; };
 		0A39B96013E4E96B00D0B638 /* NSArray+Blocks.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B91E13E4E96B00D0B638 /* NSArray+Blocks.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0A39B96113E4E96B00D0B638 /* NSArray+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B91F13E4E96B00D0B638 /* NSArray+Blocks.m */; };
-		0A39B96213E4E96B00D0B638 /* NSDictionary+URLParams.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B92013E4E96B00D0B638 /* NSDictionary+URLParams.h */; };
+		0A39B96213E4E96B00D0B638 /* NSDictionary+URLParams.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B92013E4E96B00D0B638 /* NSDictionary+URLParams.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0A39B96313E4E96B00D0B638 /* NSDictionary+URLParams.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B92113E4E96B00D0B638 /* NSDictionary+URLParams.m */; };
 		0A39B96413E4E96B00D0B638 /* NSLock+Blocks.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B92213E4E96B00D0B638 /* NSLock+Blocks.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0A39B96513E4E96B00D0B638 /* NSLock+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B92313E4E96B00D0B638 /* NSLock+Blocks.m */; };
@@ -44,8 +44,8 @@
 		0A39B97B13E4E96B00D0B638 /* HorizontalFillLayoutManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B93A13E4E96B00D0B638 /* HorizontalFillLayoutManager.m */; };
 		0A39B97C13E4E96B00D0B638 /* Layout.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B93B13E4E96B00D0B638 /* Layout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0A39B97D13E4E96B00D0B638 /* LayoutManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B93C13E4E96B00D0B638 /* LayoutManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0A39B97E13E4E96B00D0B638 /* LayoutView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B93D13E4E96B00D0B638 /* LayoutView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0A39B97F13E4E96B00D0B638 /* LayoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B93E13E4E96B00D0B638 /* LayoutView.m */; };
+		0A39B97E13E4E96B00D0B638 /* ManagedLayoutView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B93D13E4E96B00D0B638 /* ManagedLayoutView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0A39B97F13E4E96B00D0B638 /* ManagedLayoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B93E13E4E96B00D0B638 /* ManagedLayoutView.m */; };
 		0A39B98013E4E96B00D0B638 /* UBAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B93F13E4E96B00D0B638 /* UBAlertView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0A39B98113E4E96B00D0B638 /* UBAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B94013E4E96B00D0B638 /* UBAlertView.m */; };
 		0A39B98213E4E96B00D0B638 /* UIApplication+Orientation.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B94113E4E96B00D0B638 /* UIApplication+Orientation.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -79,7 +79,7 @@
 		0A39B9A013E4EA4A00D0B638 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A39B99F13E4EA4A00D0B638 /* UIKit.framework */; };
 		0AA1AA0313E9F65400A3D5A7 /* UsefulQuartzFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AA1AA0113E9F65400A3D5A7 /* UsefulQuartzFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0AA1AA0413E9F65400A3D5A7 /* UsefulQuartzFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA1AA0213E9F65400A3D5A7 /* UsefulQuartzFunctions.m */; };
-		0AA1AA0613E9F69C00A3D5A7 /* Quartz+UsefulBits.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AA1AA0513E9F69C00A3D5A7 /* Quartz+UsefulBits.h */; };
+		0AA1AA0613E9F69C00A3D5A7 /* Quartz+UsefulBits.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AA1AA0513E9F69C00A3D5A7 /* Quartz+UsefulBits.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0AAF05E513E4F5D800FD753A /* UBMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AAF05E413E4F5D800FD753A /* UBMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -124,8 +124,8 @@
 		0A39B93A13E4E96B00D0B638 /* HorizontalFillLayoutManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorizontalFillLayoutManager.m; sourceTree = "<group>"; };
 		0A39B93B13E4E96B00D0B638 /* Layout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Layout.h; sourceTree = "<group>"; };
 		0A39B93C13E4E96B00D0B638 /* LayoutManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayoutManager.h; sourceTree = "<group>"; };
-		0A39B93D13E4E96B00D0B638 /* LayoutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayoutView.h; sourceTree = "<group>"; };
-		0A39B93E13E4E96B00D0B638 /* LayoutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LayoutView.m; sourceTree = "<group>"; };
+		0A39B93D13E4E96B00D0B638 /* ManagedLayoutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagedLayoutView.h; sourceTree = "<group>"; };
+		0A39B93E13E4E96B00D0B638 /* ManagedLayoutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagedLayoutView.m; sourceTree = "<group>"; };
 		0A39B93F13E4E96B00D0B638 /* UBAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBAlertView.h; sourceTree = "<group>"; };
 		0A39B94013E4E96B00D0B638 /* UBAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBAlertView.m; sourceTree = "<group>"; };
 		0A39B94113E4E96B00D0B638 /* UIApplication+Orientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+Orientation.h"; sourceTree = "<group>"; };
@@ -271,8 +271,8 @@
 				0A39B93A13E4E96B00D0B638 /* HorizontalFillLayoutManager.m */,
 				0A39B93B13E4E96B00D0B638 /* Layout.h */,
 				0A39B93C13E4E96B00D0B638 /* LayoutManager.h */,
-				0A39B93D13E4E96B00D0B638 /* LayoutView.h */,
-				0A39B93E13E4E96B00D0B638 /* LayoutView.m */,
+				0A39B93D13E4E96B00D0B638 /* ManagedLayoutView.h */,
+				0A39B93E13E4E96B00D0B638 /* ManagedLayoutView.m */,
 				0A39B93F13E4E96B00D0B638 /* UBAlertView.h */,
 				0A39B94013E4E96B00D0B638 /* UBAlertView.m */,
 				0A39B94113E4E96B00D0B638 /* UIApplication+Orientation.h */,
@@ -340,7 +340,7 @@
 				0A39B97A13E4E96B00D0B638 /* HorizontalFillLayoutManager.h in Headers */,
 				0A39B97C13E4E96B00D0B638 /* Layout.h in Headers */,
 				0A39B97D13E4E96B00D0B638 /* LayoutManager.h in Headers */,
-				0A39B97E13E4E96B00D0B638 /* LayoutView.h in Headers */,
+				0A39B97E13E4E96B00D0B638 /* ManagedLayoutView.h in Headers */,
 				0A39B98013E4E96B00D0B638 /* UBAlertView.h in Headers */,
 				0A39B98213E4E96B00D0B638 /* UIApplication+Orientation.h in Headers */,
 				0A39B98413E4E96B00D0B638 /* UIBarButtonItem+Buttons.h in Headers */,
@@ -469,7 +469,7 @@
 				0A39B97713E4E96B00D0B638 /* CustomNavigationController.m in Sources */,
 				0A39B97913E4E96B00D0B638 /* DecoratedView.m in Sources */,
 				0A39B97B13E4E96B00D0B638 /* HorizontalFillLayoutManager.m in Sources */,
-				0A39B97F13E4E96B00D0B638 /* LayoutView.m in Sources */,
+				0A39B97F13E4E96B00D0B638 /* ManagedLayoutView.m in Sources */,
 				0A39B98113E4E96B00D0B638 /* UBAlertView.m in Sources */,
 				0A39B98313E4E96B00D0B638 /* UIApplication+Orientation.m in Sources */,
 				0A39B98513E4E96B00D0B638 /* UIBarButtonItem+Buttons.m in Sources */,
@@ -516,12 +516,18 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				GCC_STRICT_ALIASING = YES;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -533,11 +539,17 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_STRICT_ALIASING = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
