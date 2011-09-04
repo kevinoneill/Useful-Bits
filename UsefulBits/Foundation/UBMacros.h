@@ -43,7 +43,6 @@
 #define UBRELEASE(INSTANCE__) UBRELEASE_NIL(INSTANCE__)
 #endif
 
-
 #define UBSWAP_INSTANCE_RETAIN(DESTINATION__, SOURCE__) \
 {                                                   \
   id old_value__ = DESTINATION__;                   \
