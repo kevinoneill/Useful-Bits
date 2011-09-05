@@ -41,4 +41,6 @@
 - (BOOL)isNotEmpty;
 - (BOOL)isEmpty;
 
+- (NSArray *)reverse;
+
 @end

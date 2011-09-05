@@ -65,4 +65,9 @@
   return ![self isEmpty];
 }
 
+- (NSArray *)reverse;
+{
+  return [[self reverseObjectEnumerator] allObjects];
+}
+
 @end
