@@ -44,7 +44,7 @@
 
 - (NSArray *)map:(id (^)(id item))block;
 - (id)reduce:(id (^)(id current, id item))block initial:(id)initial;
-- (NSArray *)intersperse:(id (^) (void))separator;
+- (NSArray *)intersperse:(id (^) (id current, id next))separator;
 
 - (BOOL)any:(BOOL (^)(id))block;
 - (BOOL)all:(BOOL (^)(id))block;

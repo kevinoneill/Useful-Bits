@@ -160,16 +160,20 @@
   return result;
 }
 
-- (NSArray *)intersperse:(id (^) (void))separator;
+- (NSArray *)intersperse:(id (^) (id current, id next))separator;
 {
   if ([self count] < 2) return [[self copy] autorelease];
   
   NSMutableArray *result = [NSMutableArray arrayWithCapacity:(([self count] * 2) - 1)];
-  for (id item in [self trunk])
-  {
-    [result addObject:item];
-    [result addObject:separator()];
-  }; 
+
+  id current = [self first];
+  for (NSUInteger idx = 1; idx < [self count]; idx++) {
+    [result addObject:current];
+
+    id next = [self objectAtIndex:idx];
+    [result addObject:separator(current, next)];
+    current = next;
+  }
   [result addObject:[self last]];
   
   return [[result copy] autorelease];
