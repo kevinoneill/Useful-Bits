@@ -47,4 +47,20 @@
   return nil;
 }
 
+- (void)addSubviews:(NSArray *)views;
+{
+  for (UIView *view in views)
+  {
+    [self addSubview:view];
+  }
+}
+
+- (void)removeSubviews;
+{
+  for (UIView *subview in [self subviews])
+  {
+    [subview removeFromSuperview];
+  }
+}
+
 @end

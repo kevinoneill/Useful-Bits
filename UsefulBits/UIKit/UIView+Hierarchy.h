@@ -33,4 +33,7 @@
 
 - (UIView *)firstParentOfClass:(Class)klass;
 
+- (void)addSubviews:(NSArray *)views;
+- (void)removeSubviews;
+
 @end
