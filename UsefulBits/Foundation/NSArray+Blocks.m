@@ -28,7 +28,11 @@
 
 #import "NSArray+Blocks.h"
 
+#import "NSArray+Access.h"
+
 @implementation NSArray (Blocks)
+
+#pragma mark - Enumeration
 
 - (void)each:(void (^)(id))block;
 {
@@ -40,6 +44,7 @@
   [self enumerateObjectsUsingBlock: ^(id item, NSUInteger i, BOOL *stop) { block(item, i); }];
 }
 
+#pragma mark - Filters
 
 - (NSArray *)filter:(BOOL (^)(id))block;
 {
@@ -53,7 +58,7 @@
     }
   }
   
-  return [NSArray arrayWithArray:result];
+  return [[result copy] autorelease];
 }
 
 - (NSArray *)pick:(BOOL (^)(id))block;
@@ -68,7 +73,7 @@
     }
   }
   
-  return [NSArray arrayWithArray:result];
+  return [[result copy] autorelease];
 }
 
 - (id)first:(BOOL (^)(id))block;
@@ -129,7 +134,9 @@
   }];
 }
 
-- (NSArray *)map:(id<NSObject> (^)(id<NSObject> item))block;
+#pragma mark - Transformations
+
+- (NSArray *)map:(id (^)(id item))block;
 {
   NSMutableArray *result = [NSMutableArray arrayWithCapacity:[self count]];
   
@@ -151,6 +158,21 @@
   }
   
   return result;
+}
+
+- (NSArray *)intersperse:(id (^) (void))separator;
+{
+  if ([self count] < 2) return [[self copy] autorelease];
+  
+  NSMutableArray *result = [NSMutableArray arrayWithCapacity:(([self count] * 2) - 1)];
+  for (id item in [self trunk])
+  {
+    [result addObject:item];
+    [result addObject:separator()];
+  }; 
+  [result addObject:[self last]];
+  
+  return [[result copy] autorelease];
 }
 
 - (BOOL)any:(BOOL (^)(id))block;

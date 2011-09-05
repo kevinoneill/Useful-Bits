@@ -42,8 +42,9 @@
 - (id)last:(BOOL (^)(id))block;
 - (NSUInteger)indexOfLast:(BOOL (^)(id item))block;
 
-- (NSArray *)map:(id<NSObject> (^)(id<NSObject> item))block;
+- (NSArray *)map:(id (^)(id item))block;
 - (id)reduce:(id (^)(id current, id item))block initial:(id)initial;
+- (NSArray *)intersperse:(id (^) (void))separator;
 
 - (BOOL)any:(BOOL (^)(id))block;
 - (BOOL)all:(BOOL (^)(id))block;
