@@ -81,6 +81,8 @@
 		0AA1AA0413E9F65400A3D5A7 /* UsefulQuartzFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA1AA0213E9F65400A3D5A7 /* UsefulQuartzFunctions.m */; };
 		0AA1AA0613E9F69C00A3D5A7 /* Quartz+UsefulBits.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AA1AA0513E9F69C00A3D5A7 /* Quartz+UsefulBits.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0AAF05E513E4F5D800FD753A /* UBMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AAF05E413E4F5D800FD753A /* UBMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0AF3ADFC141364FF00E6C6C1 /* NSArray+Zip.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AF3ADFA141364FE00E6C6C1 /* NSArray+Zip.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0AF3ADFD141364FF00E6C6C1 /* NSArray+Zip.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF3ADFB141364FE00E6C6C1 /* NSArray+Zip.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -161,6 +163,8 @@
 		0AA1AA0213E9F65400A3D5A7 /* UsefulQuartzFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsefulQuartzFunctions.m; sourceTree = "<group>"; };
 		0AA1AA0513E9F69C00A3D5A7 /* Quartz+UsefulBits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Quartz+UsefulBits.h"; sourceTree = "<group>"; };
 		0AAF05E413E4F5D800FD753A /* UBMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBMacros.h; sourceTree = "<group>"; };
+		0AF3ADFA141364FE00E6C6C1 /* NSArray+Zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Zip.h"; sourceTree = "<group>"; };
+		0AF3ADFB141364FE00E6C6C1 /* NSArray+Zip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Zip.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,6 +257,8 @@
 				0A39B93113E4E96B00D0B638 /* NSURL+Parameters.m */,
 				0A352A8013E6103A008D4A82 /* NSObject+Marker.h */,
 				0A352A8113E6103A008D4A82 /* NSObject+Marker.m */,
+				0AF3ADFA141364FE00E6C6C1 /* NSArray+Zip.h */,
+				0AF3ADFB141364FE00E6C6C1 /* NSArray+Zip.m */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -361,6 +367,7 @@
 				0A352A8213E6103A008D4A82 /* NSObject+Marker.h in Headers */,
 				0AA1AA0313E9F65400A3D5A7 /* UsefulQuartzFunctions.h in Headers */,
 				0AA1AA0613E9F69C00A3D5A7 /* Quartz+UsefulBits.h in Headers */,
+				0AF3ADFC141364FF00E6C6C1 /* NSArray+Zip.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,6 +399,9 @@
 /* Begin PBXProject section */
 		0A39B8FA13E4E81100D0B638 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
 			buildConfigurationList = 0A39B8FD13E4E81100D0B638 /* Build configuration list for PBXProject "UsefulBits" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -486,6 +496,7 @@
 				0A39B99C13E4E96B00D0B638 /* ViewDecorators.m in Sources */,
 				0A352A8313E6103A008D4A82 /* NSObject+Marker.m in Sources */,
 				0AA1AA0413E9F65400A3D5A7 /* UsefulQuartzFunctions.m in Sources */,
+				0AF3ADFD141364FF00E6C6C1 /* NSArray+Zip.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

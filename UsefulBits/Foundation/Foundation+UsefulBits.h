@@ -28,6 +28,7 @@
 
 #import <UsefulBits/UBMacros.h>
 #import <UsefulBits/NSArray+Blocks.h>
+#import <UsefulBits/NSArray+Zip.h>
 #import <UsefulBits/NSSet+Blocks.h>
 #import <UsefulBits/NSSet+Intersection.h>
 #import <UsefulBits/NSLock+Blocks.h>
