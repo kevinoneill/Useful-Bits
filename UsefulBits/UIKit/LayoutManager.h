@@ -30,7 +30,7 @@
 
 @protocol LayoutManager <NSObject>
 
-- (CGSize)sizeThatFits:(CGSize)size;
+- (CGSize)sizeThatFits:(CGSize)size view:(UIView *)view;
 - (void)layoutSubviews:(UIView *)view;
 
 @end

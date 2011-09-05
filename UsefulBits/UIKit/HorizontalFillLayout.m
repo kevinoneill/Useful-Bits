@@ -26,18 +26,18 @@
 //  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#import "HorizontalFillLayoutManager.h"
+#import "HorizontalFillLayout.h"
 #import "NSArray+Blocks.h"
 #import "UIView+Positioning.h"
 #import "UIView+Size.h"
 
   // Size isn't perfect (remainder is padded to the right hand edge)
 
-@implementation HorizontalFillLayoutManager
+@implementation HorizontalFillLayout
 
 @synthesize resizeOption = resizeOption_;
 
-- (CGSize)sizeThatFits:(CGSize)size;
+- (CGSize)sizeThatFits:(CGSize)size view:(UIView *)view;
 {
   return size;
 }

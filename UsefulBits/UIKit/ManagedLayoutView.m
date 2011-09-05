@@ -67,7 +67,7 @@
 - (CGSize) sizeThatFits:(CGSize)size;
 {
   return ([self hasLayoutManager])
-    ? [layoutManager_ sizeThatFits:size]
+    ? [layoutManager_ sizeThatFits:size view:self]
     : [super sizeThatFits:size];
 }
 

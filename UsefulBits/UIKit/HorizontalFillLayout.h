@@ -30,14 +30,14 @@
 
 #import <UsefulBits/LayoutManager.h>
 
-enum  HorizontalFillLayoutManagerResizeOption {
+enum  HorizontalFillLayoutResizeOption {
   HorizontalFillLayoutManagerResizeOptionNone = 0,
   HorizontalFillLayoutManagerResizeOptionSize = 1,
   HorizontalFillLayoutManagerResizeOptionFit = 2,
 };
-typedef enum HorizontalFillLayoutManagerResizeOption HorizontalFillLayoutManagerResizeOption;
+typedef enum HorizontalFillLayoutResizeOption HorizontalFillLayoutManagerResizeOption;
 
-@interface HorizontalFillLayoutManager : NSObject <LayoutManager>
+@interface HorizontalFillLayout : NSObject <LayoutManager>
 {
 }
 

@@ -27,5 +27,7 @@
 //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import <UsefulBits/LayoutManager.h>
-#import <UsefulBits/HorizontalFillLayoutManager.h>
+#import <UsefulBits/HorizontalFillLayout.h>
+#import <UsefulBits/VerticalStackLayout.h>
+#import <UsefulBits/ColumnLayout.h>
 #import <UsefulBits/ManagedLayoutView.h>
