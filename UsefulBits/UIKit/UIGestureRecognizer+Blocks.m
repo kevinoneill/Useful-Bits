@@ -51,7 +51,7 @@ static char block_key;
 
 - (id)initWithActionBlock:(void (^) (UIGestureRecognizer* gesture))action;
 {
-  if (self == [self initWithTarget:self action:@selector(handleAction:)])
+  if ((self = [self initWithTarget:self action:@selector(handleAction:)]))
   {
     [self setActionBlock:action];
   }

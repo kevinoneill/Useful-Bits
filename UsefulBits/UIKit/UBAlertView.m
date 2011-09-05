@@ -32,7 +32,7 @@
 
 - (id)initWithTitle:(NSString*)title message:(NSString*)msg
 {
-  if(([super initWithTitle:title message:msg delegate:nil cancelButtonTitle:nil otherButtonTitles:nil]))
+  if((self = [super initWithTitle:title message:msg delegate:nil cancelButtonTitle:nil otherButtonTitles:nil]))
   {
     [self setDelegate:self];
     buttonBlocks_ = [[NSMutableArray alloc] init];
