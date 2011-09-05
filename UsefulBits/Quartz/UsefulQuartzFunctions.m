@@ -44,3 +44,23 @@ CGSize CGSizeBoundedBy(CGSize size, CGSize min, CGSize max)
 {
   return CGSizeMake(UBCLAMP(size.width, min.width, max.width), UBCLAMP(size.height, min.height, max.height));
 }
+
+CGRect CGRectInsetLeft(CGRect rect, CGFloat inset)
+{
+  return CGRectStandardize(CGRectMake(rect.origin.x + inset, rect.origin.y, rect.size.width - inset, rect.size.height));
+}
+
+CGRect CGRectInsetRight(CGRect rect, CGFloat inset)
+{
+  return CGRectStandardize(CGRectMake(rect.origin.x, rect.origin.y, rect.size.width - inset, rect.size.height));
+}
+
+CGRect CGRectInsetTop(CGRect rect, CGFloat inset)
+{
+  return CGRectStandardize(CGRectMake(rect.origin.x, rect.origin.y + inset, rect.size.width, rect.size.height - inset));
+}
+
+CGRect CGRectInsetBottom(CGRect rect, CGFloat inset)
+{
+  return CGRectStandardize(CGRectMake(rect.origin.x, rect.origin.y, rect.size.width, rect.size.height - inset));
+}

@@ -31,3 +31,9 @@
 extern CGSize CGSizeNoSmaller(CGSize size, CGSize min);
 extern CGSize CGSizeNoLarger(CGSize size, CGSize max);
 extern CGSize CGSizeBoundedBy(CGSize size, CGSize min, CGSize max);
+
+extern CGRect CGRectInsetLeft(CGRect rect, CGFloat inset);
+extern CGRect CGRectInsetRight(CGRect rect, CGFloat inset);
+extern CGRect CGRectInsetTop(CGRect rect, CGFloat inset);
+extern CGRect CGRectInsetBottom(CGRect rect, CGFloat inset);
+
