@@ -32,13 +32,12 @@
 
 - (NSString *)urlEncode;
 {
-  
-return (NSString *)CFURLCreateStringByAddingPercentEscapes(
-                    NULL,
-                    (CFStringRef)self,
-                    NULL,
-                    (CFStringRef)@":/?#[]@!$ &'()*+,;=\"<>%{}|\\^~`",
-                    kCFStringEncodingUTF8 );
+    return [(NSString *) CFURLCreateStringByAddingPercentEscapes(
+                        NULL,
+                        (CFStringRef)self,
+                        NULL,
+                        (CFStringRef)@":/?#[]@!$ &'()*+,;=\"<>%{}|\\^~`",
+                        kCFStringEncodingUTF8 ) autorelease];
 }
 
 @end
