@@ -39,3 +39,6 @@
 #import <UsefulBits/NSOperationQueue+WorkerQueue.h>
 #import <UsefulBits/NSString+URLEncode.h>
 #import <UsefulBits/NSURL+Parameters.h>
+#import <UsefulBits/NSDictionary+Types.h>
+#import <UsefulBits/NSDictionary+Blocks.h>
+

@@ -10,4 +10,7 @@
 
 @interface NSDictionary (Types)
 
+- (NSString *)stringForKey:(id)key;
+- (NSString *)stringForKey:(id)key default:(NSString *)defaultValue;
+
 @end

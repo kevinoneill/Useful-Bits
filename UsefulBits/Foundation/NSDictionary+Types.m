@@ -10,4 +10,21 @@
 
 @implementation NSDictionary (Types)
 
+- (id)objectForKey:(id)key ofType:(Class)type default:(id)defaultValue;
+{
+  id value = [self objectForKey:key];
+  
+  return [value isKindOfClass:type] ? value : defaultValue;
+}
+
+- (NSString *)stringForKey:(id)key default:(NSString *)defaultValue;
+{
+  return [self objectForKey:key ofType:[NSString class] default:defaultValue];
+}
+
+- (NSString *)stringForKey:(id)key;
+{
+  return [self stringForKey:key default:@""];
+}
+
 @end

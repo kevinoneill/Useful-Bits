@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0A0158E81414D9560039B4D4 /* VerticalStackLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A0158E61414D9560039B4D4 /* VerticalStackLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0A0158E91414D9560039B4D4 /* VerticalStackLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0158E71414D9560039B4D4 /* VerticalStackLayout.m */; };
+		0A265A1A146CAEB500C8A317 /* NSDictionary+Types.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A265A18146CAEB500C8A317 /* NSDictionary+Types.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0A265A1B146CAEB500C8A317 /* NSDictionary+Types.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A265A19146CAEB500C8A317 /* NSDictionary+Types.m */; };
 		0A352A8213E6103A008D4A82 /* NSObject+Marker.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A352A8013E6103A008D4A82 /* NSObject+Marker.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0A352A8313E6103A008D4A82 /* NSObject+Marker.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A352A8113E6103A008D4A82 /* NSObject+Marker.m */; };
 		0A39B90A13E4E81100D0B638 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A39B90913E4E81100D0B638 /* Foundation.framework */; };
@@ -79,6 +81,8 @@
 		0A39B99C13E4E96B00D0B638 /* ViewDecorators.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B95B13E4E96B00D0B638 /* ViewDecorators.m */; };
 		0A39B99D13E4E96B00D0B638 /* UsefulBits.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B95C13E4E96B00D0B638 /* UsefulBits.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0A39B9A013E4EA4A00D0B638 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A39B99F13E4EA4A00D0B638 /* UIKit.framework */; };
+		0A7B0BC6147F7CE1002A32AF /* NSDictionary+Blocks.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A7B0BC4147F7CE1002A32AF /* NSDictionary+Blocks.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0A7B0BC7147F7CE1002A32AF /* NSDictionary+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A7B0BC5147F7CE1002A32AF /* NSDictionary+Blocks.m */; };
 		0A9849B61414F77000F85D79 /* ColumnLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A9849B41414F77000F85D79 /* ColumnLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0A9849B71414F77000F85D79 /* ColumnLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9849B51414F77000F85D79 /* ColumnLayout.m */; };
 		0AA1AA0313E9F65400A3D5A7 /* UsefulQuartzFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AA1AA0113E9F65400A3D5A7 /* UsefulQuartzFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -92,6 +96,8 @@
 /* Begin PBXFileReference section */
 		0A0158E61414D9560039B4D4 /* VerticalStackLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerticalStackLayout.h; sourceTree = "<group>"; };
 		0A0158E71414D9560039B4D4 /* VerticalStackLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerticalStackLayout.m; sourceTree = "<group>"; };
+		0A265A18146CAEB500C8A317 /* NSDictionary+Types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Types.h"; sourceTree = "<group>"; };
+		0A265A19146CAEB500C8A317 /* NSDictionary+Types.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Types.m"; sourceTree = "<group>"; };
 		0A352A8013E6103A008D4A82 /* NSObject+Marker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Marker.h"; sourceTree = "<group>"; };
 		0A352A8113E6103A008D4A82 /* NSObject+Marker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Marker.m"; sourceTree = "<group>"; };
 		0A39B90613E4E81100D0B638 /* UsefulBits.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework.static; includeInIndex = 0; path = UsefulBits.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,6 +171,8 @@
 		0A39B95B13E4E96B00D0B638 /* ViewDecorators.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewDecorators.m; sourceTree = "<group>"; };
 		0A39B95C13E4E96B00D0B638 /* UsefulBits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsefulBits.h; sourceTree = "<group>"; };
 		0A39B99F13E4EA4A00D0B638 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		0A7B0BC4147F7CE1002A32AF /* NSDictionary+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Blocks.h"; sourceTree = "<group>"; };
+		0A7B0BC5147F7CE1002A32AF /* NSDictionary+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Blocks.m"; sourceTree = "<group>"; };
 		0A9849B41414F77000F85D79 /* ColumnLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColumnLayout.h; sourceTree = "<group>"; };
 		0A9849B51414F77000F85D79 /* ColumnLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColumnLayout.m; sourceTree = "<group>"; };
 		0AA1AA0113E9F65400A3D5A7 /* UsefulQuartzFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsefulQuartzFunctions.h; sourceTree = "<group>"; };
@@ -280,6 +288,10 @@
 				0A352A8113E6103A008D4A82 /* NSObject+Marker.m */,
 				0AF3ADFA141364FE00E6C6C1 /* NSArray+Zip.h */,
 				0AF3ADFB141364FE00E6C6C1 /* NSArray+Zip.m */,
+				0A265A18146CAEB500C8A317 /* NSDictionary+Types.h */,
+				0A265A19146CAEB500C8A317 /* NSDictionary+Types.m */,
+				0A7B0BC4147F7CE1002A32AF /* NSDictionary+Blocks.h */,
+				0A7B0BC5147F7CE1002A32AF /* NSDictionary+Blocks.m */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -390,6 +402,8 @@
 				0AF3ADFC141364FF00E6C6C1 /* NSArray+Zip.h in Headers */,
 				0A0158E81414D9560039B4D4 /* VerticalStackLayout.h in Headers */,
 				0A9849B61414F77000F85D79 /* ColumnLayout.h in Headers */,
+				0A265A1A146CAEB500C8A317 /* NSDictionary+Types.h in Headers */,
+				0A7B0BC6147F7CE1002A32AF /* NSDictionary+Blocks.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,6 +535,8 @@
 				0AF3ADFD141364FF00E6C6C1 /* NSArray+Zip.m in Sources */,
 				0A0158E91414D9560039B4D4 /* VerticalStackLayout.m in Sources */,
 				0A9849B71414F77000F85D79 /* ColumnLayout.m in Sources */,
+				0A265A1B146CAEB500C8A317 /* NSDictionary+Types.m in Sources */,
+				0A7B0BC7147F7CE1002A32AF /* NSDictionary+Blocks.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

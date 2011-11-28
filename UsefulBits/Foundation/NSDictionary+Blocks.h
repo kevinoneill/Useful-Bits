@@ -10,4 +10,8 @@
 
 @interface NSDictionary (Blocks)
 
+- (void)each:(void (^) (id key, id value))action;
+              
+- (void)withValueForKey:(id)key do:(void (^) (id value))action;
+
 @end
