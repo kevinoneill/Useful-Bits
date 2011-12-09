@@ -89,6 +89,10 @@
 		0AA1AA0413E9F65400A3D5A7 /* UsefulQuartzFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA1AA0213E9F65400A3D5A7 /* UsefulQuartzFunctions.m */; };
 		0AA1AA0613E9F69C00A3D5A7 /* Quartz+UsefulBits.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AA1AA0513E9F69C00A3D5A7 /* Quartz+UsefulBits.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0AAF05E513E4F5D800FD753A /* UBMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AAF05E413E4F5D800FD753A /* UBMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0AE3E07E149205C200C45DC9 /* UIColor+Hex.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AE3E07C149205C200C45DC9 /* UIColor+Hex.h */; };
+		0AE3E07F149205C200C45DC9 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE3E07D149205C200C45DC9 /* UIColor+Hex.m */; };
+		0AE3E0831492083100C45DC9 /* NSNumber+Hex.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AE3E0811492083100C45DC9 /* NSNumber+Hex.h */; };
+		0AE3E0841492083100C45DC9 /* NSNumber+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE3E0821492083100C45DC9 /* NSNumber+Hex.m */; };
 		0AF3ADFC141364FF00E6C6C1 /* NSArray+Zip.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AF3ADFA141364FE00E6C6C1 /* NSArray+Zip.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0AF3ADFD141364FF00E6C6C1 /* NSArray+Zip.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF3ADFB141364FE00E6C6C1 /* NSArray+Zip.m */; };
 /* End PBXBuildFile section */
@@ -179,6 +183,10 @@
 		0AA1AA0213E9F65400A3D5A7 /* UsefulQuartzFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsefulQuartzFunctions.m; sourceTree = "<group>"; };
 		0AA1AA0513E9F69C00A3D5A7 /* Quartz+UsefulBits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Quartz+UsefulBits.h"; sourceTree = "<group>"; };
 		0AAF05E413E4F5D800FD753A /* UBMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBMacros.h; sourceTree = "<group>"; };
+		0AE3E07C149205C200C45DC9 /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
+		0AE3E07D149205C200C45DC9 /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
+		0AE3E0811492083100C45DC9 /* NSNumber+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+Hex.h"; sourceTree = "<group>"; };
+		0AE3E0821492083100C45DC9 /* NSNumber+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+Hex.m"; sourceTree = "<group>"; };
 		0AF3ADFA141364FE00E6C6C1 /* NSArray+Zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Zip.h"; sourceTree = "<group>"; };
 		0AF3ADFB141364FE00E6C6C1 /* NSArray+Zip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Zip.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -292,6 +300,8 @@
 				0A265A19146CAEB500C8A317 /* NSDictionary+Types.m */,
 				0A7B0BC4147F7CE1002A32AF /* NSDictionary+Blocks.h */,
 				0A7B0BC5147F7CE1002A32AF /* NSDictionary+Blocks.m */,
+				0AE3E0811492083100C45DC9 /* NSNumber+Hex.h */,
+				0AE3E0821492083100C45DC9 /* NSNumber+Hex.m */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -339,6 +349,8 @@
 				0A39B95913E4E96B00D0B638 /* UIView+Size.m */,
 				0A39B95A13E4E96B00D0B638 /* ViewDecorators.h */,
 				0A39B95B13E4E96B00D0B638 /* ViewDecorators.m */,
+				0AE3E07C149205C200C45DC9 /* UIColor+Hex.h */,
+				0AE3E07D149205C200C45DC9 /* UIColor+Hex.m */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -404,6 +416,8 @@
 				0A9849B61414F77000F85D79 /* ColumnLayout.h in Headers */,
 				0A265A1A146CAEB500C8A317 /* NSDictionary+Types.h in Headers */,
 				0A7B0BC6147F7CE1002A32AF /* NSDictionary+Blocks.h in Headers */,
+				0AE3E07E149205C200C45DC9 /* UIColor+Hex.h in Headers */,
+				0AE3E0831492083100C45DC9 /* NSNumber+Hex.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -537,6 +551,8 @@
 				0A9849B71414F77000F85D79 /* ColumnLayout.m in Sources */,
 				0A265A1B146CAEB500C8A317 /* NSDictionary+Types.m in Sources */,
 				0A7B0BC7147F7CE1002A32AF /* NSDictionary+Blocks.m in Sources */,
+				0AE3E07F149205C200C45DC9 /* UIColor+Hex.m in Sources */,
+				0AE3E0841492083100C45DC9 /* NSNumber+Hex.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

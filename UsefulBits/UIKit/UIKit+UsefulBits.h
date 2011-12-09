@@ -38,3 +38,4 @@
 #import <UsefulBits/UIView+Positioning.h>
 #import <UsefulBits/UIView+Size.h>
 #import <UsefulBits/UIView+Actions.h>
+#import <UsefulBits/UIColor+Hex.h>

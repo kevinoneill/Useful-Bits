@@ -26,20 +26,44 @@
   //  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
   //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#import <UsefulBits/UBMacros.h>
-#import <UsefulBits/NSArray+Blocks.h>
-#import <UsefulBits/NSArray+Zip.h>
-#import <UsefulBits/NSSet+Blocks.h>
-#import <UsefulBits/NSSet+Intersection.h>
-#import <UsefulBits/NSLock+Blocks.h>
-#import <UsefulBits/NSArray+Access.h>
-#import <UsefulBits/NSObject+Blocks.h>
-#import <UsefulBits/NSDictionary+URLParams.h>
-#import <UsefulBits/NSObject+Creation.h>
-#import <UsefulBits/NSOperationQueue+WorkerQueue.h>
-#import <UsefulBits/NSString+URLEncode.h>
-#import <UsefulBits/NSURL+Parameters.h>
-#import <UsefulBits/NSDictionary+Types.h>
-#import <UsefulBits/NSDictionary+Blocks.h>
-#import <UsefulBits/NSNumber+Hex.h>
+#import "UIColor+Hex.h"
 
+#import "NSNumber+Hex.h"
+
+@implementation UIColor (Hex)
+
++ (UIColor *)colorWithHex:(NSInteger)color
+{
+  return [UIColor colorWithHex:color alpha:1.0];
+}
+
++ (UIColor *)colorWithHex:(NSInteger)color alpha:(float)alpha
+{
+  return [UIColor colorWithRed:(((color & 0xFF0000) >> 16)) / 255.0f
+                         green:(((color & 0xFF00) >> 8)) / 255.0f
+                          blue:((color & 0xFF)) / 255.0 alpha:alpha];
+}
+
++ (UIColor *)colorWithHexString:(NSString *)hexString;
+{
+  NSUInteger string_length = [hexString length];
+  if (!([hexString hasPrefix:@"0x"] && (10 == string_length || 8 == string_length))) return nil;
+  
+  NSUInteger color = 0;
+  NSUInteger alpha = 0;
+  
+  if ([hexString length] == 10)
+  {
+    color = [[NSNumber numberWithHexString:[hexString substringWithRange:NSMakeRange(4, 6)]] unsignedIntegerValue];
+    alpha = [[NSNumber numberWithHexString:[hexString substringWithRange:NSMakeRange(2, 2)]] unsignedIntegerValue];
+  }
+  else
+  {
+    color = [[NSNumber numberWithHexString:[hexString substringWithRange:NSMakeRange(2, 6)]] unsignedIntegerValue];
+  }
+  
+  return alpha > 0 ? [UIColor colorWithHex:color alpha:(alpha / 255.0f)] : [UIColor colorWithHex:color];
+}
+
+
+@end
