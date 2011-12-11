@@ -26,21 +26,20 @@
   //  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
   //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#import <UsefulBits/UBMacros.h>
-#import <UsefulBits/NSArray+Blocks.h>
-#import <UsefulBits/NSArray+Zip.h>
-#import <UsefulBits/NSSet+Blocks.h>
-#import <UsefulBits/NSSet+Intersection.h>
-#import <UsefulBits/NSLock+Blocks.h>
-#import <UsefulBits/NSArray+Access.h>
-#import <UsefulBits/NSObject+Blocks.h>
-#import <UsefulBits/NSDictionary+URLParams.h>
-#import <UsefulBits/NSObject+Creation.h>
-#import <UsefulBits/NSOperationQueue+WorkerQueue.h>
-#import <UsefulBits/NSString+URLEncode.h>
-#import <UsefulBits/NSURL+Parameters.h>
-#import <UsefulBits/NSDictionary+Types.h>
-#import <UsefulBits/NSDictionary+Blocks.h>
-#import <UsefulBits/NSNumber+Hex.h>
-#import <UsefulBits/NSDictionary+Intersection.h>
+#import <UIKit/UIKit.h>
 
+@interface Skin : NSObject
+
++ (Skin *)skin;
++ (Skin *)skinForSection:(NSString *)section;
+
+- (id)initForSection:(NSString *)section;
+
+- (NSString *)section;
+
+- (id)propertyNamed:(NSString *)name;
+- (UIColor *)colorNamed:(NSString *)name;
+- (UIImage *)imageNamed:(NSString *)name;
+- (UIFont *)fontNamed:(NSString *)name;
+
+@end

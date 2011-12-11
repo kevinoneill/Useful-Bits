@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>colors</key>
+	<dict>
+		<key>pattern</key>
+		<string>color-pattern.png</string>
+		<key>reference-to-reference</key>
+		<string>@default-color</string>
+		<key>default-color</key>
+		<string>@grey</string>
+		<key>grey</key>
+		<string>0x7f7f7f</string>
+	</dict>
+	<key>fonts</key>
+	<dict>
+		<key>apple-gothic</key>
+		<dict>
+			<key>size</key>
+			<integer>11</integer>
+			<key>name</key>
+			<string>AppleGothic</string>
+		</dict>
+		<key>system-font</key>
+		<dict>
+			<key>size</key>
+			<integer>11</integer>
+			<key>name</key>
+			<string>systemfont</string>
+		</dict>
+		<key>system-font-bold</key>
+		<dict>
+			<key>size</key>
+			<integer>11</integer>
+			<key>name</key>
+			<string>systemfont-bold</string>
+		</dict>
+		<key>system-font-italic</key>
+		<dict>
+			<key>size</key>
+			<string>11</string>
+			<key>name</key>
+			<string>systemfont-italic</string>
+		</dict>
+		<key>bold-font</key>
+		<string>Helvetica-Bold</string>
+		<key>base-font</key>
+		<string>systemfont</string>
+	</dict>
+	<key>images</key>
+	<dict>
+		<key>background</key>
+		<string>pattern.png</string>
+	</dict>
+	<key>properties</key>
+	<dict>
+		<key>string</key>
+		<string>a string</string>
+		<key>number</key>
+		<integer>42</integer>
+	</dict>
+</dict>
+</plist>
