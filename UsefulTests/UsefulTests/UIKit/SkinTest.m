@@ -149,8 +149,6 @@
   GHAssertEquals(11.f, [font pointSize], @"expected the font to be 11pt");
 }
 
-
-
 #pragma mark - Broken
 
 - (void)testBrokenThrows
