@@ -12,4 +12,6 @@
 
 - (NSDictionary *)merge:(NSDictionary *)other;
 
+- (NSDictionary *)removeKeys:(NSSet *)keys;
+
 @end

@@ -18,4 +18,12 @@
   return [[result copy] autorelease];
 }
 
+- (NSDictionary *)removeKeys:(NSSet *)keys;
+{
+  NSMutableDictionary *result = [NSMutableDictionary dictionaryWithDictionary:self];
+  [result removeObjectsForKeys:[keys allObjects]];
+  
+  return [[result copy] autorelease];
+}
+
 @end
