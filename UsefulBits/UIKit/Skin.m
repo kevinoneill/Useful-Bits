@@ -28,8 +28,8 @@ static const CGFloat kDefaultFontSize = 14.0;
 @property (nonatomic, copy) NSCache *images;
 @property (nonatomic, copy) NSCache *fonts;
 
-- (NSString *)valueForName:(NSString *)name inSection:(NSString *)section;
-- (NSString *)pathForResource:(NSString *)name InSection:(NSString *)section;
+- (NSString *)valueForName:(NSString *)name inPart:(NSString *)section;
+- (NSString *)pathForResource:(NSString *)name inPart:(NSString *)section;
 
 @end
 
@@ -228,7 +228,7 @@ static inline NSString *bundle_relative_path(NSString *full_path)
     NSString *font_name = nil;
     CGFloat font_size = kDefaultFontSize;
     
-    id font_value = [self valueForName:name inSection:@"fonts"];
+    id font_value = [self valueForName:name inPart:@"fonts"];
     
     if ([font_value isKindOfClass:[NSDictionary class]])
     {
@@ -270,7 +270,7 @@ static inline NSString *bundle_relative_path(NSString *full_path)
 
 - (id)propertyNamed:(NSString *)name;
 {
-  return [self valueForName:name inSection:@"properties"];
+  return [self valueForName:name inPart:@"properties"];
 }       
 
 #pragma mark - Colors
@@ -283,14 +283,14 @@ static inline NSString *bundle_relative_path(NSString *full_path)
   {
     color = [UIColor cyanColor];
 
-    NSString *value = [self valueForName:name inSection:@"colors"];
+    NSString *value = [self valueForName:name inPart:@"colors"];
     if ([value hasPrefix:kHexPrefix])
     {
       color = [UIColor colorWithHexString:value];
     }
     else
     {
-      NSString *image_path = [self pathForResource:name InSection:@"colors"];
+      NSString *image_path = [self pathForResource:name inPart:@"colors"];
       UIImage *image = [UIImage imageNamed:image_path];
       if (nil != image)
       {
@@ -322,7 +322,7 @@ static inline NSString *bundle_relative_path(NSString *full_path)
   UIImage *image = [images_ objectForKey:name];
   if (nil == image)
   {
-    NSString *image_path = [self pathForResource:name InSection:@"images"];
+    NSString *image_path = [self pathForResource:name inPart:@"images"];
     image = [UIImage imageNamed:image_path];
     
     if (nil != image)
@@ -336,17 +336,17 @@ static inline NSString *bundle_relative_path(NSString *full_path)
 
 #pragma mark - Utilities
 
-- (NSString *)valueForName:(NSString *)name inSection:(NSString *)section;
+- (NSString *)valueForName:(NSString *)name inPart:(NSString *)part;
 {
-  return [[self configuration] valueForKeyPath:[[section stringByAppendingString: @"."] stringByAppendingString:name]];
+  return [[self configuration] valueForKeyPath:[[part stringByAppendingString: @"."] stringByAppendingString:name]];
 }
 
-- (NSString *)pathForResource:(NSString *)name InSection:(NSString *)section;
+- (NSString *)pathForResource:(NSString *)name inPart:(NSString *)part;
 {
-  NSString *value = [self valueForName:name inSection:section];
+  NSString *value = [self valueForName:name inPart:part];
   if (nil == value) return nil;
   
-  NSString *section_path = [path_for_section([self section]) stringByAppendingPathComponent:section];  
+  NSString *section_path = [path_for_section([self section]) stringByAppendingPathComponent:part];  
   NSString *resource_path = [bundle_ pathForResource:value ofType:nil inDirectory:section_path];
   NSString *path = bundle_relative_path(resource_path);
   
