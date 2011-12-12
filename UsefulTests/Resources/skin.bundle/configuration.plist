@@ -4,6 +4,8 @@
 <dict>
 	<key>colors</key>
 	<dict>
+		<key>property-color</key>
+		<string>@property-grey</string>
 		<key>pattern</key>
 		<string>color-pattern.png</string>
 		<key>reference-to-reference</key>
@@ -55,6 +57,8 @@
 	</dict>
 	<key>properties</key>
 	<dict>
+		<key>property-grey</key>
+		<string>0x7f7f7f</string>
 		<key>string</key>
 		<string>a string</string>
 		<key>number</key>

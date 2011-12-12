@@ -3,7 +3,6 @@
 //  UsefulTests
 //
 //  Created by Kevin O'Neill on 11/12/11.
-//  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
 
 #import <GHUnitIOS/GHUnit.h>
@@ -52,6 +51,17 @@
   id value = [skin propertyNamed:@"missing"];
   
   GHAssertNil(value, @"should not have provided a value");
+}
+
+#pragma mark - References
+
+- (void)testResolvesColorToPropertyValue
+{
+  Skin *skin = [Skin skin];
+  UIColor *grey = [skin colorNamed:@"property-color"];
+  
+  GHAssertNotNil(grey, @"should have provided grey");
+  GHAssertEqualObjects([UIColor colorWithHex:0x7f7f7f], grey, @"should be grey");
 }
 
 #pragma mark - Colors
@@ -177,12 +187,29 @@
   GHAssertEqualObjects([UIColor colorWithHex:0x7f7f7f], grey, @"should be grey");
 }
 
+- (void)testResolvesSectionPatternColors
+{
+  Skin *skin = [Skin skinForSection:@"subsection"];
+  UIColor *pattern = [skin colorNamed:@"pattern"];
+  
+  GHAssertNotNil(pattern, @"should have provided pattern");
+  GHAssertNotEqualObjects([UIColor cyanColor], pattern, @"should be pattern");
+}
+
 - (void)testResolvesSectionImages
 {
   Skin *skin = [Skin skinForSection:@"subsection"];
   UIImage *image = [skin imageNamed:@"sub-image"];
   
   GHAssertNotNil(image, @"should have provided image");
+}
+
+- (void)testResolvesInheritedImages
+{
+  Skin *skin = [Skin skinForSection:@"subsection"];
+  UIImage *image = [skin imageNamed:@"background"];
+  
+  GHAssertNotNil(image, @"should have provided image");  
 }
 
 @end

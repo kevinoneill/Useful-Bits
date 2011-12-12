@@ -29,7 +29,6 @@ static const CGFloat kDefaultFontSize = 14.0;
 @property (nonatomic, copy) NSCache *fonts;
 
 - (NSString *)valueForName:(NSString *)name inPart:(NSString *)section;
-- (NSString *)pathForResource:(NSString *)name inPart:(NSString *)section;
 
 @end
 
@@ -77,7 +76,7 @@ static Skin *skin_for_section(NSString *section)
   return result;
 }
 
-static inline NSString * path_for_section(NSString *section)
+static inline NSString *path_for_section(NSString *section)
 {
   return [NSString pathWithComponents:[section componentsSeparatedByString:kSectionPathDelimiter]];
 }
@@ -98,12 +97,12 @@ static NSDictionary *resolve_references(NSDictionary *source)
 {
   NSMutableDictionary *resolved = [NSMutableDictionary dictionaryWithCapacity:4];
   
-  for (NSString *component in [NSArray arrayWithObjects:@"images", @"fonts", @"properties" ,@"colors", nil])
+  for (NSString *part_name in [NSArray arrayWithObjects:@"properties" ,@"images", @"fonts", @"colors", nil])
   {
-    NSDictionary *section = [source objectForKey:component];
-    NSMutableDictionary *resolved_section = [NSMutableDictionary dictionaryWithDictionary:section];
+    NSDictionary *part = [source objectForKey:part_name];
+    NSMutableDictionary *resolved_part = [NSMutableDictionary dictionaryWithDictionary:part];
     
-    NSSet *references = [section keysOfEntriesPassingTest:^ BOOL (id key, id obj, BOOL *stop) {
+    NSSet *references = [part keysOfEntriesPassingTest:^ BOOL (id key, id obj, BOOL *stop) {
       return [obj isKindOfClass:[NSString class]] ? [obj hasPrefix:kReferencePrefix] : NO;
     }];
     
@@ -111,11 +110,18 @@ static NSDictionary *resolve_references(NSDictionary *source)
     {
       NSMutableSet *seen = [NSMutableSet set];
       
-      NSString *value = [section objectForKey:key];
+      NSString *value = [part objectForKey:key];
       do {
         [seen addObject:value];
         NSString *referenced_key = [value substringFromIndex:[kReferencePrefix length]];
-        value = [section objectForKey:referenced_key];
+
+          // KAO - TODO: probably should break this out and add a resolution strategy
+        value = [part objectForKey:referenced_key];
+        if (nil == value && ![@"properties" isEqualToString:part_name])
+        {
+          value = [resolved valueForKeyPath:[@"properties." stringByAppendingString:referenced_key]];
+        }
+        
         if ([value hasPrefix:kReferencePrefix] && [seen containsObject:value]) 
         {
           NSException *recursive = [NSException
@@ -126,10 +132,10 @@ static NSDictionary *resolve_references(NSDictionary *source)
         }
       } while ([value hasPrefix:kReferencePrefix]);
       
-      [resolved_section setValue:value forKey:key];
+      [resolved_part setValue:value forKey:key];
     }
     
-    [resolved setObject:resolved_section forKey:component];
+    [resolved setObject:resolved_part forKey:part_name];
   }
   
   return resolved;
@@ -140,6 +146,11 @@ static inline NSString *bundle_relative_path(NSString *full_path)
   NSUInteger min_length = [[[NSBundle mainBundle] resourcePath] length] + 1;
   
   return [full_path length] >= min_length ? [full_path substringFromIndex:min_length] : nil;
+}
+
+static inline NSString *value_for_name(NSDictionary *source, NSString *name, NSString *part)
+{
+  return [source valueForKeyPath:[[part stringByAppendingString: @"."] stringByAppendingString:name]];
 }
 
 #pragma mark - Skin
@@ -181,18 +192,37 @@ static inline NSString *bundle_relative_path(NSString *full_path)
                                                      ofType:@"plist"
                                                 inDirectory:path_for_section(section)];
     
+
+    NSMutableDictionary *local_configuration = [NSMutableDictionary dictionaryWithContentsOfFile:configuration_path];
+    for (NSString *part in [NSArray arrayWithObjects:@"images", @"colors", nil])
+    {
+      NSDictionary *part_configuration = [local_configuration objectForKey:part];
+      NSMutableDictionary *expanded = [NSMutableDictionary dictionaryWithDictionary:part_configuration];
+      [part_configuration enumerateKeysAndObjectsUsingBlock:^(NSString *key, id value, BOOL *stop) {
+        if ([value isKindOfClass:[NSString class]] && !([value hasPrefix:kReferencePrefix] || [value hasPrefix:kHexPrefix]))
+        {
+          NSString *section_path = [path_for_section(section) stringByAppendingPathComponent:part];  
+          NSString *resource_path = [bundle_ pathForResource:value ofType:nil inDirectory:section_path];
+          NSString *path = bundle_relative_path(resource_path);
+          
+          [expanded setObject:path forKey:key];
+        }
+      }];
+      
+      [local_configuration setObject:expanded forKey:part];
+    }
+    
     NSDictionary *skin_configuration = nil;
     if ([section isEqualToString:@""])
     {
-      skin_configuration = [NSDictionary dictionaryWithContentsOfFile:configuration_path];
+      skin_configuration = local_configuration;
     }
     else
     {
       NSArray *address = [section componentsSeparatedByString:kSectionPathDelimiter];
       NSString *parent_name = [[address trunk] componentsJoinedByString:kSectionPathDelimiter];
       Skin *parent = skin_for_section(parent_name);
-      
-      NSDictionary *local_configuration = [NSDictionary dictionaryWithContentsOfFile:configuration_path];
+            
       NSDictionary *parent_configuration = [parent configuration];
       
       skin_configuration = merge_configurations(parent_configuration, local_configuration);
@@ -290,8 +320,7 @@ static inline NSString *bundle_relative_path(NSString *full_path)
     }
     else
     {
-      NSString *image_path = [self pathForResource:name inPart:@"colors"];
-      UIImage *image = [UIImage imageNamed:image_path];
+      UIImage *image = [UIImage imageNamed:value];
       if (nil != image)
       {
         color = [UIColor colorWithPatternImage:image];
@@ -322,7 +351,7 @@ static inline NSString *bundle_relative_path(NSString *full_path)
   UIImage *image = [images_ objectForKey:name];
   if (nil == image)
   {
-    NSString *image_path = [self pathForResource:name inPart:@"images"];
+    NSString *image_path = [self valueForName:name inPart:@"images"];
     image = [UIImage imageNamed:image_path];
     
     if (nil != image)
@@ -338,19 +367,7 @@ static inline NSString *bundle_relative_path(NSString *full_path)
 
 - (NSString *)valueForName:(NSString *)name inPart:(NSString *)part;
 {
-  return [[self configuration] valueForKeyPath:[[part stringByAppendingString: @"."] stringByAppendingString:name]];
-}
-
-- (NSString *)pathForResource:(NSString *)name inPart:(NSString *)part;
-{
-  NSString *value = [self valueForName:name inPart:part];
-  if (nil == value) return nil;
-  
-  NSString *section_path = [path_for_section([self section]) stringByAppendingPathComponent:part];  
-  NSString *resource_path = [bundle_ pathForResource:value ofType:nil inDirectory:section_path];
-  NSString *path = bundle_relative_path(resource_path);
-  
-  return path;
+  return value_for_name([self configuration], name, part);
 }
 
 @end
