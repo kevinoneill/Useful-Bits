@@ -41,7 +41,8 @@
 {
   return [UIColor colorWithRed:(((color & 0xFF0000) >> 16)) / 255.0f
                          green:(((color & 0xFF00) >> 8)) / 255.0f
-                          blue:((color & 0xFF)) / 255.0 alpha:alpha];
+                          blue:((color & 0xFF)) / 255.0f
+                         alpha:alpha];
 }
 
 + (UIColor *)colorWithHexString:(NSString *)hexString;
@@ -50,19 +51,19 @@
   if (!([hexString hasPrefix:@"0x"] && (10 == string_length || 8 == string_length))) return nil;
   
   NSUInteger color = 0;
-  NSUInteger alpha = 0;
+  NSUInteger alpha = 255;
   
   if ([hexString length] == 10)
   {
-    color = [[NSNumber numberWithHexString:[hexString substringWithRange:NSMakeRange(4, 6)]] unsignedIntegerValue];
-    alpha = [[NSNumber numberWithHexString:[hexString substringWithRange:NSMakeRange(2, 2)]] unsignedIntegerValue];
+    color = [[NSNumber integerWithHexString:[hexString substringWithRange:NSMakeRange(4, 6)]] unsignedIntegerValue];
+    alpha = [[NSNumber integerWithHexString:[hexString substringWithRange:NSMakeRange(2, 2)]] unsignedIntegerValue];
   }
   else
   {
-    color = [[NSNumber numberWithHexString:[hexString substringWithRange:NSMakeRange(2, 6)]] unsignedIntegerValue];
+    color = [[NSNumber integerWithHexString:[hexString substringWithRange:NSMakeRange(2, 6)]] unsignedIntegerValue];
   }
   
-  return alpha > 0 ? [UIColor colorWithHex:color alpha:(alpha / 255.0f)] : [UIColor colorWithHex:color];
+  return alpha < 255 ? [UIColor colorWithHex:color alpha:(alpha / 255.0f)] : [UIColor colorWithHex:color];
 }
 
 

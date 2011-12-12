@@ -10,14 +10,14 @@
 
 @implementation NSNumber (Hex)
 
-+ (NSNumber *)numberWithHexString:(NSString *)hexString;
++ (NSNumber *)integerWithHexString:(NSString *)hexString;
 {
   NSScanner *scanner = [NSScanner scannerWithString:hexString];
   
   NSUInteger value;
   if ([scanner scanHexInt:&value]) 
   {
-    return [NSNumber numberWithUnsignedInteger:value]; 
+    return [NSNumber numberWithInteger:value]; 
   }
   
   return nil;

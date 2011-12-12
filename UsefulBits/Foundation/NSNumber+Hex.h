@@ -10,6 +10,6 @@
 
 @interface NSNumber (Hex)
 
-+ (NSNumber *)numberWithHexString:(NSString *)hexString;
++ (NSNumber *)integerWithHexString:(NSString *)hexString;
 
 @end

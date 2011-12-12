@@ -91,11 +91,11 @@
 		0AAF05E513E4F5D800FD753A /* UBMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AAF05E413E4F5D800FD753A /* UBMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0AE3E07E149205C200C45DC9 /* UIColor+Hex.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AE3E07C149205C200C45DC9 /* UIColor+Hex.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0AE3E07F149205C200C45DC9 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE3E07D149205C200C45DC9 /* UIColor+Hex.m */; };
-		0AE3E0831492083100C45DC9 /* NSNumber+Hex.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AE3E0811492083100C45DC9 /* NSNumber+Hex.h */; };
+		0AE3E0831492083100C45DC9 /* NSNumber+Hex.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AE3E0811492083100C45DC9 /* NSNumber+Hex.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0AE3E0841492083100C45DC9 /* NSNumber+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE3E0821492083100C45DC9 /* NSNumber+Hex.m */; };
 		0AE9E44914920EA8006D8985 /* Skin.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AE9E44714920EA8006D8985 /* Skin.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0AE9E44A14920EA8006D8985 /* Skin.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE9E44814920EA8006D8985 /* Skin.m */; };
-		0AE9E4521492E829006D8985 /* NSDictionary+Intersection.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AE9E4501492E829006D8985 /* NSDictionary+Intersection.h */; };
+		0AE9E4521492E829006D8985 /* NSDictionary+Intersection.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AE9E4501492E829006D8985 /* NSDictionary+Intersection.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0AE9E4531492E829006D8985 /* NSDictionary+Intersection.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE9E4511492E829006D8985 /* NSDictionary+Intersection.m */; };
 		0AF3ADFC141364FF00E6C6C1 /* NSArray+Zip.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AF3ADFA141364FE00E6C6C1 /* NSArray+Zip.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0AF3ADFD141364FF00E6C6C1 /* NSArray+Zip.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF3ADFB141364FE00E6C6C1 /* NSArray+Zip.m */; };
