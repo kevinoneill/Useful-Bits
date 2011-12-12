@@ -55,6 +55,26 @@
 
 #pragma mark - References
 
+- (void)testResolvesCompoundFontPropertyReference
+{
+  Skin *skin = [Skin skin];
+  UIFont *font = [skin fontNamed:@"property-reference"];
+  
+  GHAssertNotNil(font, @"property-reference not loaded");
+  GHAssertEquals(12.f, [font pointSize], @"expected the font to be 12pt");
+  GHAssertEqualStrings(@"Helvetica-Bold", [font fontName], @"expected helvetica bold");
+}
+
+- (void)testResolvesCompoundFontLocalReference
+{
+  Skin *skin = [Skin skin];
+  UIFont *font = [skin fontNamed:@"local-reference"];
+  
+  GHAssertNotNil(font, @"local-reference not loaded");
+  GHAssertEquals(13.f, [font pointSize], @"expected the font to be 12pt");
+  GHAssertEqualStrings(@"Helvetica-Bold", [font fontName], @"expected helvetica bold");
+}
+
 - (void)testResolvesColorToPropertyValue
 {
   Skin *skin = [Skin skin];

@@ -17,12 +17,19 @@
 	</dict>
 	<key>fonts</key>
 	<dict>
-		<key>apple-gothic</key>
+		<key>local-reference</key>
+		<dict>
+			<key>name</key>
+			<string>@bold-font</string>
+			<key>size</key>
+			<string>13</string>
+		</dict>
+		<key>property-reference</key>
 		<dict>
 			<key>size</key>
-			<integer>11</integer>
+			<string>12</string>
 			<key>name</key>
-			<string>AppleGothic</string>
+			<string>@property-font</string>
 		</dict>
 		<key>system-font</key>
 		<dict>
@@ -57,6 +64,8 @@
 	</dict>
 	<key>properties</key>
 	<dict>
+		<key>property-font</key>
+		<string>Helvetica-Bold</string>
 		<key>property-grey</key>
 		<string>0x7f7f7f</string>
 		<key>string</key>

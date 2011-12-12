@@ -66,7 +66,7 @@ static inline void cache_skin(Skin *skin)
 static Skin *skin_for_section(NSString *section)
 {
   Skin *result = cached_skin_for_cache(section);
-
+  
   if (nil == result)
   {
     result = [[[Skin alloc] initForSection:section] autorelease];
@@ -93,50 +93,80 @@ static NSDictionary *merge_configurations(NSDictionary *parent, NSDictionary *ch
   return configuration;
 }
 
+static NSDictionary *resolve_dictionary(NSDictionary *dictionary, NSDictionary *properties)
+{
+  NSMutableDictionary *resolved = [NSMutableDictionary dictionaryWithDictionary:dictionary];
+  
+  NSSet *references = [dictionary keysOfEntriesPassingTest:^ BOOL (id key, id obj, BOOL *stop) {
+    return [obj isKindOfClass:[NSString class]] ? [obj hasPrefix:kReferencePrefix] : NO;
+  }];
+  
+  for (NSString *key in references)
+  {
+    NSMutableSet *seen = [NSMutableSet set];
+    
+    NSString *value = [dictionary objectForKey:key];
+    do {
+      [seen addObject:value];
+      NSString *referenced_key = [value substringFromIndex:[kReferencePrefix length]];
+      
+      value = [dictionary objectForKey:referenced_key];
+      if (nil == value && nil != properties)
+      {
+        value = [properties objectForKey:referenced_key];
+      }
+      
+      if ([value hasPrefix:kReferencePrefix] && [seen containsObject:value]) 
+      {
+        NSException *recursive = [NSException
+                                  exceptionWithName:@"RecursiveReference"
+                                  reason:[NSString stringWithFormat:@"Recursive reference found for key \"%@\"", key]
+                                  userInfo:nil];
+        @throw recursive;
+      }
+    } while ([value hasPrefix:kReferencePrefix]);
+    
+    [resolved setValue:value forKey:key];
+  }
+  
+  return resolved;
+}
+
+static NSDictionary *resolve_fonts(NSDictionary *fonts, NSDictionary *properties)
+{
+  NSDictionary *resolved_fonts = resolve_dictionary(fonts, properties);
+  
+  NSSet *compound_font_keys = [fonts keysOfEntriesPassingTest:^BOOL(id key, id obj, BOOL *stop) {
+    return [obj isKindOfClass:[NSDictionary class]];
+  }];
+  
+  NSMutableDictionary *font_properties = [NSMutableDictionary dictionaryWithDictionary:properties];
+  [font_properties addEntriesFromDictionary:[resolved_fonts removeKeys:compound_font_keys]];
+  for (NSString *font_key in compound_font_keys)
+  {
+    NSDictionary *font = [fonts objectForKey:font_key];
+    NSDictionary *resolved_font = resolve_dictionary(font, font_properties);
+    [resolved_fonts setValue:resolved_font forKey:font_key];
+  }
+  
+  return resolved_fonts;
+}
+
 static NSDictionary *resolve_references(NSDictionary *source)
 {
   NSMutableDictionary *resolved = [NSMutableDictionary dictionaryWithCapacity:4];
   
-  for (NSString *part_name in [NSArray arrayWithObjects:@"properties" ,@"images", @"fonts", @"colors", nil])
+  NSDictionary *properties = resolve_dictionary([source objectForKey:@"properties"], nil);
+  [resolved setObject:properties forKey:@"properties"];
+  
+  for (NSString *part_name in [NSArray arrayWithObjects:@"images", @"colors", nil])
   {
     NSDictionary *part = [source objectForKey:part_name];
-    NSMutableDictionary *resolved_part = [NSMutableDictionary dictionaryWithDictionary:part];
-    
-    NSSet *references = [part keysOfEntriesPassingTest:^ BOOL (id key, id obj, BOOL *stop) {
-      return [obj isKindOfClass:[NSString class]] ? [obj hasPrefix:kReferencePrefix] : NO;
-    }];
-    
-    for (NSString *key in references)
-    {
-      NSMutableSet *seen = [NSMutableSet set];
-      
-      NSString *value = [part objectForKey:key];
-      do {
-        [seen addObject:value];
-        NSString *referenced_key = [value substringFromIndex:[kReferencePrefix length]];
-
-          // KAO - TODO: probably should break this out and add a resolution strategy
-        value = [part objectForKey:referenced_key];
-        if (nil == value && ![@"properties" isEqualToString:part_name])
-        {
-          value = [resolved valueForKeyPath:[@"properties." stringByAppendingString:referenced_key]];
-        }
-        
-        if ([value hasPrefix:kReferencePrefix] && [seen containsObject:value]) 
-        {
-          NSException *recursive = [NSException
-                                    exceptionWithName:@"RecursiveReference"
-                                    reason:[NSString stringWithFormat:@"Recursive reference found for key \"%@\"", key]
-                                    userInfo:nil];
-          @throw recursive;
-        }
-      } while ([value hasPrefix:kReferencePrefix]);
-      
-      [resolved_part setValue:value forKey:key];
-    }
-    
-    [resolved setObject:resolved_part forKey:part_name];
+    [resolved setObject:resolve_dictionary(part, properties) forKey:part_name];
   }
+  
+  NSDictionary *fonts = resolve_fonts([source objectForKey:@"fonts"], properties);
+  [resolved setObject:fonts forKey:@"fonts"];
   
   return resolved;
 }
@@ -192,7 +222,7 @@ static inline NSString *value_for_name(NSDictionary *source, NSString *name, NSS
                                                      ofType:@"plist"
                                                 inDirectory:path_for_section(section)];
     
-
+    
     NSMutableDictionary *local_configuration = [NSMutableDictionary dictionaryWithContentsOfFile:configuration_path];
     for (NSString *part in [NSArray arrayWithObjects:@"images", @"colors", nil])
     {
@@ -222,7 +252,7 @@ static inline NSString *value_for_name(NSDictionary *source, NSString *name, NSS
       NSArray *address = [section componentsSeparatedByString:kSectionPathDelimiter];
       NSString *parent_name = [[address trunk] componentsJoinedByString:kSectionPathDelimiter];
       Skin *parent = skin_for_section(parent_name);
-            
+      
       NSDictionary *parent_configuration = [parent configuration];
       
       skin_configuration = merge_configurations(parent_configuration, local_configuration);
@@ -312,7 +342,7 @@ static inline NSString *value_for_name(NSDictionary *source, NSString *name, NSS
   if (nil == color)
   {
     color = [UIColor cyanColor];
-
+    
     NSString *value = [self valueForName:name inPart:@"colors"];
     if ([value hasPrefix:kHexPrefix])
     {
@@ -329,7 +359,7 @@ static inline NSString *value_for_name(NSDictionary *source, NSString *name, NSS
     
     [colors_ setObject:color forKey:name];
   }
-
+  
   return color;
 }
 
