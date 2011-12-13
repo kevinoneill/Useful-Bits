@@ -64,10 +64,6 @@
 	</dict>
 	<key>properties</key>
 	<dict>
-		<key>property-font</key>
-		<string>Helvetica-Bold</string>
-		<key>property-grey</key>
-		<string>0x7f7f7f</string>
 		<key>string</key>
 		<string>a string</string>
 		<key>number</key>

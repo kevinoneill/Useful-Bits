@@ -55,16 +55,6 @@
 
 #pragma mark - References
 
-- (void)testResolvesCompoundFontPropertyReference
-{
-  Skin *skin = [Skin skin];
-  UIFont *font = [skin fontNamed:@"property-reference"];
-  
-  GHAssertNotNil(font, @"property-reference not loaded");
-  GHAssertEquals(12.f, [font pointSize], @"expected the font to be 12pt");
-  GHAssertEqualStrings(@"Helvetica-Bold", [font fontName], @"expected helvetica bold");
-}
-
 - (void)testResolvesCompoundFontLocalReference
 {
   Skin *skin = [Skin skin];
@@ -73,15 +63,6 @@
   GHAssertNotNil(font, @"local-reference not loaded");
   GHAssertEquals(13.f, [font pointSize], @"expected the font to be 12pt");
   GHAssertEqualStrings(@"Helvetica-Bold", [font fontName], @"expected helvetica bold");
-}
-
-- (void)testResolvesColorToPropertyValue
-{
-  Skin *skin = [Skin skin];
-  UIColor *grey = [skin colorNamed:@"property-color"];
-  
-  GHAssertNotNil(grey, @"should have provided grey");
-  GHAssertEqualObjects([UIColor colorWithHex:0x7f7f7f], grey, @"should be grey");
 }
 
 #pragma mark - Colors

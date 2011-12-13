@@ -132,15 +132,15 @@ static NSDictionary *resolve_dictionary(NSDictionary *dictionary, NSDictionary *
   return resolved;
 }
 
-static NSDictionary *resolve_fonts(NSDictionary *fonts, NSDictionary *properties)
+static NSDictionary *resolve_fonts(NSDictionary *fonts, NSDictionary *inherited_properties)
 {
-  NSDictionary *resolved_fonts = resolve_dictionary(fonts, properties);
+  NSDictionary *resolved_fonts = resolve_dictionary(fonts, inherited_properties);
   
   NSSet *compound_font_keys = [fonts keysOfEntriesPassingTest:^BOOL(id key, id obj, BOOL *stop) {
     return [obj isKindOfClass:[NSDictionary class]];
   }];
   
-  NSMutableDictionary *font_properties = [NSMutableDictionary dictionaryWithDictionary:properties];
+  NSMutableDictionary *font_properties = [NSMutableDictionary dictionaryWithDictionary:inherited_properties];
   [font_properties addEntriesFromDictionary:[resolved_fonts removeKeys:compound_font_keys]];
   for (NSString *font_key in compound_font_keys)
   {
@@ -156,16 +156,13 @@ static NSDictionary *resolve_references(NSDictionary *source)
 {
   NSMutableDictionary *resolved = [NSMutableDictionary dictionaryWithCapacity:4];
   
-  NSDictionary *properties = resolve_dictionary([source objectForKey:@"properties"], nil);
-  [resolved setObject:properties forKey:@"properties"];
-  
-  for (NSString *part_name in [NSArray arrayWithObjects:@"images", @"colors", nil])
+  for (NSString *part_name in [NSArray arrayWithObjects:@"properties", @"images", @"colors", nil])
   {
     NSDictionary *part = [source objectForKey:part_name];
-    [resolved setObject:resolve_dictionary(part, properties) forKey:part_name];
+    [resolved setObject:resolve_dictionary(part, nil) forKey:part_name];
   }
   
-  NSDictionary *fonts = resolve_fonts([source objectForKey:@"fonts"], properties);
+  NSDictionary *fonts = resolve_fonts([source objectForKey:@"fonts"], nil);
   [resolved setObject:fonts forKey:@"fonts"];
   
   return resolved;
