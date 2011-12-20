@@ -290,6 +290,30 @@ static NSDictionary *expand_paths (NSBundle *bundle, NSString *section, NSString
 
 #pragma mark - Fonts
 
+static UIFont *resolve_font(NSString *name, CGFloat size)
+{ 
+  UIFont *font = nil;
+  
+  if ([name isEqualToString:kSystemFont])
+  {
+    font = [UIFont systemFontOfSize:size];
+  }
+  else if ([name isEqualToString:kBoldSystemFont])
+  {
+    font = [UIFont boldSystemFontOfSize:size];
+  }
+  else if ([name isEqualToString:kItalicSystemFont])
+  {
+    font = [UIFont italicSystemFontOfSize:size];
+  }
+  else
+  {
+    font = [UIFont fontWithName:name size:size];
+  }
+  
+  return font;
+}
+
 - (UIFont *)fontNamed:(NSString *)name;
 {
   UIFont *font = [[self fonts] objectForKey:name];
@@ -311,22 +335,7 @@ static NSDictionary *expand_paths (NSBundle *bundle, NSString *section, NSString
       font_name = font_value;
     }
     
-    if ([font_name isEqualToString:kSystemFont])
-    {
-      font = [UIFont systemFontOfSize:font_size];
-    }
-    else if ([font_name isEqualToString:kBoldSystemFont])
-    {
-      font = [UIFont boldSystemFontOfSize:font_size];
-    }
-    else if ([font_name isEqualToString:kItalicSystemFont])
-    {
-      font = [UIFont italicSystemFontOfSize:font_size];
-    }
-    else
-    {
-      font = [UIFont fontWithName:font_name size:font_size];
-    }
+    font = resolve_font(font_name, font_size);
     
     if (nil != font)
     {
