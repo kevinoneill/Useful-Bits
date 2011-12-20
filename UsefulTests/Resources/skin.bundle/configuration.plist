@@ -59,6 +59,8 @@
 	</dict>
 	<key>images</key>
 	<dict>
+		<key>stretchable-reference</key>
+		<string>@stretchable</string>
 		<key>background</key>
 		<string>pattern.png</string>
 		<key>stretchable</key>
@@ -77,6 +79,8 @@
 		<string>a string</string>
 		<key>number</key>
 		<integer>42</integer>
+		<key>number-reference</key>
+		<string>@number</string>
 	</dict>
 </dict>
 </plist>

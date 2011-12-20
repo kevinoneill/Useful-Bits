@@ -53,6 +53,16 @@
   GHAssertNil(value, @"should not have provided a value");
 }
 
+- (void)testReferenceToNumberProperty
+{
+  Skin *skin = [Skin skin];
+  id value = [skin propertyNamed:@"number-reference"];
+  
+  GHAssertNotNil(value, @"should have provided a value");
+  GHAssertTrue([value isKindOfClass:[NSNumber class]], @"expected an instance of NSNumber");
+  GHAssertEqualObjects([NSNumber numberWithInteger:42], value, nil);
+}
+
 #pragma mark - References
 
 - (void)testResolvesCompoundFontLocalReference
@@ -127,6 +137,17 @@
   Skin *skin = [Skin skin];
   UIImage *image = [skin imageNamed:@"stretchable"];
 
+  GHAssertNotNil(image, @"should have provided image");
+  GHAssertEquals([image leftCapWidth], 5, @"incorrect horizontal cap");
+  GHAssertEquals([image topCapHeight], 7, @"incorrect vertical cap");
+}
+
+
+- (void)testResolvesReferenceStretchableImages
+{
+  Skin *skin = [Skin skin];
+  UIImage *image = [skin imageNamed:@"stretchable-reference"];
+  
   GHAssertNotNil(image, @"should have provided image");
   GHAssertEquals([image leftCapWidth], 5, @"incorrect horizontal cap");
   GHAssertEquals([image topCapHeight], 7, @"incorrect vertical cap");
@@ -221,6 +242,16 @@
   UIImage *image = [skin imageNamed:@"background"];
   
   GHAssertNotNil(image, @"should have provided image");  
+}
+
+- (void)testResolvesInheritedStretchableImages
+{
+  Skin *skin = [Skin skinForSection:@"subsection"];
+  UIImage *image = [skin imageNamed:@"subsection-stretchable-reference"];
+  
+  GHAssertNotNil(image, @"should have provided image");
+  GHAssertEquals([image leftCapWidth], 5, @"incorrect horizontal cap");
+  GHAssertEquals([image topCapHeight], 7, @"incorrect vertical cap");
 }
 
 @end

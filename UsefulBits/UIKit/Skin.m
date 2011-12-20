@@ -105,7 +105,7 @@ static NSDictionary *resolve_dictionary(NSDictionary *dictionary, NSDictionary *
   {
     NSMutableSet *seen = [NSMutableSet set];
     
-    NSString *value = [dictionary objectForKey:key];
+    id value = [dictionary objectForKey:key];
     do {
       [seen addObject:value];
       NSString *referenced_key = [value substringFromIndex:[kReferencePrefix length]];
@@ -116,7 +116,7 @@ static NSDictionary *resolve_dictionary(NSDictionary *dictionary, NSDictionary *
         value = [properties objectForKey:referenced_key];
       }
       
-      if ([value hasPrefix:kReferencePrefix] && [seen containsObject:value]) 
+      if ([value isKindOfClass:[NSString class]] && [value hasPrefix:kReferencePrefix] && [seen containsObject:value]) 
       {
         NSException *recursive = [NSException
                                   exceptionWithName:@"RecursiveReference"
@@ -124,7 +124,7 @@ static NSDictionary *resolve_dictionary(NSDictionary *dictionary, NSDictionary *
                                   userInfo:nil];
         @throw recursive;
       }
-    } while ([value hasPrefix:kReferencePrefix]);
+    } while ([value isKindOfClass:[NSString class]] && [value hasPrefix:kReferencePrefix]);
     
     [resolved setValue:value forKey:key];
   }
