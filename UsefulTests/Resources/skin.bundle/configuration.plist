@@ -61,6 +61,15 @@
 	<dict>
 		<key>background</key>
 		<string>pattern.png</string>
+		<key>stretchable</key>
+		<dict>
+			<key>name</key>
+			<string>pattern.png</string>
+			<key>horizontal-cap</key>
+			<integer>5</integer>
+			<key>vertical-cap</key>
+			<integer>7</integer>
+		</dict>
 	</dict>
 	<key>properties</key>
 	<dict>

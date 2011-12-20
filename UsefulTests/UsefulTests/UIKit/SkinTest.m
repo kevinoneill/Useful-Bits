@@ -122,6 +122,16 @@
   GHAssertNotNil(image, @"should have provided image");
 }
 
+- (void)testResolvesStretchableImages
+{
+  Skin *skin = [Skin skin];
+  UIImage *image = [skin imageNamed:@"stretchable"];
+
+  GHAssertNotNil(image, @"should have provided image");
+  GHAssertEquals([image leftCapWidth], 5, @"incorrect horizontal cap");
+  GHAssertEquals([image topCapHeight], 7, @"incorrect vertical cap");
+}
+
 - (void)testResolvesNilForMissingImages
 {
   Skin *skin = [Skin skin];

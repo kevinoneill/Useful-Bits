@@ -180,6 +180,32 @@ static inline NSString *value_for_name(NSDictionary *source, NSString *name, NSS
   return [source valueForKeyPath:[[part stringByAppendingString: @"."] stringByAppendingString:name]];
 }
 
+static inline NSString* expand_path(NSBundle *bundle, NSString *section, NSString *part, NSString *value)
+{
+  NSString *section_path = [path_for_section(section) stringByAppendingPathComponent:part];  
+  NSString *resource_path = [bundle pathForResource:value ofType:nil inDirectory:section_path];
+
+  return bundle_relative_path(resource_path);
+}
+
+static NSDictionary *expand_paths (NSBundle *bundle, NSString *section, NSString *part, NSDictionary *configuration)
+{
+  NSMutableDictionary *expanded = [NSMutableDictionary dictionaryWithDictionary:configuration];
+  [configuration enumerateKeysAndObjectsUsingBlock:^(NSString *key, id value, BOOL *stop) {
+    if ([value isKindOfClass:[NSString class]] && !([value hasPrefix:kReferencePrefix] || [value hasPrefix:kHexPrefix]))
+    {
+      NSString *path = expand_path(bundle, section, part, value);
+      [expanded setObject:path forKey:key];
+    }
+    else if ([value isKindOfClass:[NSDictionary class]])
+    {
+      [expanded setObject:expand_paths(bundle, section, part, value) forKey:key];
+    }
+  }];
+  
+  return expanded;
+}
+
 #pragma mark - Skin
 
 @implementation Skin
@@ -223,20 +249,8 @@ static inline NSString *value_for_name(NSDictionary *source, NSString *name, NSS
     NSMutableDictionary *local_configuration = [NSMutableDictionary dictionaryWithContentsOfFile:configuration_path];
     for (NSString *part in [NSArray arrayWithObjects:@"images", @"colors", nil])
     {
-      NSDictionary *part_configuration = [local_configuration objectForKey:part];
-      NSMutableDictionary *expanded = [NSMutableDictionary dictionaryWithDictionary:part_configuration];
-      [part_configuration enumerateKeysAndObjectsUsingBlock:^(NSString *key, id value, BOOL *stop) {
-        if ([value isKindOfClass:[NSString class]] && !([value hasPrefix:kReferencePrefix] || [value hasPrefix:kHexPrefix]))
-        {
-          NSString *section_path = [path_for_section(section) stringByAppendingPathComponent:part];  
-          NSString *resource_path = [bundle_ pathForResource:value ofType:nil inDirectory:section_path];
-          NSString *path = bundle_relative_path(resource_path);
-          
-          [expanded setObject:path forKey:key];
-        }
-      }];
-      
-      [local_configuration setObject:expanded forKey:part];
+      [local_configuration setObject:expand_paths(bundle_, section, part, [local_configuration objectForKey:part])
+                              forKey:part];
     }
     
     NSDictionary *skin_configuration = nil;
@@ -378,8 +392,22 @@ static inline NSString *value_for_name(NSDictionary *source, NSString *name, NSS
   UIImage *image = [images_ objectForKey:name];
   if (nil == image)
   {
-    NSString *image_path = [self valueForName:name inPart:@"images"];
-    image = [UIImage imageNamed:image_path];
+    id value = [self valueForName:name inPart:@"images"];
+    
+    if ([value isKindOfClass:[NSString class]])
+    {
+      NSString *image_path = value;
+      image = [UIImage imageNamed:image_path];
+    }
+    else // KAO - Assumes a dictionary
+    {
+      NSString *image_path = [value objectForKey:@"name"];
+      NSNumber *hcap = [value objectForKey:@"horizontal-cap"];
+      NSNumber *vcap = [value objectForKey:@"vertical-cap"];
+      
+      image = [[UIImage imageNamed:image_path] stretchableImageWithLeftCapWidth:[hcap integerValue]
+                                                                   topCapHeight:[vcap integerValue]];
+    }
     
     if (nil != image)
     {
