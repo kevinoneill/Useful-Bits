@@ -33,4 +33,6 @@
 
 + (id)URLWithString:(NSString *)URLString parameters:(NSDictionary *)parameters;
 
+- (NSDictionary *)queryParameters;
+
 @end
