@@ -39,3 +39,4 @@
 #import <UsefulBits/UIView+Size.h>
 #import <UsefulBits/UIView+Actions.h>
 #import <UsefulBits/UIColor+Hex.h>
+#import <UsefulBits/UIWebView+Blocks.h>
