@@ -43,4 +43,5 @@
 #import <UsefulBits/NSDictionary+Blocks.h>
 #import <UsefulBits/NSNumber+Hex.h>
 #import <UsefulBits/NSDictionary+Intersection.h>
+#import <UsefulBits/NSMutableDictionary+ConditionalSet.h>
 

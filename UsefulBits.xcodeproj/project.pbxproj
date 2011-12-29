@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		0A0158E81414D9560039B4D4 /* VerticalStackLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A0158E61414D9560039B4D4 /* VerticalStackLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0A0158E91414D9560039B4D4 /* VerticalStackLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0158E71414D9560039B4D4 /* VerticalStackLayout.m */; };
-		0A253F7214AC1863003ABC71 /* NSMutableDictionary+ConditionalSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A253F7014AC1863003ABC71 /* NSMutableDictionary+ConditionalSet.h */; };
+		0A253F7214AC1863003ABC71 /* NSMutableDictionary+ConditionalSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A253F7014AC1863003ABC71 /* NSMutableDictionary+ConditionalSet.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0A253F7314AC1863003ABC71 /* NSMutableDictionary+ConditionalSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A253F7114AC1863003ABC71 /* NSMutableDictionary+ConditionalSet.m */; };
 		0A265A1A146CAEB500C8A317 /* NSDictionary+Types.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A265A18146CAEB500C8A317 /* NSDictionary+Types.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0A265A1B146CAEB500C8A317 /* NSDictionary+Types.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A265A19146CAEB500C8A317 /* NSDictionary+Types.m */; };
