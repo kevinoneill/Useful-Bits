@@ -27,4 +27,14 @@
   return [self stringForKey:key default:@""];
 }
 
+- (NSNumber *)numberForKey:(id)key default:(NSNumber *)defaultValue;
+{
+  return [self objectForKey:key ofType:[NSNumber class] default:defaultValue];
+}
+
+- (NSNumber *)numberForKey:(id)key;
+{
+  return [self numberForKey:key default:nil];
+}
+
 @end
