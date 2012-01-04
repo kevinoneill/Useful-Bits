@@ -72,12 +72,22 @@ static char blocks_key;
   objc_setAssociatedObject(self, &blocks_key, blocks, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (void)addObserverAction:(void (^)(NSString *keyPath, id object, NSDictionary *change))action forKeyPath:(NSString *)path options:(NSKeyValueObservingOptions)options;
+- (id)addObserverAction:(void (^)(NSString *keyPath, id object, NSDictionary *change))action forKeyPath:(NSString *)path options:(NSKeyValueObservingOptions)options;
 {
-  UBBlockObserver_ *observer = [UBBlockObserver_ instanceWithAction:action keyPath:path];
+  __block UBBlockObserver_ *observer = [UBBlockObserver_ instanceWithAction:action keyPath:path];
   
   [[self actionBlocks] addObject:observer];
   [self addObserver:observer forKeyPath:path options:options context:NULL];
+  
+  return [[^ {
+    [self removeObserver:observer forKeyPath:path];
+    [[self actionBlocks] removeObject:observer];
+  } copy] autorelease];
+}
+
+- (void)removeObserverAction:(id)token;
+{
+  ((void (^) (void))token)();
 }
 
 - (void)removeObserverActionsForKeyPath:(NSString *)path;

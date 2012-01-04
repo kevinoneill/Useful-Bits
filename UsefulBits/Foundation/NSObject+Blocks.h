@@ -31,7 +31,8 @@
 
 @interface NSObject (Blocks)
 
-- (void)addObserverAction:(void (^)(NSString *keyPath, id object, NSDictionary *change))action forKeyPath:(NSString *)path options:(NSKeyValueObservingOptions)options;
+- (id)addObserverAction:(void (^)(NSString *keyPath, id object, NSDictionary *change))action forKeyPath:(NSString *)path options:(NSKeyValueObservingOptions)options;
+- (void)removeObserverAction:(id)token;
 - (void)removeObserverActionsForKeyPath:(NSString *)path;
 
 @end
