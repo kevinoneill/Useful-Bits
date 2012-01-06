@@ -32,10 +32,6 @@
 #import "NSArray+Blocks.h"
 
 @interface UBBlockObserver_ : NSObject
-{
-  NSString *keyPath_;
-  void (^action_)(NSString *keyPath, id object, NSDictionary *change);
-}
 
 + (UBBlockObserver_ *)instanceWithAction:(void (^) (NSString *keyPath, id object, NSDictionary *change))action keyPath:(NSString *)keyPath;
 
@@ -117,6 +113,9 @@ static char blocks_key;
   return [instance autorelease];
 }
 
+@synthesize keyPath = keyPath_;
+@synthesize action = action_;
+
 - (void)dealloc
 {
   [action_ release];
@@ -124,9 +123,6 @@ static char blocks_key;
   
   [super dealloc];
 }
-
-@synthesize keyPath = keyPath_;
-@synthesize action = action_;
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
