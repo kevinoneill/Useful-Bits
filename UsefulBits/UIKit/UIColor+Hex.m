@@ -55,8 +55,8 @@
   
   if ([hexString length] == 10)
   {
-    color = [[NSNumber integerWithHexString:[hexString substringWithRange:NSMakeRange(4, 6)]] unsignedIntegerValue];
-    alpha = [[NSNumber integerWithHexString:[hexString substringWithRange:NSMakeRange(2, 2)]] unsignedIntegerValue];
+    color = [[NSNumber integerWithHexString:[hexString substringWithRange:NSMakeRange(2, 6)]] unsignedIntegerValue];
+    alpha = [[NSNumber integerWithHexString:[hexString substringWithRange:NSMakeRange(8, 2)]] unsignedIntegerValue];
   }
   else
   {
