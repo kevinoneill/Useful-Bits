@@ -40,3 +40,4 @@
 #import <UsefulBits/UIView+Actions.h>
 #import <UsefulBits/UIColor+Hex.h>
 #import <UsefulBits/UIWebView+Blocks.h>
+#import <UsefulBits/DecoratedView.h>
