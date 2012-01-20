@@ -28,14 +28,34 @@
   return [[result copy] autorelease];
 }
 
-- (void)withValueForKey:(id)key do:(void (^) (id value))action;
+- (void)withValueForKey:(id)key meetingCondition:(BOOL (^) (id value))condition do:(void (^) (id value))action;
 {
   id value = [self objectForKey:key];
-  
-  if (nil != value)
+
+  if (condition(value))
   {
     action(value);
   }
+}
+
+- (void)withValueForKey:(id)key ofClass:(Class)class do:(void (^) (id value))action;
+{
+  [self withValueForKey:key
+       meetingCondition:^BOOL(id value) {
+         return [value isKindOfClass:class];
+       } do:^(id value) {
+         action(value);
+       }];
+}
+
+- (void)withValueForKey:(id)key do:(void (^) (id value))action;
+{
+  [self withValueForKey:key
+       meetingCondition:^BOOL(id value) {
+         return nil != value && [NSNull null] != value;
+       } do:^(id value) {
+         action(value);
+       }];
 }
 
 @end
