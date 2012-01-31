@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0A0158E81414D9560039B4D4 /* VerticalStackLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A0158E61414D9560039B4D4 /* VerticalStackLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0A0158E91414D9560039B4D4 /* VerticalStackLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0158E71414D9560039B4D4 /* VerticalStackLayout.m */; };
+		0A1B719814D76E0900247F46 /* Stack.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A1B719614D76E0900247F46 /* Stack.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0A1B719914D76E0900247F46 /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A1B719714D76E0900247F46 /* Stack.m */; };
 		0A253F7214AC1863003ABC71 /* NSMutableDictionary+ConditionalSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A253F7014AC1863003ABC71 /* NSMutableDictionary+ConditionalSet.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0A253F7314AC1863003ABC71 /* NSMutableDictionary+ConditionalSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A253F7114AC1863003ABC71 /* NSMutableDictionary+ConditionalSet.m */; };
 		0A253FA114AD4B8C003ABC71 /* PasswordManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A253F9F14AD4B8C003ABC71 /* PasswordManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -114,6 +116,8 @@
 /* Begin PBXFileReference section */
 		0A0158E61414D9560039B4D4 /* VerticalStackLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerticalStackLayout.h; sourceTree = "<group>"; };
 		0A0158E71414D9560039B4D4 /* VerticalStackLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerticalStackLayout.m; sourceTree = "<group>"; };
+		0A1B719614D76E0900247F46 /* Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stack.h; sourceTree = "<group>"; };
+		0A1B719714D76E0900247F46 /* Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stack.m; sourceTree = "<group>"; };
 		0A253F7014AC1863003ABC71 /* NSMutableDictionary+ConditionalSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+ConditionalSet.h"; sourceTree = "<group>"; };
 		0A253F7114AC1863003ABC71 /* NSMutableDictionary+ConditionalSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+ConditionalSet.m"; sourceTree = "<group>"; };
 		0A253F9F14AD4B8C003ABC71 /* PasswordManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordManager.h; sourceTree = "<group>"; };
@@ -350,6 +354,8 @@
 				0AE9E4511492E829006D8985 /* NSDictionary+Intersection.m */,
 				0A253F7014AC1863003ABC71 /* NSMutableDictionary+ConditionalSet.h */,
 				0A253F7114AC1863003ABC71 /* NSMutableDictionary+ConditionalSet.m */,
+				0A1B719614D76E0900247F46 /* Stack.h */,
+				0A1B719714D76E0900247F46 /* Stack.m */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -476,6 +482,7 @@
 				0A253F7214AC1863003ABC71 /* NSMutableDictionary+ConditionalSet.h in Headers */,
 				0A253FA114AD4B8C003ABC71 /* PasswordManager.h in Headers */,
 				0A253FA514AD4C0A003ABC71 /* NSMutableDictionary+PasswordManager.h in Headers */,
+				0A1B719814D76E0900247F46 /* Stack.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -617,6 +624,7 @@
 				0A253F7314AC1863003ABC71 /* NSMutableDictionary+ConditionalSet.m in Sources */,
 				0A253FA214AD4B8C003ABC71 /* PasswordManager.m in Sources */,
 				0A253FA614AD4C0A003ABC71 /* NSMutableDictionary+PasswordManager.m in Sources */,
+				0A1B719914D76E0900247F46 /* Stack.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
