@@ -27,6 +27,7 @@
   //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import <UsefulBits/UBMacros.h>
+#import <UsefulBits/UBFoundationFunctions.h>
 #import <UsefulBits/NSArray+Blocks.h>
 #import <UsefulBits/NSArray+Zip.h>
 #import <UsefulBits/NSSet+Blocks.h>

@@ -109,6 +109,8 @@
 		0AE9E44A14920EA8006D8985 /* Skin.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE9E44814920EA8006D8985 /* Skin.m */; };
 		0AE9E4521492E829006D8985 /* NSDictionary+Intersection.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AE9E4501492E829006D8985 /* NSDictionary+Intersection.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0AE9E4531492E829006D8985 /* NSDictionary+Intersection.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE9E4511492E829006D8985 /* NSDictionary+Intersection.m */; };
+		0AEA933F14DE609200235D65 /* UBFoundationFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AEA933D14DE609200235D65 /* UBFoundationFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0AEA934014DE609200235D65 /* UBFoundationFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AEA933E14DE609200235D65 /* UBFoundationFunctions.m */; };
 		0AF3ADFC141364FF00E6C6C1 /* NSArray+Zip.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AF3ADFA141364FE00E6C6C1 /* NSArray+Zip.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0AF3ADFD141364FF00E6C6C1 /* NSArray+Zip.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF3ADFB141364FE00E6C6C1 /* NSArray+Zip.m */; };
 /* End PBXBuildFile section */
@@ -219,6 +221,8 @@
 		0AE9E44814920EA8006D8985 /* Skin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Skin.m; sourceTree = "<group>"; };
 		0AE9E4501492E829006D8985 /* NSDictionary+Intersection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Intersection.h"; sourceTree = "<group>"; };
 		0AE9E4511492E829006D8985 /* NSDictionary+Intersection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Intersection.m"; sourceTree = "<group>"; };
+		0AEA933D14DE609200235D65 /* UBFoundationFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBFoundationFunctions.h; sourceTree = "<group>"; };
+		0AEA933E14DE609200235D65 /* UBFoundationFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBFoundationFunctions.m; sourceTree = "<group>"; };
 		0AF3ADFA141364FE00E6C6C1 /* NSArray+Zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Zip.h"; sourceTree = "<group>"; };
 		0AF3ADFB141364FE00E6C6C1 /* NSArray+Zip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Zip.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -317,6 +321,8 @@
 			isa = PBXGroup;
 			children = (
 				0A39B91B13E4E96B00D0B638 /* Foundation+UsefulBits.h */,
+				0AEA933D14DE609200235D65 /* UBFoundationFunctions.h */,
+				0AEA933E14DE609200235D65 /* UBFoundationFunctions.m */,
 				0AAF05E413E4F5D800FD753A /* UBMacros.h */,
 				0A39B91C13E4E96B00D0B638 /* NSArray+Access.h */,
 				0A39B91D13E4E96B00D0B638 /* NSArray+Access.m */,
@@ -483,6 +489,7 @@
 				0A253FA114AD4B8C003ABC71 /* PasswordManager.h in Headers */,
 				0A253FA514AD4C0A003ABC71 /* NSMutableDictionary+PasswordManager.h in Headers */,
 				0A1B719814D76E0900247F46 /* Stack.h in Headers */,
+				0AEA933F14DE609200235D65 /* UBFoundationFunctions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -625,6 +632,7 @@
 				0A253FA214AD4B8C003ABC71 /* PasswordManager.m in Sources */,
 				0A253FA614AD4C0A003ABC71 /* NSMutableDictionary+PasswordManager.m in Sources */,
 				0A1B719914D76E0900247F46 /* Stack.m in Sources */,
+				0AEA934014DE609200235D65 /* UBFoundationFunctions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
