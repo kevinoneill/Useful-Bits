@@ -35,4 +35,6 @@
 - (void)removeObserverAction:(id)token;
 - (void)removeObserverActionsForKeyPath:(NSString *)path;
 
+- (void)execute:(void (^)(void))action afterDelay:(NSTimeInterval)delay;
+
 @end

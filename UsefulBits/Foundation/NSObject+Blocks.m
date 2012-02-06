@@ -99,6 +99,18 @@ static char blocks_key;
   [[self actionBlocks] removeObjectsInArray:blocks_to_be_removed];
 }
 
+- (void)execute:(void (^)(void))action afterDelay:(NSTimeInterval)delay;
+{
+  [self performSelector:@selector(ub_executeDelayedAction:) 
+             withObject:[[action copy] autorelease] 
+             afterDelay:delay];
+}
+
+- (void)ub_executeDelayedAction:(void (^)(void))action
+{
+  action();
+}
+
 @end
 
 @implementation UBBlockObserver_
@@ -135,6 +147,5 @@ static char blocks_key;
     [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
   }
 }
-
 
 @end
