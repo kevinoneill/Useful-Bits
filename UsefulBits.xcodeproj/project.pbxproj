@@ -658,7 +658,7 @@
 					armv6,
 				);
 				COPY_PHASE_STRIP = NO;
-				GCC_C_LANGUAGE_STANDARD = "compiler-default";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -686,7 +686,7 @@
 					armv6,
 				);
 				COPY_PHASE_STRIP = YES;
-				GCC_C_LANGUAGE_STANDARD = "compiler-default";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_STRICT_ALIASING = YES;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;

@@ -57,5 +57,15 @@
   [old_value__ release];                          \
 }
 
+#if defined(__GNUC__) && !defined(__STRICT_ANSI__)
+
+#define UBCLAMP(VALUE__, MIN__, MAX__) ({\
+  __typeof__(VALUE__) upper_value__ = MAX((MIN__), (VALUE__)); MIN((MAX__), upper_value__); \
+})
+
+#else
+
 #define UBCLAMP(VALUE__, MIN__, MAX__) \
-MIN((MAX__), MAX((MIN__), (VALUE__)))
+  MIN((MAX__), MAX((MIN__), (VALUE__)))
+
+#endif
