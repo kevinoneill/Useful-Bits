@@ -32,7 +32,7 @@
 
 - (NSSet *)intersection:(NSSet*)other
 {
-  NSMutableSet *copy = [[self mutableCopy] autorelease];
+  NSMutableSet *copy = [self mutableCopy];
   [copy intersectSet:other];
 
 	return [NSSet setWithSet:copy];
@@ -40,11 +40,10 @@
 
 - (NSSet *)difference:(NSSet *)other
 {
-  NSMutableSet *copy = [[self mutableCopy] autorelease];
+  NSMutableSet *copy = [self mutableCopy];
   [copy minusSet:other];
 
 	return [NSSet setWithSet:copy];
 }
-
 
 @end

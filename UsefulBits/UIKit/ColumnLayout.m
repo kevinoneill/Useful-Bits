@@ -39,7 +39,7 @@
 
 + (id)instance;
 {
-  return [[[[self class] alloc] init] autorelease];
+  return [[[self class] alloc] init];
 }
 
 - (NSUInteger)columns;

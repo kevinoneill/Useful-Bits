@@ -46,12 +46,6 @@
   return [self initWithFrame:frame layoutManager:nil];
 }
 
-- (void)dealloc
-{
-  [layoutManager_ release];
-  
-  [super dealloc];
-}
 
 
 @synthesize layoutManager = layoutManager_;

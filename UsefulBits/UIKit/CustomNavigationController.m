@@ -34,12 +34,11 @@
 
 - (id)init;
 {
-  [self release];
   
   NSArray *objects = [[NSBundle mainBundle] loadNibNamed:@"custom-navigation" owner:nil options:nil];
-  self = [[objects first:^ (id item) {
+  self = [objects first:^ (id item) {
     return [item isKindOfClass:[UINavigationController class]];
-  }] retain];
+  }];
   
   return self;
 }

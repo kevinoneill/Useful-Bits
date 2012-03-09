@@ -49,7 +49,7 @@ static char kBlockDelegateKey;
   
   if (delegate == nil && create)
   {
-    delegate = [[[UIWebView_Blocks_Delegate alloc] init] autorelease];
+    delegate = [[UIWebView_Blocks_Delegate alloc] init];
     objc_setAssociatedObject(self, &kBlockDelegateKey, delegate, OBJC_ASSOCIATION_RETAIN);
     
     [self setDelegate:delegate];
@@ -107,15 +107,6 @@ static char kBlockDelegateKey;
 @synthesize onDidFinishLoad = onDidFinishLoad_;
 @synthesize onDidFinishWithError = onDidFinishWithError_;
 
--(void)dealloc
-{
-  [onShouldStartLoad_ release];
-  [onDidStartLoad_ release];
-  [onDidFinishLoad_ release];
-  [onDidFinishWithError_ release];
-  
-  [super dealloc];
-}
 
 #pragma mark - UIWebViewDelegate
 

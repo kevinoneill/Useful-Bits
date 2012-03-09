@@ -23,22 +23,22 @@ static NSString *kServiceName = @"ub-password-manager";
   
 	NSMutableDictionary *query = [NSMutableDictionary passwordQueryForService:kServiceName account:account];
   
-  switch (SecItemCopyMatching((CFDictionaryRef)query, NULL))
+  switch (SecItemCopyMatching((__bridge CFDictionaryRef)query, NULL))
   {
     case errSecItemNotFound:
     {
       [query setObject:[password dataUsingEncoding:NSUTF8StringEncoding]
-                forKey:kSecValueData];
+                forKey:(__bridge id)(kSecValueData)];
       
-			return SecItemAdd((CFDictionaryRef)query, NULL) == errSecSuccess;
+			return SecItemAdd((__bridge CFDictionaryRef)query, NULL) == errSecSuccess;
       break;
     } 
     case errSecSuccess:
     {
       NSDictionary *update = [NSDictionary dictionaryWithObject:[password dataUsingEncoding:NSUTF8StringEncoding] 
-                                                         forKey:(id)kSecValueData];
+                                                         forKey:(__bridge id)kSecValueData];
       
-      return SecItemUpdate((CFDictionaryRef)query, (CFDictionaryRef)update) == errSecSuccess;
+      return SecItemUpdate((__bridge CFDictionaryRef)query, (__bridge CFDictionaryRef)update) == errSecSuccess;
       break;
     }
     default:
@@ -51,17 +51,17 @@ static NSString *kServiceName = @"ub-password-manager";
 + (NSString *)passwordForAccount:(NSString *)account;
 {
 	NSMutableDictionary *query = [NSMutableDictionary passwordQueryForService:kServiceName account:account];
-	[query setObject:(id)kCFBooleanTrue forKey:(id)kSecReturnData];
-	
-	NSData *data = nil;
-	OSStatus result = SecItemCopyMatching((CFDictionaryRef)query, (CFTypeRef *)&data);
+	[query setObject:(id)kCFBooleanTrue forKey:(__bridge id)kSecReturnData];
+
+	CFTypeRef result = NULL;
+  OSStatus status = SecItemCopyMatching((__bridge CFDictionaryRef)query, &result);
+	NSData *data = (__bridge_transfer NSData *)result;
   
-	if (result == errSecSuccess)
+	if (status == errSecSuccess)
   {
 		NSString *password = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    [data release];
     
-		return [password autorelease];
+		return password;
   }
 	
   return nil;
@@ -71,7 +71,7 @@ static NSString *kServiceName = @"ub-password-manager";
 {
   NSMutableDictionary *query = [NSMutableDictionary passwordQueryForService:kServiceName account:account];
 
-  return SecItemDelete((CFDictionaryRef)query) == errSecSuccess;
+  return SecItemDelete((__bridge CFDictionaryRef)query) == errSecSuccess;
 }
 
 @end

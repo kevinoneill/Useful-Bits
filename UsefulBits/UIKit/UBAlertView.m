@@ -41,18 +41,11 @@
   return self;
 }
 
-- (void)dealloc
-{
-  [cancel_ release];
-  [buttonBlocks_ release];
-  
-  [super dealloc];
-}
 
 -(void)addButtonWithTitle:(NSString*)title block:(void(^)(UBAlertView*, NSInteger))block
 {
   [self addButtonWithTitle:title];
-  [buttonBlocks_ addObject:[[block copy] autorelease]];
+  [buttonBlocks_ addObject:[block copy]];
 }
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -76,7 +69,6 @@
 {
   if (block != cancel_)
   {
-    [cancel_ release];
     cancel_ = [block copy];
   }
 }

@@ -56,7 +56,7 @@
     }
   }
   
-  return [[result copy] autorelease];
+  return [result copy];
 }
 
 @end

@@ -50,17 +50,11 @@
   ActionWrapper *instance = [[[self class] alloc] init];
   [instance setAction:action];
   
-  return [instance autorelease];
+  return instance;
 }
 
 @synthesize action = action_;
 
-- (void) dealloc
-{
-  [action_ release];
-  
-  [super dealloc];
-}
 
 - (void) invokeAction:(id)sender
 {

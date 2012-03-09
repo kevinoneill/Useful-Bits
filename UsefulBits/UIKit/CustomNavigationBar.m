@@ -33,14 +33,6 @@
 
 @implementation CustomNavigationBar
 
-- (void)dealloc
-{
-  [backgroundImageName_ release];
-  [backgroundImagePortrait_ release];
-  [backgroundImageLandscape_ release];
-  
-  [super dealloc];
-}
 
 #pragma mark -
 #pragma mark Properties
@@ -54,7 +46,6 @@
 {
   if (name != backgroundImageName_ && ![backgroundImageName_ isEqualToString:name])
   {
-    [backgroundImageName_ release];
     backgroundImageName_ = [name copy];
     
     [self setDecorator:(nil != name) ? ImageNamedForOrintationDecorator(name) : nil];

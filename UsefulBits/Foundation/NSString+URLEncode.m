@@ -32,12 +32,12 @@
 
 - (NSString *)urlEncode;
 {
-    return [(NSString *) CFURLCreateStringByAddingPercentEscapes(
+    return (__bridge_transfer NSString *) CFURLCreateStringByAddingPercentEscapes(
                         NULL,
-                        (CFStringRef)self,
+                        (__bridge CFStringRef)self,
                         NULL,
                         (CFStringRef)@":/?#[]@!$ &'()*+,;=\"<>%{}|\\^~`",
-                        kCFStringEncodingUTF8 ) autorelease];
+                        kCFStringEncodingUTF8 );
 }
 
 @end

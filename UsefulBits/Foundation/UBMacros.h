@@ -34,27 +34,14 @@
 #define IS_RELEASE 1
 #endif
 
-#define UBRELEASE_NIL(INSTANCE__)      { [INSTANCE__ release]; INSTANCE__ = nil; }
-#define UBRELEASE_DEADBABE(INSTANCE__) { [INSTANCE__ release]; *((uint *) &INSTANCE__) = 0xDEADBABE; }
-
-#if IS_DEBUG
-#define UBRELEASE(INSTANCE__) UBRELEASE_DEADBABE(INSTANCE__)
-#else
-#define UBRELEASE(INSTANCE__) UBRELEASE_NIL(INSTANCE__)
-#endif
-
 #define UBSWAP_INSTANCE_RETAIN(DESTINATION__, SOURCE__) \
 {                                                   \
-  id old_value__ = DESTINATION__;                   \
-  DESTINATION__ = [(SOURCE__) retain];              \
-  [old_value__ release];                            \
+  DESTINATION__ = SOURCE__;              \
 }
 
 #define UBSWAP_INSTANCE_COPY(DESTINATION__, SOURCE__) \
 {                                                 \
-  id old_value__ = DESTINATION__;                 \
   DESTINATION__ = [(SOURCE__) copy];              \
-  [old_value__ release];                          \
 }
 
 #if defined(__GNUC__) && !defined(__STRICT_ANSI__)

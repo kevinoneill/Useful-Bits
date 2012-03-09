@@ -58,7 +58,7 @@
     }
   }
   
-  return [[result copy] autorelease];
+  return [result copy];
 }
 
 - (NSArray *)pick:(BOOL (^)(id))block;
@@ -73,7 +73,7 @@
     }
   }
   
-  return [[result copy] autorelease];
+  return [result copy];
 }
 
 - (id)first:(BOOL (^)(id))block;
@@ -162,7 +162,7 @@
 
 - (NSArray *)intersperse:(id (^) (id current, id next))separator;
 {
-  if ([self count] < 2) return [[self copy] autorelease];
+  if ([self count] < 2) return [self copy];
   
   NSMutableArray *result = [NSMutableArray arrayWithCapacity:(([self count] * 2) - 1)];
 
@@ -176,7 +176,7 @@
   }
   [result addObject:[self last]];
   
-  return [[result copy] autorelease];
+  return [result copy];
 }
 
 - (BOOL)any:(BOOL (^)(id))block;

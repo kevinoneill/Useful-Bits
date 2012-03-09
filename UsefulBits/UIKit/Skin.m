@@ -21,7 +21,7 @@ static const CGFloat kDefaultFontSize = 14.0;
 @interface Skin ()
 
 @property (nonatomic, copy) NSString *section;
-@property (nonatomic, retain) NSBundle *bundle;
+@property (strong, nonatomic) NSBundle *bundle;
 @property (nonatomic, copy) NSDictionary *configuration;
 
 @property (nonatomic, copy) NSCache *colors;
@@ -69,7 +69,7 @@ static Skin *skin_for_section(NSString *section)
   
   if (nil == result)
   {
-    result = [[[Skin alloc] initForSection:section] autorelease];
+    result = [[Skin alloc] initForSection:section];
     cache_skin(result);
   }
   
@@ -83,7 +83,7 @@ static inline NSString *path_for_section(NSString *section)
 
 static NSDictionary *merge_configurations(NSDictionary *parent, NSDictionary *child)
 {
-  __block NSMutableDictionary *configuration = [NSMutableDictionary dictionaryWithCapacity:7U];
+  __unsafe_unretained NSMutableDictionary *configuration = [NSMutableDictionary dictionaryWithCapacity:7U];
   
   [[NSArray arrayWithObjects:@"images", @"colors", @"fonts", @"properties", nil] each:^(NSString *key) {
     NSDictionary *merged = [[parent objectForKey:key] merge:[child objectForKey:key]];
@@ -239,7 +239,7 @@ static NSDictionary *expand_paths (NSBundle *bundle, NSString *section, NSString
     fonts_ = [[NSCache alloc] init];
     
     NSString *skin_name = [[[NSBundle mainBundle] infoDictionary] stringForKey:@"skin-name" default:@"skin"];
-    bundle_ = [[NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:skin_name ofType:@"bundle"]] retain];
+    bundle_ = [NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:skin_name ofType:@"bundle"]];
     
     NSString *configuration_path = [bundle_ pathForResource:@"configuration" 
                                                      ofType:@"plist"
@@ -275,18 +275,6 @@ static NSDictionary *expand_paths (NSBundle *bundle, NSString *section, NSString
   return self;
 }
 
-- (void)dealloc;
-{
-  [colors_ release];
-  [images_ release];
-  [fonts_ release];
-  
-  [section_ release];
-  [bundle_ release];
-  [configuration_ release];
-  
-  [super dealloc];
-}
 
 #pragma mark - Fonts
 

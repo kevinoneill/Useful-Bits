@@ -18,9 +18,9 @@
   NSParameterAssert(nil != account);
   
   return [NSMutableDictionary dictionaryWithObjectsAndKeys:
-          service, (id)kSecAttrService,
-          account, (id)kSecAttrAccount,
-          (id)kSecClassGenericPassword, (id)kSecClass,
+          service, (__bridge id)kSecAttrService,
+          account, (__bridge id)kSecAttrAccount,
+          (__bridge id)kSecClassGenericPassword, (__bridge id)kSecClass,
           nil];
 }
 

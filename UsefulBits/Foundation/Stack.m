@@ -29,13 +29,6 @@
   return self;
 }
 
-- (void)dealloc
-{
-  [stack_ release];
-  
-  [super dealloc];
-}
-
 - (void)push:(id)object;
 {
   [stack_ addObject:object];

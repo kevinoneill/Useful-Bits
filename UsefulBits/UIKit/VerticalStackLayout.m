@@ -38,7 +38,7 @@
 
 + (id)instance;
 {
-  return [[[[self class] alloc] init] autorelease];
+  return [[[self class] alloc] init];
 }
 
 - (void)layout:(UIView *)view action:(void (^) (UIView *subview, CGRect subviewFrame))action;

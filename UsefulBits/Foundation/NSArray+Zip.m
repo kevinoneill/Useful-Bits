@@ -23,7 +23,7 @@
     [result addObject:[NSArray arrayWithObjects:[self objectAtIndex:idx], [other objectAtIndex:idx], nil]];
   }
   
-  return [[result copy] autorelease];
+  return [result copy];
 }
 
 - (NSArray *)flatten;
@@ -41,7 +41,7 @@
     [result addObject:item];
   }
   
-  return [[result copy] autorelease];
+  return [result copy];
 }
 
 @end

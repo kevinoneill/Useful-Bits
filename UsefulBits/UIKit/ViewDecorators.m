@@ -45,22 +45,22 @@ ViewDecorator TileImageDecorator(UIImage *image)
 {
   NSCAssert(image != nil, @"an image must be supplied");
   
-  return [[^ (UIView *view, CGRect dirtyRect, CGContextRef context) {
+  return [^ (UIView *view, CGRect dirtyRect, CGContextRef context) {
     CGContextDrawTiledImage(context, [image bounds], [image CGImage]);
-  } copy] autorelease];
+  } copy];
 }
 
 ViewDecorator ImageForOrintationDecorator(UIImage *portrait, UIImage *landscape)
 {
   NSCAssert(portrait != nil && landscape != nil, @"portrait and landscape images must be supplied");
   
-  return [[^ (UIView *view, CGRect dirtyRect, CGContextRef context) {
+  return [^ (UIView *view, CGRect dirtyRect, CGContextRef context) {
     UIImage *image = [[UIApplication sharedApplication] isStatusBarLandscape] ? landscape : portrait;
 
     CGContextTranslateCTM(context, 0., [image height]);
     CGContextScaleCTM(context, 1., -1.);
     CGContextDrawImage(context, [image bounds], [image CGImage]);
-  } copy] autorelease];
+  } copy];
 }
 
 ViewDecorator ImageNamedForOrintationDecorator(NSString *name)
@@ -77,7 +77,7 @@ ViewDecorator ImageNamedForOrintationDecorator(NSString *name)
 
 ViewDecorator BottomKeylineDecorator(UIColor *color)
 {
-  return [[^ (UIView *view, CGRect dirtyRect, CGContextRef context) {
+  return [^ (UIView *view, CGRect dirtyRect, CGContextRef context) {
     CGContextSetShadowWithColor(context, CGSizeMake(0., 1.), 0., [[UIColor colorWithWhite:1. alpha:.72] CGColor]);
     CGContextSetAllowsAntialiasing(context, NO);
     CGContextSetLineWidth(context, 1.);
@@ -89,7 +89,7 @@ ViewDecorator BottomKeylineDecorator(UIColor *color)
     CGContextAddLineToPoint(context, [view width] -3., bottom);
     CGContextStrokePath(context);
 
-  } copy] autorelease];
+  } copy];
 }
 
 ViewDecorator CombineDecorators(ViewDecorator first, ...)
@@ -110,14 +110,14 @@ ViewDecorator CombineDecorators(ViewDecorator first, ...)
 
 ViewDecorator CombineDecoratorsFromArray(NSArray *decorators)
 {
-  NSArray *local_decorators = [[decorators copy] autorelease];
+  NSArray *local_decorators = [decorators copy];
   
-  return [[^ (UIView *view, CGRect dirtyRect, CGContextRef context) {
+  return [^ (UIView *view, CGRect dirtyRect, CGContextRef context) {
     for(ViewDecorator decorator in local_decorators)
     {
       CGContextSaveGState(context);
       decorator(view, dirtyRect, context);
       CGContextRestoreGState(context);
     }
-  } copy] autorelease];
+  } copy];
 }

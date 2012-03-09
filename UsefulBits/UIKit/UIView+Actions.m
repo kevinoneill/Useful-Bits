@@ -70,7 +70,6 @@
   }
 
   [self addGestureRecognizer:tap_gesture];
-  UBRELEASE(tap_gesture);
 }
 
 - (void)onTap:(void (^) (id sender))action touches:(NSUInteger)touches; 

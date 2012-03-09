@@ -31,12 +31,9 @@
 #import <UsefulBits/LayoutManager.h>
 
 @interface ManagedLayoutView : UIView
-{
-  id<LayoutManager> layoutManager_;
-}
 
 - (id)initWithFrame:(CGRect)frame layoutManager:(id<LayoutManager>)layoutManager;
 
-@property (nonatomic, retain) id<LayoutManager> layoutManager;
+@property (strong, nonatomic) id<LayoutManager> layoutManager;
 
 @end

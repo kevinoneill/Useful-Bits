@@ -35,7 +35,7 @@
   NSMutableDictionary *result = [NSMutableDictionary dictionaryWithDictionary:self];
   [result addEntriesFromDictionary:other];
   
-  return [[result copy] autorelease];
+  return [result copy];
 }
 
 - (NSDictionary *)removeKeys:(NSSet *)keys;
@@ -43,7 +43,7 @@
   NSMutableDictionary *result = [NSMutableDictionary dictionaryWithDictionary:self];
   [result removeObjectsForKeys:[keys allObjects]];
   
-  return [[result copy] autorelease];
+  return [result copy];
 }
 
 @end

@@ -25,7 +25,7 @@
     [result addObject:action(key, obj)];
   }];
   
-  return [[result copy] autorelease];
+  return [result copy];
 }
 
 - (void)withValueForKey:(id)key meetingCondition:(BOOL (^) (id value))condition do:(void (^) (id value))action;

@@ -34,22 +34,22 @@
 
 + (UIBarButtonItem *)barButtonWithImageNamed:(NSString *)name target:(id)target action:(SEL)action;
 {
-  UIButton *button = [[[UIButton alloc] initWithFrame:CGRectZero] autorelease];
+  UIButton *button = [[UIButton alloc] initWithFrame:CGRectZero];
   [button setImage:[UIImage imageNamed:name] forState:UIControlStateNormal];
   [button sizeToFit];
   [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
   
-  return [[[UIBarButtonItem alloc] initWithCustomView:button] autorelease];
+  return [[UIBarButtonItem alloc] initWithCustomView:button];
 }
 
 + (UIBarButtonItem *)barButtonWithImageNamed:(NSString *)name action:(void (^) (id sender))action;
 {
-  UIButton *button = [[[UIButton alloc] initWithFrame:CGRectZero] autorelease];
+  UIButton *button = [[UIButton alloc] initWithFrame:CGRectZero];
   [button setImage:[UIImage imageNamed:name] forState:UIControlStateNormal];
   [button sizeToFit];
   [button addEventHandler:action forControlEvents:UIControlEventTouchUpInside];
   
-  return [[[UIBarButtonItem alloc] initWithCustomView:button] autorelease];
+  return [[UIBarButtonItem alloc] initWithCustomView:button];
 }
 
 @end

@@ -35,7 +35,7 @@
   id result = [[[self class] alloc] init];
   [result setValuesForKeysWithDictionary:dictionary];
   
-  return [result autorelease];
+  return result;
 }
 
 @end

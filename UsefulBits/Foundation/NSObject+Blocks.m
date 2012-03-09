@@ -70,15 +70,15 @@ static char blocks_key;
 
 - (id)addObserverAction:(void (^)(NSString *keyPath, id object, NSDictionary *change))action forKeyPath:(NSString *)path options:(NSKeyValueObservingOptions)options;
 {
-  __block UBBlockObserver_ *observer = [UBBlockObserver_ instanceWithAction:action keyPath:path];
+  __unsafe_unretained UBBlockObserver_ *observer = [UBBlockObserver_ instanceWithAction:action keyPath:path];
   
   [[self actionBlocks] addObject:observer];
   [self addObserver:observer forKeyPath:path options:options context:NULL];
   
-  return [[^ {
+  return [^ {
     [self removeObserver:observer forKeyPath:path];
     [[self actionBlocks] removeObject:observer];
-  } copy] autorelease];
+  } copy];
 }
 
 - (void)removeObserverAction:(id)token;
@@ -102,7 +102,7 @@ static char blocks_key;
 - (void)execute:(void (^)(void))action afterDelay:(NSTimeInterval)delay;
 {
   [self performSelector:@selector(ub_executeDelayedAction:) 
-             withObject:[[action copy] autorelease] 
+             withObject:[action copy] 
              afterDelay:delay];
 }
 
@@ -122,19 +122,12 @@ static char blocks_key;
   [instance setAction:action];
   [instance setKeyPath:keyPath];
   
-  return [instance autorelease];
+  return instance;
 }
 
 @synthesize keyPath = keyPath_;
 @synthesize action = action_;
 
-- (void)dealloc
-{
-  [action_ release];
-  [keyPath_ release];
-  
-  [super dealloc];
-}
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {

@@ -44,9 +44,7 @@ static char block_key;
 
 + (id)instanceWithActionBlock:(void (^) (UIGestureRecognizer* gesture))action;
 {
-  id instance = [[[self class] alloc] initWithActionBlock:action];
-  
-  return [instance autorelease];
+  return [[[self class] alloc] initWithActionBlock:action];
 }
 
 - (id)initWithActionBlock:(void (^) (UIGestureRecognizer* gesture))action;
