@@ -31,15 +31,16 @@
 @interface NSArray (Blocks)
 
 - (void)each:(void (^)(id item))block;
-- (void)eachWithIndex:(void (^)(id, NSUInteger))block;
+- (void)eachWithIndex:(void (^)(id item, NSUInteger index))block;
+- (void)eachMatching:(BOOL (^)(id item))predicate do:(void (^)(id item))action;
 
 - (NSArray *)filter:(BOOL (^)(id item))block;
 - (NSArray *)pick:(BOOL (^)(id item))block;
 
-- (id)first:(BOOL (^)(id))block;
+- (id)first:(BOOL (^)(id item))block;
 - (NSUInteger)indexOfFirst:(BOOL (^)(id item))block;
 
-- (id)last:(BOOL (^)(id))block;
+- (id)last:(BOOL (^)(id item))block;
 - (NSUInteger)indexOfLast:(BOOL (^)(id item))block;
 
 - (NSArray *)map:(id (^)(id item))block;

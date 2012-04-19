@@ -44,6 +44,17 @@
   [self enumerateObjectsUsingBlock: ^(id item, NSUInteger i, BOOL *stop) { block(item, i); }];
 }
 
+- (void)eachMatching:(BOOL (^)(id item))predicate do:(void (^)(id item))action;
+{
+  for (id obj in self)
+  {
+    if (predicate(obj))
+    {
+      action(obj);
+    }
+  }
+}
+
 #pragma mark - Filters
 
 - (NSArray *)filter:(BOOL (^)(id))block;
