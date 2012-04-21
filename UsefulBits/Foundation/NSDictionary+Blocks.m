@@ -28,7 +28,12 @@
   return [[result copy] autorelease];
 }
 
-- (void)withValueForKey:(id)key meetingCondition:(BOOL (^) (id value))condition do:(void (^) (id value))action;
+- (void)withValueForKey:(id)key meetingCondition:(BOOL (^) (id))condition do:(void (^) (id))action;
+{
+  [self withValueForKey:key meetingCondition:condition do:action default:NULL];
+}
+
+- (void)withValueForKey:(id)key meetingCondition:(BOOL (^) (id value))condition do:(void (^) (id value))action default:(void (^) (void))default_action;
 {
   id value = [self objectForKey:key];
 
@@ -36,26 +41,40 @@
   {
     action(value);
   }
+  else if (NULL != default_action)
+  {
+    default_action();
+  }
 }
 
 - (void)withValueForKey:(id)key ofClass:(Class)class do:(void (^) (id value))action;
+{
+  [self withValueForKey:key ofClass:class do:action default:NULL];
+}
+
+- (void)withValueForKey:(id)key ofClass:(Class)class do:(void (^) (id value))action default:(void (^) (void))default_action;
 {
   [self withValueForKey:key
        meetingCondition:^BOOL(id value) {
          return [value isKindOfClass:class];
        } do:^(id value) {
-         action(value);
-       }];
+    action(value);
+  } default:default_action];
 }
 
 - (void)withValueForKey:(id)key do:(void (^) (id value))action;
+{
+  [self withValueForKey:key do:action default:NULL];
+}
+
+- (void)withValueForKey:(id)key do:(void (^) (id value))action default:(void (^) (void))default_action;
 {
   [self withValueForKey:key
        meetingCondition:^BOOL(id value) {
          return nil != value && [NSNull null] != value;
        } do:^(id value) {
          action(value);
-       }];
+       } default:default_action];
 }
 
 @end
