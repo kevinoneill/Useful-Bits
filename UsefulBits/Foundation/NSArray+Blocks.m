@@ -149,15 +149,30 @@
 
 - (NSArray *)map:(id (^)(id item))block;
 {
+  return [self map:block filterNil:YES];
+}
+
+- (NSArray *)map:(id (^)(id item))block filterNil:(BOOL)filter_nil;
+{
   NSMutableArray *result = [NSMutableArray arrayWithCapacity:[self count]];
   
   for (id obj in self)
   {
-    [result addObject:block(obj)];
+    id instance = block(obj);
+    
+    if (nil != instance)
+    {
+      [result addObject:instance];
+    }
+    else if (!filter_nil)
+    {
+      [result addObject:[NSNull null]];
+    }
   }
   
   return [NSArray arrayWithArray:result];
 }
+
 
 - (id)reduce:(id (^)(id current, id item))block initial:(id)initial;
 {
