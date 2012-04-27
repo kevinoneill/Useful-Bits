@@ -36,10 +36,18 @@
 - (id)initForSection:(NSString *)section;
 
 - (NSString *)section;
+- (Skin *)sectionNamed:(NSString *)name;
 
 - (id)propertyNamed:(NSString *)name;
+- (void)withPropertyNamed:(NSString *)name do:(void (^) (id value))action;
+
 - (UIColor *)colorNamed:(NSString *)name;
+- (void)withColorNamed:(NSString *)name do:(void (^) (UIColor *color))action;
+
 - (UIImage *)imageNamed:(NSString *)name;
+- (void)withImageNamed:(NSString *)name do:(void (^) (UIImage *image))action;
+
 - (UIFont *)fontNamed:(NSString *)name;
+- (void)withFontNamed:(NSString *)name do:(void (^) (UIFont *font))action;
 
 @end

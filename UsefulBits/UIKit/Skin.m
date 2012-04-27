@@ -288,6 +288,13 @@ static NSDictionary *expand_paths (NSBundle *bundle, NSString *section, NSString
   [super dealloc];
 }
 
+#pragma mark - Subsections
+
+- (Skin *)sectionNamed:(NSString *)name;
+{
+  return [Skin skinForSection:[NSString stringWithFormat:@"%@.%@", [self section], name]];
+}
+
 #pragma mark - Fonts
 
 static UIFont *resolve_font(NSString *name, CGFloat size)
@@ -312,6 +319,15 @@ static UIFont *resolve_font(NSString *name, CGFloat size)
   }
   
   return font;
+}
+
+- (void)withFontNamed:(NSString *)name do:(void (^) (UIFont *font))action;
+{
+  id value = [self valueForName:name inPart:@"fonts"];
+  if (nil != value)
+  {
+    action([self fontNamed:name]);
+  }
 }
 
 - (UIFont *)fontNamed:(NSString *)name;
@@ -348,12 +364,30 @@ static UIFont *resolve_font(NSString *name, CGFloat size)
 
 #pragma mark - Properties
 
+- (void)withPropertyNamed:(NSString *)name do:(void (^) (id value))action;
+{
+  id value = [self valueForName:name inPart:@"properties"];
+
+  if (nil != value)
+  {
+    action(value);
+  }
+}
+
 - (id)propertyNamed:(NSString *)name;
 {
   return [self valueForName:name inPart:@"properties"];
 }       
 
 #pragma mark - Colors
+
+- (void)withColorNamed:(NSString *)name do:(void (^) (UIColor *color))action;
+{
+  if (nil != [self valueForName:name inPart:@"colors"])
+  {
+    action([self colorNamed:name]);
+  }
+}
 
 - (UIColor *)colorNamed:(NSString *)name;
 {
@@ -391,6 +425,15 @@ static UIFont *resolve_font(NSString *name, CGFloat size)
   if (value)
   {
     action(value);
+  }
+}
+
+- (void)withImageNamed:(NSString *)name do:(void (^) (UIImage *image))action;
+{
+  id value = [self valueForName:name inPart:@"images"];
+  if (value)
+  {
+    action([self imageNamed:name]);
   }
 }
 
