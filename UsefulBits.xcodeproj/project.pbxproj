@@ -99,6 +99,9 @@
 		0AA1AA0413E9F65400A3D5A7 /* UsefulQuartzFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA1AA0213E9F65400A3D5A7 /* UsefulQuartzFunctions.m */; };
 		0AA1AA0613E9F69C00A3D5A7 /* Quartz+UsefulBits.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AA1AA0513E9F69C00A3D5A7 /* Quartz+UsefulBits.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0AAF05E513E4F5D800FD753A /* UBMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AAF05E413E4F5D800FD753A /* UBMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0AC777B1154AABF90074331C /* UIView+Skin.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AC777AF154AABF90074331C /* UIView+Skin.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0AC777B2154AABF90074331C /* UIView+Skin.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC777B0154AABF90074331C /* UIView+Skin.m */; };
+		0AC777B8154AACA30074331C /* UILabel+Skin.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC777B6154AACA30074331C /* UILabel+Skin.m */; };
 		0AE0165314A323330061F9F0 /* UIWebView+Blocks.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AE0165114A323330061F9F0 /* UIWebView+Blocks.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0AE0165414A323330061F9F0 /* UIWebView+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE0165214A323330061F9F0 /* UIWebView+Blocks.m */; };
 		0AE3E07E149205C200C45DC9 /* UIColor+Hex.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AE3E07C149205C200C45DC9 /* UIColor+Hex.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -211,6 +214,9 @@
 		0AA1AA0213E9F65400A3D5A7 /* UsefulQuartzFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsefulQuartzFunctions.m; sourceTree = "<group>"; };
 		0AA1AA0513E9F69C00A3D5A7 /* Quartz+UsefulBits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Quartz+UsefulBits.h"; sourceTree = "<group>"; };
 		0AAF05E413E4F5D800FD753A /* UBMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBMacros.h; sourceTree = "<group>"; };
+		0AC777AF154AABF90074331C /* UIView+Skin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Skin.h"; sourceTree = "<group>"; };
+		0AC777B0154AABF90074331C /* UIView+Skin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Skin.m"; sourceTree = "<group>"; };
+		0AC777B6154AACA30074331C /* UILabel+Skin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Skin.m"; sourceTree = "<group>"; };
 		0AE0165114A323330061F9F0 /* UIWebView+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+Blocks.h"; sourceTree = "<group>"; };
 		0AE0165214A323330061F9F0 /* UIWebView+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+Blocks.m"; sourceTree = "<group>"; };
 		0AE3E07C149205C200C45DC9 /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
@@ -369,6 +375,7 @@
 		0A39B93213E4E96B00D0B638 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				0AC777B4154AAC6C0074331C /* Skin */,
 				0A39B94D13E4E96B00D0B638 /* UIKit+UsefulBits.h */,
 				0A39B93313E4E96B00D0B638 /* CustomNavigationBar.h */,
 				0A39B93413E4E96B00D0B638 /* CustomNavigationBar.m */,
@@ -411,8 +418,6 @@
 				0A39B95B13E4E96B00D0B638 /* ViewDecorators.m */,
 				0AE3E07C149205C200C45DC9 /* UIColor+Hex.h */,
 				0AE3E07D149205C200C45DC9 /* UIColor+Hex.m */,
-				0AE9E44714920EA8006D8985 /* Skin.h */,
-				0AE9E44814920EA8006D8985 /* Skin.m */,
 				0AE0165114A323330061F9F0 /* UIWebView+Blocks.h */,
 				0AE0165214A323330061F9F0 /* UIWebView+Blocks.m */,
 			);
@@ -427,6 +432,18 @@
 				0AA1AA0513E9F69C00A3D5A7 /* Quartz+UsefulBits.h */,
 			);
 			path = Quartz;
+			sourceTree = "<group>";
+		};
+		0AC777B4154AAC6C0074331C /* Skin */ = {
+			isa = PBXGroup;
+			children = (
+				0AE9E44714920EA8006D8985 /* Skin.h */,
+				0AE9E44814920EA8006D8985 /* Skin.m */,
+				0AC777AF154AABF90074331C /* UIView+Skin.h */,
+				0AC777B0154AABF90074331C /* UIView+Skin.m */,
+				0AC777B6154AACA30074331C /* UILabel+Skin.m */,
+			);
+			name = Skin;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -490,6 +507,7 @@
 				0A253FA514AD4C0A003ABC71 /* NSMutableDictionary+PasswordManager.h in Headers */,
 				0A1B719814D76E0900247F46 /* Stack.h in Headers */,
 				0AEA933F14DE609200235D65 /* UBFoundationFunctions.h in Headers */,
+				0AC777B1154AABF90074331C /* UIView+Skin.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -633,6 +651,8 @@
 				0A253FA614AD4C0A003ABC71 /* NSMutableDictionary+PasswordManager.m in Sources */,
 				0A1B719914D76E0900247F46 /* Stack.m in Sources */,
 				0AEA934014DE609200235D65 /* UBFoundationFunctions.m in Sources */,
+				0AC777B2154AABF90074331C /* UIView+Skin.m in Sources */,
+				0AC777B8154AACA30074331C /* UILabel+Skin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
