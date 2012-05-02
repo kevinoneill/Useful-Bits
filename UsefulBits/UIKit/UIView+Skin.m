@@ -25,6 +25,11 @@
   [skin withColorNamed:@"background" do:^(UIColor *color) {
     [self setBackgroundColor:color];
   }];
+  
+  for (UIView *view in [self subviews])
+  {
+    [view styleWithSkin:skin];
+  }
 }
 
 @end
