@@ -35,10 +35,11 @@
     if ([item isKindOfClass:[NSArray class]])
     {
       [result addObjectsFromArray:[item flatten]];
-      break;
     }
-    
-    [result addObject:item];
+    else
+    {
+      [result addObject:item];
+    }
   }
   
   return [[result copy] autorelease];
