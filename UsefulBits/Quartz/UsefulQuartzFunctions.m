@@ -64,3 +64,8 @@ CGRect CGRectInsetBottom(CGRect rect, CGFloat inset)
 {
   return CGRectStandardize(CGRectMake(rect.origin.x, rect.origin.y, rect.size.width, rect.size.height - inset));
 }
+
+CGRect CGRectMakeSized(CGSize size)
+{
+  return CGRectStandardize(CGRectMake(0., 0., size.width, size.height));
+}
