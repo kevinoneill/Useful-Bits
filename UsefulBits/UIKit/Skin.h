@@ -50,4 +50,6 @@
 - (UIFont *)fontNamed:(NSString *)name;
 - (void)withFontNamed:(NSString *)name do:(void (^) (UIFont *font))action;
 
+- (Skin *)merge:(Skin *)other;
+
 @end

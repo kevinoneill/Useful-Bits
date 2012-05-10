@@ -20,8 +20,9 @@ static const CGFloat kDefaultFontSize = 14.0;
 
 @interface Skin ()
 
+- (id)initWithSkins:(NSArray *)skins;
+
 @property (nonatomic, copy) NSString *section;
-@property (nonatomic, retain) NSBundle *bundle;
 @property (nonatomic, copy) NSDictionary *configuration;
 
 @property (nonatomic, copy) NSCache *colors;
@@ -81,12 +82,20 @@ static inline NSString *path_for_section(NSString *section)
   return [NSString pathWithComponents:[section componentsSeparatedByString:kSectionPathDelimiter]];
 }
 
+static NSString *merged_section_name(NSArray *skins)
+{
+  return [[skins map:^id(Skin *skin) {
+    return [skin section];
+  }] componentsJoinedByString:@":"];
+}
+
+
 static NSDictionary *merge_configurations(NSDictionary *parent, NSDictionary *child)
 {
   __block NSMutableDictionary *configuration = [NSMutableDictionary dictionaryWithCapacity:7U];
   
   [[NSArray arrayWithObjects:@"images", @"colors", @"fonts", @"properties", nil] each:^(NSString *key) {
-    NSDictionary *merged = [[parent objectForKey:key] merge:[child objectForKey:key]];
+    NSDictionary *merged = [(NSDictionary *)[parent objectForKey:key] merge:[child objectForKey:key]];
     [configuration setObject:merged forKey:key];
   }];
   
@@ -221,12 +230,16 @@ static NSDictionary *expand_paths (NSBundle *bundle, NSString *section, NSString
 }
 
 @synthesize section = section_;
-@synthesize bundle = bundle_;
 @synthesize configuration = configuration_;
 
 @synthesize colors = colors_;
 @synthesize images = images_;
 @synthesize fonts = fonts_;
+
+- (id)init;
+{
+  return [self initForSection:@""];
+}
 
 - (id)initForSection:(NSString *)section;
 {
@@ -239,9 +252,9 @@ static NSDictionary *expand_paths (NSBundle *bundle, NSString *section, NSString
     fonts_ = [[NSCache alloc] init];
     
     NSString *skin_name = [[[NSBundle mainBundle] infoDictionary] stringForKey:@"skin-name" default:@"skin"];
-    bundle_ = [[NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:skin_name ofType:@"bundle"]] retain];
+    NSBundle *bundle = [NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:skin_name ofType:@"bundle"]];
     
-    NSString *configuration_path = [bundle_ pathForResource:@"configuration" 
+    NSString *configuration_path = [bundle pathForResource:@"configuration" 
                                                      ofType:@"plist"
                                                 inDirectory:path_for_section(section)];
     
@@ -249,7 +262,7 @@ static NSDictionary *expand_paths (NSBundle *bundle, NSString *section, NSString
     NSMutableDictionary *local_configuration = [NSMutableDictionary dictionaryWithContentsOfFile:configuration_path];
     for (NSString *part in [NSArray arrayWithObjects:@"images", @"colors", nil])
     {
-      [local_configuration setObject:expand_paths(bundle_, section, part, [local_configuration objectForKey:part])
+      [local_configuration setObject:expand_paths(bundle, section, part, [local_configuration objectForKey:part])
                               forKey:part];
     }
     
@@ -275,6 +288,26 @@ static NSDictionary *expand_paths (NSBundle *bundle, NSString *section, NSString
   return self;
 }
 
+- (id)initWithSkins:(NSArray *)skins;
+{
+  if ((self = [super init]))
+  {
+    section_ = [merged_section_name(skins) copy];
+    
+    colors_ = [[NSCache alloc] init];
+    images_ = [[NSCache alloc] init];
+    fonts_ = [[NSCache alloc] init];
+    
+    NSDictionary *configuration = [[skins rest] reduce:^id(NSDictionary *configuration, Skin *skin) {
+      return merge_configurations(configuration, [skin configuration]);
+    } initial:[[skins first] configuration]];
+    
+    configuration_ = [resolve_references(configuration) copy];
+  }
+  
+  return self;
+}
+
 - (void)dealloc;
 {
   [colors_ release];
@@ -282,7 +315,6 @@ static NSDictionary *expand_paths (NSBundle *bundle, NSString *section, NSString
   [fonts_ release];
   
   [section_ release];
-  [bundle_ release];
   [configuration_ release];
   
   [super dealloc];
@@ -475,6 +507,21 @@ static UIFont *resolve_font(NSString *name, CGFloat size)
 - (NSString *)valueForName:(NSString *)name inPart:(NSString *)part;
 {
   return value_for_name([self configuration], name, part);
+}
+
+- (Skin *)merge:(Skin *)other;
+{
+  NSArray *skins = [NSArray arrayWithObjects:self, other, nil];
+  NSString *section = merged_section_name(skins);
+  
+  Skin *result = skin_for_section(section);
+  if (nil == result)
+  {
+    result = [[[Skin alloc] initWithSkins:skins] autorelease];
+    cache_skin(result);
+  }
+  
+  return result;  
 }
 
 @end
