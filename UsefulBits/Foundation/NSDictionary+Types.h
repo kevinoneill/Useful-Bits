@@ -15,4 +15,8 @@
 
 - (NSNumber *)numberForKey:(id)key default:(NSNumber *)defaultValue;
 - (NSNumber *)numberForKey:(id)key;
+
+- (NSArray *)arrayForKey:(id)key default:(NSArray *)defaultValue;
+- (NSArray *)arrayForKey:(id)key;
+
 @end

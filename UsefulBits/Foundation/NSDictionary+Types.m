@@ -13,7 +13,7 @@
 - (id)objectForKey:(id)key ofType:(Class)type default:(id)defaultValue;
 {
   id value = [self objectForKey:key];
-  
+
   return [value isKindOfClass:type] ? value : defaultValue;
 }
 
@@ -36,5 +36,16 @@
 {
   return [self numberForKey:key default:nil];
 }
+
+- (NSArray *)arrayForKey:(id)key default:(NSArray *)defaultValue;
+{
+  return [self objectForKey:key ofType:[NSArray class] default:defaultValue];
+}
+
+- (NSArray *)arrayForKey:(id)key;
+{
+  return [self arrayForKey:key default:[NSArray array]];
+}
+
 
 @end

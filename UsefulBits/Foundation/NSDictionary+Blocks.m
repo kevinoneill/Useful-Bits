@@ -20,11 +20,11 @@
 - (NSArray *)map:(id (^) (id key, id value))action;
 {
   NSMutableArray *result = [NSMutableArray arrayWithCapacity:[self count]];
-  
+
   [self enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
     [result addObject:action(key, obj)];
   }];
-  
+
   return [[result copy] autorelease];
 }
 
@@ -76,5 +76,27 @@
          action(value);
        } default:default_action];
 }
+
+- (NSDictionary *)pick:(BOOL (^)(id, id))filter;
+{
+  NSMutableDictionary *result = [NSMutableDictionary dictionaryWithCapacity:[self count]];
+
+  [self enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+    if (filter(key, obj))
+    {
+      [result setObject:obj forKey:key];
+    }
+  }];
+
+  return [[result copy] autorelease];
+}
+
+- (NSDictionary *)filter:(BOOL (^)(id, id))filter;
+{
+  return [self pick:^BOOL(id key, id value) {
+    return !filter(key, value);
+  }];
+}
+
 
 @end
