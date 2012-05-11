@@ -2,24 +2,23 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>images</key>
-	<dict>
-		<key>sub-image</key>
-		<string>subimage.png</string>
-		<key>subsection-stretchable-reference</key>
-		<string>@stretchable</string>
-	</dict>
 	<key>colors</key>
 	<dict>
-		<key>parent-reference-color</key>
-		<string>@grey</string>
+		<key>unresolved</key>
+		<string>@missing</string>
 	</dict>
 	<key>fonts</key>
-	<dict/>
+	<dict>
+		<key>unresolved</key>
+		<string>@missing</string>
+	</dict>
+	<key>images</key>
+	<dict>
+		<key>unresolved</key>
+		<string>@missing</string>
+	</dict>
 	<key>properties</key>
 	<dict>
-		<key>string</key>
-		<string>a new string</string>
 		<key>unresolved</key>
 		<string>@missing</string>
 	</dict>

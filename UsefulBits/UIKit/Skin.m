@@ -39,12 +39,17 @@ static void with_skin_cache(void (^action) (NSMutableDictionary *cache))
 {
   static dispatch_once_t initialized;
   static NSMutableDictionary *cache = nil;
-  
+
   dispatch_once(&initialized, ^ {
 		cache = [[NSMutableDictionary alloc] init];
   });
-  
+
   action(cache);
+}
+
+static inline BOOL is_reference(id value)
+{
+  return [value isKindOfClass:[NSString class]] && [value hasPrefix:kReferencePrefix];
 }
 
 static inline Skin *cached_skin_for_cache(NSString *section)
@@ -53,7 +58,7 @@ static inline Skin *cached_skin_for_cache(NSString *section)
   with_skin_cache(^(NSMutableDictionary *cache) {
     result = [cache objectForKey:section];
   });
-  
+
   return result;
 }
 
@@ -67,13 +72,13 @@ static inline void cache_skin(Skin *skin)
 static Skin *skin_for_section(NSString *section)
 {
   Skin *result = cached_skin_for_cache(section);
-  
+
   if (nil == result)
   {
     result = [[[Skin alloc] initForSection:section] autorelease];
     cache_skin(result);
   }
-  
+
   return result;
 }
 
@@ -93,39 +98,40 @@ static NSString *merged_section_name(NSArray *skins)
 static NSDictionary *merge_configurations(NSDictionary *parent, NSDictionary *child)
 {
   __block NSMutableDictionary *configuration = [NSMutableDictionary dictionaryWithCapacity:7U];
-  
+
   [[NSArray arrayWithObjects:@"images", @"colors", @"fonts", @"properties", nil] each:^(NSString *key) {
     NSDictionary *merged = [(NSDictionary *)[parent objectForKey:key] merge:[child objectForKey:key]];
     [configuration setObject:merged forKey:key];
   }];
-  
+
   return configuration;
 }
 
 static NSDictionary *resolve_dictionary(NSDictionary *dictionary, NSDictionary *properties)
 {
   NSMutableDictionary *resolved = [NSMutableDictionary dictionaryWithDictionary:dictionary];
-  
+
   NSSet *references = [dictionary keysOfEntriesPassingTest:^ BOOL (id key, id obj, BOOL *stop) {
     return [obj isKindOfClass:[NSString class]] ? [obj hasPrefix:kReferencePrefix] : NO;
   }];
-  
+
   for (NSString *key in references)
   {
     NSMutableSet *seen = [NSMutableSet set];
-    
-    id value = [dictionary objectForKey:key];
+
+    id unresolved_value = [dictionary objectForKey:key];
+    id value = unresolved_value;
     do {
       [seen addObject:value];
       NSString *referenced_key = [value substringFromIndex:[kReferencePrefix length]];
-      
+
       value = [dictionary objectForKey:referenced_key];
       if (nil == value && nil != properties)
       {
         value = [properties objectForKey:referenced_key];
       }
-      
-      if ([value isKindOfClass:[NSString class]] && [value hasPrefix:kReferencePrefix] && [seen containsObject:value]) 
+
+      if (is_reference(value) && [seen containsObject:value])
       {
         NSException *recursive = [NSException
                                   exceptionWithName:@"RecursiveReference"
@@ -133,22 +139,22 @@ static NSDictionary *resolve_dictionary(NSDictionary *dictionary, NSDictionary *
                                   userInfo:nil];
         @throw recursive;
       }
-    } while ([value isKindOfClass:[NSString class]] && [value hasPrefix:kReferencePrefix]);
-    
-    [resolved setValue:value forKey:key];
+    } while (is_reference(value));
+
+    [resolved setObject:(nil == value ? unresolved_value : value) forKey:key];
   }
-  
+
   return resolved;
 }
 
 static NSDictionary *resolve_fonts(NSDictionary *fonts, NSDictionary *inherited_properties)
 {
   NSDictionary *resolved_fonts = resolve_dictionary(fonts, inherited_properties);
-  
+
   NSSet *compound_font_keys = [fonts keysOfEntriesPassingTest:^BOOL(id key, id obj, BOOL *stop) {
     return [obj isKindOfClass:[NSDictionary class]];
   }];
-  
+
   NSMutableDictionary *font_properties = [NSMutableDictionary dictionaryWithDictionary:inherited_properties];
   [font_properties addEntriesFromDictionary:[resolved_fonts removeKeys:compound_font_keys]];
   for (NSString *font_key in compound_font_keys)
@@ -157,41 +163,43 @@ static NSDictionary *resolve_fonts(NSDictionary *fonts, NSDictionary *inherited_
     NSDictionary *resolved_font = resolve_dictionary(font, font_properties);
     [resolved_fonts setValue:resolved_font forKey:font_key];
   }
-  
+
   return resolved_fonts;
 }
 
 static NSDictionary *resolve_references(NSDictionary *source)
 {
   NSMutableDictionary *resolved = [NSMutableDictionary dictionaryWithCapacity:4];
-  
+
   for (NSString *part_name in [NSArray arrayWithObjects:@"properties", @"images", @"colors", nil])
   {
     NSDictionary *part = [source objectForKey:part_name];
     [resolved setObject:resolve_dictionary(part, nil) forKey:part_name];
   }
-  
+
   NSDictionary *fonts = resolve_fonts([source objectForKey:@"fonts"], nil);
   [resolved setObject:fonts forKey:@"fonts"];
-  
+
   return resolved;
 }
 
 static inline NSString *bundle_relative_path(NSString *full_path)
 {
   NSUInteger min_length = [[[NSBundle mainBundle] resourcePath] length] + 1;
-  
+
   return [full_path length] >= min_length ? [full_path substringFromIndex:min_length] : nil;
 }
 
 static inline NSString *value_for_name(NSDictionary *source, NSString *name, NSString *part)
 {
-  return [source valueForKeyPath:[[part stringByAppendingString: @"."] stringByAppendingString:name]];
+  id value = [source valueForKeyPath:[[part stringByAppendingString: @"."] stringByAppendingString:name]];
+
+  return value;
 }
 
 static inline NSString* expand_path(NSBundle *bundle, NSString *section, NSString *part, NSString *value)
 {
-  NSString *section_path = [path_for_section(section) stringByAppendingPathComponent:part];  
+  NSString *section_path = [path_for_section(section) stringByAppendingPathComponent:part];
   NSString *resource_path = [bundle pathForResource:value ofType:nil inDirectory:section_path];
 
   return bundle_relative_path(resource_path);
@@ -211,7 +219,7 @@ static NSDictionary *expand_paths (NSBundle *bundle, NSString *section, NSString
       [expanded setObject:expand_paths(bundle, section, part, value) forKey:key];
     }
   }];
-  
+
   return expanded;
 }
 
@@ -246,26 +254,26 @@ static NSDictionary *expand_paths (NSBundle *bundle, NSString *section, NSString
   if ((self = [super init]))
   {
     section_ = [section copy];
-    
+
     colors_ = [[NSCache alloc] init];
     images_ = [[NSCache alloc] init];
     fonts_ = [[NSCache alloc] init];
-    
+
     NSString *skin_name = [[[NSBundle mainBundle] infoDictionary] stringForKey:@"skin-name" default:@"skin"];
     NSBundle *bundle = [NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:skin_name ofType:@"bundle"]];
-    
-    NSString *configuration_path = [bundle pathForResource:@"configuration" 
+
+    NSString *configuration_path = [bundle pathForResource:@"configuration"
                                                      ofType:@"plist"
                                                 inDirectory:path_for_section(section)];
-    
-    
+
+
     NSMutableDictionary *local_configuration = [NSMutableDictionary dictionaryWithContentsOfFile:configuration_path];
     for (NSString *part in [NSArray arrayWithObjects:@"images", @"colors", nil])
     {
       [local_configuration setObject:expand_paths(bundle, section, part, [local_configuration objectForKey:part])
                               forKey:part];
     }
-    
+
     NSDictionary *skin_configuration = nil;
     if ([section isEqualToString:@""])
     {
@@ -276,15 +284,15 @@ static NSDictionary *expand_paths (NSBundle *bundle, NSString *section, NSString
       NSArray *address = [section componentsSeparatedByString:kSectionPathDelimiter];
       NSString *parent_name = [[address trunk] componentsJoinedByString:kSectionPathDelimiter];
       Skin *parent = skin_for_section(parent_name);
-      
+
       NSDictionary *parent_configuration = [parent configuration];
-      
+
       skin_configuration = merge_configurations(parent_configuration, local_configuration);
     }
-    
+
     configuration_ = [resolve_references(skin_configuration) copy];
   }
-  
+
   return self;
 }
 
@@ -293,18 +301,18 @@ static NSDictionary *expand_paths (NSBundle *bundle, NSString *section, NSString
   if ((self = [super init]))
   {
     section_ = [merged_section_name(skins) copy];
-    
+
     colors_ = [[NSCache alloc] init];
     images_ = [[NSCache alloc] init];
     fonts_ = [[NSCache alloc] init];
-    
+
     NSDictionary *configuration = [[skins rest] reduce:^id(NSDictionary *configuration, Skin *skin) {
       return merge_configurations(configuration, [skin configuration]);
     } initial:[[skins first] configuration]];
-    
+
     configuration_ = [resolve_references(configuration) copy];
   }
-  
+
   return self;
 }
 
@@ -313,10 +321,10 @@ static NSDictionary *expand_paths (NSBundle *bundle, NSString *section, NSString
   [colors_ release];
   [images_ release];
   [fonts_ release];
-  
+
   [section_ release];
   [configuration_ release];
-  
+
   [super dealloc];
 }
 
@@ -330,9 +338,9 @@ static NSDictionary *expand_paths (NSBundle *bundle, NSString *section, NSString
 #pragma mark - Fonts
 
 static UIFont *resolve_font(NSString *name, CGFloat size)
-{ 
+{
   UIFont *font = nil;
-  
+
   if ([name isEqualToString:kSystemFont])
   {
     font = [UIFont systemFontOfSize:size];
@@ -349,7 +357,7 @@ static UIFont *resolve_font(NSString *name, CGFloat size)
   {
     font = [UIFont fontWithName:name size:size];
   }
-  
+
   return font;
 }
 
@@ -365,14 +373,14 @@ static UIFont *resolve_font(NSString *name, CGFloat size)
 - (UIFont *)fontNamed:(NSString *)name;
 {
   UIFont *font = [[self fonts] objectForKey:name];
-  
+
   if (nil == font)
   {
     NSString *font_name = nil;
     CGFloat font_size = kDefaultFontSize;
-    
+
     id font_value = [self valueForName:name inPart:@"fonts"];
-    
+
     if ([font_value isKindOfClass:[NSDictionary class]])
     {
       font_name = [font_value objectForKey:kFontNameKey];
@@ -382,15 +390,15 @@ static UIFont *resolve_font(NSString *name, CGFloat size)
     {
       font_name = font_value;
     }
-    
+
     font = resolve_font(font_name, font_size);
-    
+
     if (nil != font)
     {
       [[self fonts] setObject:font forKey:name];
     }
   }
-  
+
   return font;
 }
 
@@ -408,8 +416,10 @@ static UIFont *resolve_font(NSString *name, CGFloat size)
 
 - (id)propertyNamed:(NSString *)name;
 {
-  return [self valueForName:name inPart:@"properties"];
-}       
+  id result = [self valueForName:name inPart:@"properties"];
+
+  return is_reference(result) ? nil : result;
+}
 
 #pragma mark - Colors
 
@@ -424,11 +434,11 @@ static UIFont *resolve_font(NSString *name, CGFloat size)
 - (UIColor *)colorNamed:(NSString *)name;
 {
   UIColor *color = [colors_ objectForKey:name];
-  
+
   if (nil == color)
   {
     color = [UIColor cyanColor];
-    
+
     NSString *value = [self valueForName:name inPart:@"colors"];
     if ([value hasPrefix:kHexPrefix])
     {
@@ -442,10 +452,10 @@ static UIFont *resolve_font(NSString *name, CGFloat size)
         color = [UIColor colorWithPatternImage:image];
       }
     }
-    
+
     [colors_ setObject:color forKey:name];
   }
-  
+
   return color;
 }
 
@@ -472,12 +482,12 @@ static UIFont *resolve_font(NSString *name, CGFloat size)
 - (UIImage *)imageNamed:(NSString *)name;
 {
   NSParameterAssert(nil != name && [name length] > 0);
-  
+
   UIImage *image = [images_ objectForKey:name];
   if (nil == image)
   {
     id value = [self valueForName:name inPart:@"images"];
-    
+
     if ([value isKindOfClass:[NSString class]])
     {
       NSString *image_path = value;
@@ -488,17 +498,17 @@ static UIFont *resolve_font(NSString *name, CGFloat size)
       NSString *image_path = [value objectForKey:@"name"];
       NSNumber *hcap = [value objectForKey:@"horizontal-cap"];
       NSNumber *vcap = [value objectForKey:@"vertical-cap"];
-      
+
       image = [[UIImage imageNamed:image_path] stretchableImageWithLeftCapWidth:[hcap integerValue]
                                                                    topCapHeight:[vcap integerValue]];
     }
-    
+
     if (nil != image)
     {
       [images_ setObject:image forKey:name];
     }
   }
-  
+
   return image;
 }
 
@@ -513,15 +523,15 @@ static UIFont *resolve_font(NSString *name, CGFloat size)
 {
   NSArray *skins = [NSArray arrayWithObjects:self, other, nil];
   NSString *section = merged_section_name(skins);
-  
+
   Skin *result = cached_skin_for_cache(section);
   if (nil == result)
   {
     result = [[[Skin alloc] initWithSkins:skins] autorelease];
     cache_skin(result);
   }
-  
-  return result;  
+
+  return result;
 }
 
 @end

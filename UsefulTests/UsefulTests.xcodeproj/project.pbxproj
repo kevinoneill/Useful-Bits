@@ -10,6 +10,7 @@
 		0A06DF8D14943E1C00F14344 /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A06DF8C14943E1C00F14344 /* GHUnitIOS.framework */; };
 		0A06DF911494486700F14344 /* SkinTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A06DF901494486700F14344 /* SkinTest.m */; };
 		0A06DF9414944DF100F14344 /* skin.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0A06DF9314944DF100F14344 /* skin.bundle */; };
+		0AA4898B155CAE2200DD5DE0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AA4898A155CAE2200DD5DE0 /* Security.framework */; };
 		0AE9E46714943593006D8985 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AE9E46614943593006D8985 /* UIKit.framework */; };
 		0AE9E46914943593006D8985 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AE9E46814943593006D8985 /* Foundation.framework */; };
 		0AE9E46B14943593006D8985 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AE9E46A14943593006D8985 /* CoreGraphics.framework */; };
@@ -22,6 +23,7 @@
 		0A06DF8C14943E1C00F14344 /* GHUnitIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnitIOS.framework; path = ../Vendor/GHUnitIOS.framework; sourceTree = "<group>"; };
 		0A06DF901494486700F14344 /* SkinTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SkinTest.m; sourceTree = "<group>"; };
 		0A06DF9314944DF100F14344 /* skin.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = skin.bundle; sourceTree = "<group>"; };
+		0AA4898A155CAE2200DD5DE0 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		0AE9E46214943593006D8985 /* UsefulTests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UsefulTests.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AE9E46614943593006D8985 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0AE9E46814943593006D8985 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -42,6 +44,7 @@
 				0AE9E46714943593006D8985 /* UIKit.framework in Frameworks */,
 				0AE9E46914943593006D8985 /* Foundation.framework in Frameworks */,
 				0AE9E46B14943593006D8985 /* CoreGraphics.framework in Frameworks */,
+				0AA4898B155CAE2200DD5DE0 /* Security.framework in Frameworks */,
 				0A06DF8D14943E1C00F14344 /* GHUnitIOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -86,6 +89,7 @@
 		0AE9E46514943593006D8985 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0AA4898A155CAE2200DD5DE0 /* Security.framework */,
 				0AE9E48914943AAA006D8985 /* UsefulBits.framework */,
 				0A06DF8C14943E1C00F14344 /* GHUnitIOS.framework */,
 				0AE9E46614943593006D8985 /* UIKit.framework */,
