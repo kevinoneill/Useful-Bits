@@ -514,7 +514,7 @@ static UIFont *resolve_font(NSString *name, CGFloat size)
   NSArray *skins = [NSArray arrayWithObjects:self, other, nil];
   NSString *section = merged_section_name(skins);
   
-  Skin *result = skin_for_section(section);
+  Skin *result = cached_skin_for_cache(section);
   if (nil == result)
   {
     result = [[[Skin alloc] initWithSkins:skins] autorelease];
