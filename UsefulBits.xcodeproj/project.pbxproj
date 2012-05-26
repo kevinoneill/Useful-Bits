@@ -99,6 +99,8 @@
 		0AA1AA0413E9F65400A3D5A7 /* UsefulQuartzFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA1AA0213E9F65400A3D5A7 /* UsefulQuartzFunctions.m */; };
 		0AA1AA0613E9F69C00A3D5A7 /* Quartz+UsefulBits.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AA1AA0513E9F69C00A3D5A7 /* Quartz+UsefulBits.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0AAF05E513E4F5D800FD753A /* UBMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AAF05E413E4F5D800FD753A /* UBMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0AB5CD321570CAA000D4A1E8 /* UIColor+Luminosity.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AB5CD301570CAA000D4A1E8 /* UIColor+Luminosity.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0AB5CD331570CAA000D4A1E8 /* UIColor+Luminosity.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB5CD311570CAA000D4A1E8 /* UIColor+Luminosity.m */; };
 		0AC777B1154AABF90074331C /* UIView+Skin.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AC777AF154AABF90074331C /* UIView+Skin.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0AC777B2154AABF90074331C /* UIView+Skin.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC777B0154AABF90074331C /* UIView+Skin.m */; };
 		0AC777B8154AACA30074331C /* UILabel+Skin.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC777B6154AACA30074331C /* UILabel+Skin.m */; };
@@ -214,6 +216,8 @@
 		0AA1AA0213E9F65400A3D5A7 /* UsefulQuartzFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsefulQuartzFunctions.m; sourceTree = "<group>"; };
 		0AA1AA0513E9F69C00A3D5A7 /* Quartz+UsefulBits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Quartz+UsefulBits.h"; sourceTree = "<group>"; };
 		0AAF05E413E4F5D800FD753A /* UBMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBMacros.h; sourceTree = "<group>"; };
+		0AB5CD301570CAA000D4A1E8 /* UIColor+Luminosity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Luminosity.h"; sourceTree = "<group>"; };
+		0AB5CD311570CAA000D4A1E8 /* UIColor+Luminosity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Luminosity.m"; sourceTree = "<group>"; };
 		0AC777AF154AABF90074331C /* UIView+Skin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Skin.h"; sourceTree = "<group>"; };
 		0AC777B0154AABF90074331C /* UIView+Skin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Skin.m"; sourceTree = "<group>"; };
 		0AC777B6154AACA30074331C /* UILabel+Skin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Skin.m"; sourceTree = "<group>"; };
@@ -377,6 +381,8 @@
 			children = (
 				0AC777B4154AAC6C0074331C /* Skin */,
 				0A39B94D13E4E96B00D0B638 /* UIKit+UsefulBits.h */,
+				0AB5CD301570CAA000D4A1E8 /* UIColor+Luminosity.h */,
+				0AB5CD311570CAA000D4A1E8 /* UIColor+Luminosity.m */,
 				0A39B93313E4E96B00D0B638 /* CustomNavigationBar.h */,
 				0A39B93413E4E96B00D0B638 /* CustomNavigationBar.m */,
 				0A39B93513E4E96B00D0B638 /* CustomNavigationController.h */,
@@ -508,6 +514,7 @@
 				0A1B719814D76E0900247F46 /* Stack.h in Headers */,
 				0AEA933F14DE609200235D65 /* UBFoundationFunctions.h in Headers */,
 				0AC777B1154AABF90074331C /* UIView+Skin.h in Headers */,
+				0AB5CD321570CAA000D4A1E8 /* UIColor+Luminosity.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -653,6 +660,7 @@
 				0AEA934014DE609200235D65 /* UBFoundationFunctions.m in Sources */,
 				0AC777B2154AABF90074331C /* UIView+Skin.m in Sources */,
 				0AC777B8154AACA30074331C /* UILabel+Skin.m in Sources */,
+				0AB5CD331570CAA000D4A1E8 /* UIColor+Luminosity.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

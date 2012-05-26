@@ -1,4 +1,4 @@
-//  Copyright (c) 2011, Kevin O'Neill
+//  Copyright (c) 2011, 2012, Kevin O'Neill
 //  All rights reserved.
 //
 //  Redistribution and use in source and binary forms, with or without
@@ -39,5 +39,6 @@
 #import <UsefulBits/UIView+Size.h>
 #import <UsefulBits/UIView+Actions.h>
 #import <UsefulBits/UIColor+Hex.h>
+#import <UsefulBits/UIColor+Luminosity.h>
 #import <UsefulBits/UIWebView+Blocks.h>
 #import <UsefulBits/DecoratedView.h>
