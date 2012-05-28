@@ -36,6 +36,7 @@
 @synthesize columns = columns_;
 @synthesize gutter = gutter_;
 @synthesize padding = padding_;
+@synthesize contentInset = contentInset_;
 
 + (id)instance;
 {
@@ -53,7 +54,7 @@
   
   NSUInteger column_count = [self columns];
   CGFloat gutter = [self gutter];
-  CGFloat column_width = MAX(ceilf(([view width] - (gutter * (column_count - 1))) / column_count), 0.);
+  CGFloat column_width = MAX(ceilf((([view width] - contentInset_.left - contentInset_.right) - (gutter * (column_count - 1))) / column_count), 0.);
   
   __block CGFloat subview_height = 0.;
   __block CGFloat row_height = 0.;
@@ -85,13 +86,15 @@
     bounds = CGRectUnion(bounds, subviewFrame);
   }]; 
   
-  return CGRectIntegral(bounds).size; 
+  CGSize content_size = CGRectIntegral(bounds).size;
+  
+  return CGSizeMake(content_size.width + contentInset_.left + contentInset_.right, content_size.height + contentInset_.top + contentInset_.bottom); 
 }
 
 - (void)layoutSubviews:(UIView *)view
 {
   [self layout:view action:^(UIView *subview, CGRect subviewFrame) {
-    [subview setFrame:subviewFrame];
+    [subview setFrame:CGRectOffset(subviewFrame, contentInset_.left, contentInset_.top)];
   }]; 
 }
 

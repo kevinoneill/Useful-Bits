@@ -26,9 +26,9 @@
   //  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
   //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-#import <UsefulBits/LayoutManager.h>
+#import "UsefulBits/LayoutManager.h"
 
 @interface ColumnLayout : NSObject <LayoutManager>
 
@@ -37,5 +37,6 @@
 @property (nonatomic ,assign) NSUInteger columns;
 @property (nonatomic ,assign) CGFloat gutter;
 @property (nonatomic ,assign) CGFloat padding;
+@property (nonatomic, assign) UIEdgeInsets contentInset;
 
 @end
