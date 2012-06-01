@@ -77,6 +77,46 @@
        } default:default_action];
 }
 
+- (void)withStringForKey:(id)key do:(void (^) (NSString *value))action;
+{
+  [self withValueForKey:key ofClass:[NSString class] do:action default:NULL];
+}
+
+- (void)withStringForKey:(id)key do:(void (^) (NSString *value))action default:(void (^) (void))default_action;
+{
+  [self withValueForKey:key ofClass:[NSString class] do:action default:default_action];
+}
+
+- (void)withNumberForKey:(id)key do:(void (^) (NSNumber *value))action;
+{
+  [self withValueForKey:key ofClass:[NSNumber class] do:action default:NULL];
+}
+
+- (void)withNumberForKey:(id)key do:(void (^) (NSNumber *value))action default:(void (^) (void))default_action;
+{
+  [self withValueForKey:key ofClass:[NSNumber class] do:action default:default_action];
+}
+
+- (void)withDictionaryForKey:(id)key do:(void (^) (NSDictionary *value))action;
+{
+  [self withValueForKey:key ofClass:[NSDictionary class] do:action default:NULL];
+}
+
+- (void)withDictionaryForKey:(id)key do:(void (^) (NSDictionary *value))action default:(void (^) (void))default_action;
+{
+  [self withValueForKey:key ofClass:[NSDictionary class] do:action default:default_action];
+}
+
+- (void)withArrayForKey:(id)key do:(void (^) (NSArray *value))action;
+{
+  [self withValueForKey:key ofClass:[NSArray class] do:action default:NULL];
+}
+
+- (void)withArrayForKey:(id)key do:(void (^) (NSArray *value))action default:(void (^) (void))default_action;
+{
+  [self withValueForKey:key ofClass:[NSArray class] do:action default:default_action];
+}
+
 - (NSDictionary *)pick:(BOOL (^)(id, id))filter;
 {
   NSMutableDictionary *result = [NSMutableDictionary dictionaryWithCapacity:[self count]];

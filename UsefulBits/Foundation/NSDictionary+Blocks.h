@@ -25,4 +25,16 @@
 - (NSDictionary *)pick:(BOOL (^) (id key, id value))filter;
 - (NSDictionary *)filter:(BOOL (^) (id key, id value))filter;
 
+- (void)withStringForKey:(id)key do:(void (^) (NSString *value))action;
+- (void)withStringForKey:(id)key do:(void (^) (NSString *value))action default:(void (^) (void))default_action;
+
+- (void)withNumberForKey:(id)key do:(void (^) (NSNumber *value))action;
+- (void)withNumberForKey:(id)key do:(void (^) (NSNumber *value))action default:(void (^) (void))default_action;
+
+- (void)withDictionaryForKey:(id)key do:(void (^) (NSDictionary *value))action;
+- (void)withDictionaryForKey:(id)key do:(void (^) (NSDictionary *value))action default:(void (^) (void))default_action;
+
+- (void)withArrayForKey:(id)key do:(void (^) (NSArray *value))action;
+- (void)withArrayForKey:(id)key do:(void (^) (NSArray *value))action default:(void (^) (void))default_action;
+
 @end
