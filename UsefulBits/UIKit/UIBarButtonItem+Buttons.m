@@ -44,8 +44,13 @@
 
 + (UIBarButtonItem *)barButtonWithImageNamed:(NSString *)name action:(void (^) (id sender))action;
 {
+  return [self barButtonWithImage:[UIImage imageNamed:name] action:action];
+}
+
++ (UIBarButtonItem *)barButtonWithImage:(UIImage *)image action:(void (^) (id sender))action;
+{
   UIButton *button = [[[UIButton alloc] initWithFrame:CGRectZero] autorelease];
-  [button setImage:[UIImage imageNamed:name] forState:UIControlStateNormal];
+  [button setImage:image forState:UIControlStateNormal];
   [button sizeToFit];
   [button addEventHandler:action forControlEvents:UIControlEventTouchUpInside];
   

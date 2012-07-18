@@ -35,4 +35,6 @@
 
 + (UIBarButtonItem *)barButtonWithImageNamed:(NSString *)name action:(void (^) (id sender))action;
 
++ (UIBarButtonItem *)barButtonWithImage:(UIImage *)image action:(void (^) (id sender))action;
+
 @end
