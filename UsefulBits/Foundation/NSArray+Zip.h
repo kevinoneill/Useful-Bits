@@ -11,6 +11,10 @@
 @interface NSArray (Zip)
 
 - (NSArray *)zip:(NSArray *)other;
+- (NSArray *)zip:(NSArray *)other padding:(BOOL)padding;
+- (NSArray *)zip:(NSArray *)other combinator:(id (^)(id item1, id item2))combinator;
+- (NSArray *)zip:(NSArray *)other combinator:(id (^)(id item1, id item2))combinator padding:(BOOL)padding;
+
 - (NSArray *)flatten;
 
 @end
