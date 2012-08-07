@@ -51,4 +51,7 @@
 - (BOOL)any:(BOOL (^)(id))block;
 - (BOOL)all:(BOOL (^)(id))block;
 
+- (NSArray *)pad:(NSInteger)size;
+- (NSArray *)pad:(NSInteger)size with:(id (^)())fill;
+
 @end

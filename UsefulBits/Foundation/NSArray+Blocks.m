@@ -215,4 +215,26 @@
   return NSNotFound == [self indexOfFirst:^ BOOL (id item) { return !block(item); }];
 }
 
+- (NSArray *)pad:(NSInteger)size;
+{
+  return [self pad:size with:^ id (NSInteger index) {
+    return [NSNull null];
+  }];
+}
+
+- (NSArray *)pad:(NSInteger)size with:(id (^)())fill;
+{
+  if ([self count] >= size) return self;
+  
+  NSMutableArray *result = [NSMutableArray arrayWithCapacity:size];
+  [result addObjectsFromArray:self];
+  
+  for (NSInteger idx = [result count]; idx < size; idx++)
+  {
+    [result addObject:fill()];
+  }
+  
+  return [[result copy] autorelease];
+}
+
 @end
