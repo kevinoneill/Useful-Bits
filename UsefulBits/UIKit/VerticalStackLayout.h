@@ -26,7 +26,7 @@
   //  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
   //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 #import <UsefulBits/LayoutManager.h>
 
@@ -34,6 +34,9 @@
 
 + (id)instance;
 
-@property (nonatomic ,assign) CGFloat padding;
+@property (nonatomic, assign) CGFloat padding;
+@property (nonatomic, assign) UIEdgeInsets contentInsets;
+
+- (id)initWithPadding:(CGFloat)padding contentInsets:(UIEdgeInsets)insets;
 
 @end

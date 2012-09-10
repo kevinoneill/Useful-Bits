@@ -35,32 +35,50 @@
 @implementation VerticalStackLayout
 
 @synthesize padding = padding_;
+@synthesize contentInsets = contentInsets_;
 
 + (id)instance;
 {
   return [[[[self class] alloc] init] autorelease];
 }
 
+- (id)init;
+{
+  return [self initWithPadding:0 contentInsets:UIEdgeInsetsZero];
+}
+
+- (id)initWithPadding:(CGFloat)padding contentInsets:(UIEdgeInsets)insets;
+{
+  if ((self = [super init]))
+  {
+    [self setPadding:padding];
+    [self setContentInsets:insets];
+  }
+  
+  return self;
+}
+
 - (void)layout:(UIView *)view action:(void (^) (UIView *subview, CGRect subviewFrame))action;
 {
   if ([[view subviews] count] == 0) return;
   
-  CGFloat width = [view width];
+  CGRect content_bounds = UIEdgeInsetsInsetRect([view bounds], [self contentInsets]);
+  CGFloat width = CGRectGetWidth(content_bounds);
   
   CGFloat subview_height = [[[[view subviews] trunk] reduce: ^ id (id height, id subview) {
     CGSize subview_size = [subview sizeThatFits:CGSizeMake(width, 0.)];
-    CGRect subview_frame = CGRectMake(0, [height floatValue], width, subview_size.height);
+    CGRect subview_frame = CGRectMake(CGRectGetMinX(content_bounds), [height floatValue], width, subview_size.height);
     
     action(subview, subview_frame);
     
     CGFloat bottom = ceilf(CGRectGetMaxY(subview_frame) + [self padding]);
 
     return [NSNumber numberWithFloat:bottom];
-  } initial:[NSNumber numberWithFloat:0.]] floatValue];
+  } initial:[NSNumber numberWithFloat:CGRectGetMinY(content_bounds)]] floatValue];
   
   UIView *last = [[view subviews] last];
   CGSize last_size = [last sizeThatFits:CGSizeMake(width, 0.)];
-  CGRect last_frame = CGRectMake(0, subview_height, width, last_size.height);
+  CGRect last_frame = CGRectMake(CGRectGetMinX(content_bounds), subview_height, width, last_size.height);
 
   action(last, last_frame);
 }
@@ -68,11 +86,13 @@
 - (CGSize)sizeThatFits:(CGSize)size view:(UIView *)view;
 {
   __block CGRect bounds = CGRectZero;
+
   [self layout:view action:^(UIView *subview, CGRect subviewFrame) {
     bounds = CGRectUnion(bounds, subviewFrame);
-  }]; 
+  }];
   
-  return CGRectIntegral(bounds).size; 
+  CGSize content_size = CGRectIntegral(bounds).size;
+  return CGSizeMake(size.width, [self contentInsets].top +  content_size.height + [self contentInsets].bottom);
 }
 
 - (void)layoutSubviews:(UIView *)view
