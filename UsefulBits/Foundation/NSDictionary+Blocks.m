@@ -28,6 +28,38 @@
   return [[result copy] autorelease];
 }
 
+- (NSDictionary *)transform:(id (^) (id key, id value))action;
+{
+  return [self transform:action filterNil:NO];
+}
+
+- (NSDictionary *)transform:(id (^) (id key, id value))action filterNil:(BOOL)filterNil;
+{
+  NSMutableDictionary *result = [NSMutableDictionary dictionaryWithDictionary:self];
+
+  [self enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+    id value = action(key, obj);
+
+    if (value)
+    {
+      [result setObject:value forKey:key];
+    }
+    else
+    {
+      if (filterNil)
+      {
+        [result removeObjectForKey:key];
+      }
+      else
+      {
+        [result setObject:[NSNull null] forKey:key];
+      }
+    }
+  }];
+
+  return [[result copy] autorelease];
+}
+
 - (void)withValueForKey:(id)key meetingCondition:(BOOL (^) (id))condition do:(void (^) (id))action;
 {
   [self withValueForKey:key meetingCondition:condition do:action default:NULL];
