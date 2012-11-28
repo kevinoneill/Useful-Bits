@@ -18,6 +18,7 @@
 		0AE9E47314943593006D8985 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE9E47214943593006D8985 /* main.m */; };
 		0AE9E48B14943AAA006D8985 /* UsefulBits.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AE9E48914943AAA006D8985 /* UsefulBits.framework */; };
 		AA6F7CDC15D0BF0700D881A4 /* NSArrayPaddingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6F7CDB15D0BF0700D881A4 /* NSArrayPaddingTests.m */; };
+		AA713C6E1665941900E5A4C2 /* NSArrayZipTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AA713C6D1665941900E5A4C2 /* NSArrayZipTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		0AE9E47414943593006D8985 /* UsefulTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UsefulTests-Prefix.pch"; sourceTree = "<group>"; };
 		0AE9E48914943AAA006D8985 /* UsefulBits.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UsefulBits.framework; path = "../build/Release-iphoneos/UsefulBits.framework"; sourceTree = "<group>"; };
 		AA6F7CDB15D0BF0700D881A4 /* NSArrayPaddingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSArrayPaddingTests.m; path = Foundation/NSArrayPaddingTests.m; sourceTree = "<group>"; };
+		AA713C6D1665941900E5A4C2 /* NSArrayZipTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSArrayZipTests.m; path = Foundation/NSArrayZipTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				AA6F7CDB15D0BF0700D881A4 /* NSArrayPaddingTests.m */,
+				AA713C6D1665941900E5A4C2 /* NSArrayZipTests.m */,
 			);
 			name = Foundation;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 				0AE9E47314943593006D8985 /* main.m in Sources */,
 				0A06DF911494486700F14344 /* SkinTest.m in Sources */,
 				AA6F7CDC15D0BF0700D881A4 /* NSArrayPaddingTests.m in Sources */,
+				AA713C6E1665941900E5A4C2 /* NSArrayZipTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

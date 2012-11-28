@@ -15,36 +15,37 @@
 
 - (NSArray *)zip:(NSArray *)other;
 {
-  return [self zip:other padding:NO];
+  return [self zip:other truncate:YES];
 }
 
-- (NSArray *)zip:(NSArray *)other padding:(BOOL)padding;
+- (NSArray *)zip:(NSArray *)other truncate:(BOOL)truncate;
 {
   return [self zip:other combinator:^id(id item1, id item2) {
     return [NSArray arrayWithObjects:item1, item2, nil];
-  } padding:padding];
+  } truncate:truncate];
 }
 
 - (NSArray *)zip:(NSArray *)other combinator:(id (^)(id item1, id item2))combinator;
 {
-  return [self zip:other combinator:combinator padding:NO];
+  return [self zip:other combinator:combinator truncate:YES];
 }
 
-- (NSArray *)zip:(NSArray *)other combinator:(id (^)(id item1, id item2))combinator padding:(BOOL)padding;
+- (NSArray *)zip:(NSArray *)other combinator:(id (^)(id item1, id item2))combinator truncate:(BOOL)truncate;
 {
-  NSInteger size = [other count] > [self count] ? [other count] : [self count];
+  NSInteger size = truncate ? MIN([other count], [self count]) : MAX([other count], [self count]);
   
-  NSArray *array1 = padding ? [self pad:size] : self;
-  NSArray *array2 = padding ? [other pad:size] : other;
+  NSArray *array1 = [self pad:size];
+  NSArray *array2 = [other pad:size];
   
-  NSMutableArray *result = [NSMutableArray arrayWithCapacity:size];
+  NSMutableArray *results = [NSMutableArray arrayWithCapacity:size];
+  
   for (NSUInteger idx = 0; idx < size; idx++)
   {
     id result = combinator([array1 objectAtIndex:idx], [array2 objectAtIndex:idx]);
-    [result addObject:result];
+    [results addObject:result];
   }
   
-  return [[result copy] autorelease];
+  return [[results copy] autorelease];
 }
 
 - (NSArray *)flatten;
