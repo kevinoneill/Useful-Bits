@@ -118,6 +118,8 @@
 		0AEA934014DE609200235D65 /* UBFoundationFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AEA933E14DE609200235D65 /* UBFoundationFunctions.m */; };
 		0AF3ADFC141364FF00E6C6C1 /* NSArray+Zip.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AF3ADFA141364FE00E6C6C1 /* NSArray+Zip.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0AF3ADFD141364FF00E6C6C1 /* NSArray+Zip.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF3ADFB141364FE00E6C6C1 /* NSArray+Zip.m */; };
+		AA713C5D16658A1F00E5A4C2 /* HorizontalStackLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = AA713C5B16658A1F00E5A4C2 /* HorizontalStackLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AA713C5E16658A1F00E5A4C2 /* HorizontalStackLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = AA713C5C16658A1F00E5A4C2 /* HorizontalStackLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -235,6 +237,8 @@
 		0AEA933E14DE609200235D65 /* UBFoundationFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBFoundationFunctions.m; sourceTree = "<group>"; };
 		0AF3ADFA141364FE00E6C6C1 /* NSArray+Zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Zip.h"; sourceTree = "<group>"; };
 		0AF3ADFB141364FE00E6C6C1 /* NSArray+Zip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Zip.m"; sourceTree = "<group>"; };
+		AA713C5B16658A1F00E5A4C2 /* HorizontalStackLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizontalStackLayout.h; sourceTree = "<group>"; };
+		AA713C5C16658A1F00E5A4C2 /* HorizontalStackLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorizontalStackLayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,6 +259,8 @@
 		0A0158E51414D8E00039B4D4 /* Layouts */ = {
 			isa = PBXGroup;
 			children = (
+				AA713C5B16658A1F00E5A4C2 /* HorizontalStackLayout.h */,
+				AA713C5C16658A1F00E5A4C2 /* HorizontalStackLayout.m */,
 				0A39B93913E4E96B00D0B638 /* HorizontalFillLayout.h */,
 				0A39B93A13E4E96B00D0B638 /* HorizontalFillLayout.m */,
 				0A0158E61414D9560039B4D4 /* VerticalStackLayout.h */,
@@ -515,6 +521,7 @@
 				0AEA933F14DE609200235D65 /* UBFoundationFunctions.h in Headers */,
 				0AC777B1154AABF90074331C /* UIView+Skin.h in Headers */,
 				0AB5CD321570CAA000D4A1E8 /* UIColor+Luminosity.h in Headers */,
+				AA713C5D16658A1F00E5A4C2 /* HorizontalStackLayout.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -661,6 +668,7 @@
 				0AC777B2154AABF90074331C /* UIView+Skin.m in Sources */,
 				0AC777B8154AACA30074331C /* UILabel+Skin.m in Sources */,
 				0AB5CD331570CAA000D4A1E8 /* UIColor+Luminosity.m in Sources */,
+				AA713C5E16658A1F00E5A4C2 /* HorizontalStackLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
