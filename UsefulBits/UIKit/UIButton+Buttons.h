@@ -26,27 +26,14 @@
 //  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#import "UIBarButtonItem+Buttons.h"
+#import <UIKit/UIKit.h>
 
-#import "UIButton+Buttons.h"
+@interface UIButton (Buttons)
 
-@implementation UIBarButtonItem (Buttons)
++ (UIButton *)buttonWithImageNamed:(NSString *)name target:(id)target action:(SEL)action;
 
-+ (UIBarButtonItem *)barButtonWithImageNamed:(NSString *)name target:(id)target action:(SEL)action;
-{
-  UIButton *button = [UIButton buttonWithImageNamed:name target:target action:action];
-  return [[[UIBarButtonItem alloc] initWithCustomView:button] autorelease];
-}
++ (UIButton *)buttonWithImageNamed:(NSString *)name action:(void (^) (id sender))action;
 
-+ (UIBarButtonItem *)barButtonWithImageNamed:(NSString *)name action:(void (^) (id sender))action;
-{
-  return [self barButtonWithImage:[UIImage imageNamed:name] action:action];
-}
-
-+ (UIBarButtonItem *)barButtonWithImage:(UIImage *)image action:(void (^) (id sender))action;
-{
-  UIButton *button = [UIButton buttonWithImage:image action:action];
-  return [[[UIBarButtonItem alloc] initWithCustomView:button] autorelease];
-}
++ (UIButton *)buttonWithImage:(UIImage *)image action:(void (^) (id sender))action;
 
 @end

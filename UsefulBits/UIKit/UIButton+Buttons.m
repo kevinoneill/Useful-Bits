@@ -26,27 +26,36 @@
 //  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#import "UIBarButtonItem+Buttons.h"
-
 #import "UIButton+Buttons.h"
 
-@implementation UIBarButtonItem (Buttons)
+#import "UIControl+Blocks.h"
 
-+ (UIBarButtonItem *)barButtonWithImageNamed:(NSString *)name target:(id)target action:(SEL)action;
+@implementation UIButton (Buttons)
+
++ (UIButton *)buttonWithImageNamed:(NSString *)name target:(id)target action:(SEL)action;
 {
-  UIButton *button = [UIButton buttonWithImageNamed:name target:target action:action];
-  return [[[UIBarButtonItem alloc] initWithCustomView:button] autorelease];
+  UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+  [button setImage:[UIImage imageNamed:name] forState:UIControlStateNormal];
+  [button sizeToFit];
+  [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+  
+  return button;
 }
 
-+ (UIBarButtonItem *)barButtonWithImageNamed:(NSString *)name action:(void (^) (id sender))action;
++ (UIButton *)buttonWithImageNamed:(NSString *)name action:(void (^) (id sender))action;
 {
-  return [self barButtonWithImage:[UIImage imageNamed:name] action:action];
+  return [self buttonWithImage:[UIImage imageNamed:name] action:action];
 }
 
-+ (UIBarButtonItem *)barButtonWithImage:(UIImage *)image action:(void (^) (id sender))action;
++ (UIButton *)buttonWithImage:(UIImage *)image action:(void (^) (id sender))action;
 {
-  UIButton *button = [UIButton buttonWithImage:image action:action];
-  return [[[UIBarButtonItem alloc] initWithCustomView:button] autorelease];
+  UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+  [button setImage:image forState:UIControlStateNormal];
+  [button sizeToFit];
+  [button addEventHandler:action forControlEvents:UIControlEventTouchUpInside];
+  
+  return button;
 }
+
 
 @end
