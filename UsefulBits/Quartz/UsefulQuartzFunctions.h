@@ -39,3 +39,4 @@ extern CGRect CGRectInsetRight(CGRect rect, CGFloat inset);
 extern CGRect CGRectInsetTop(CGRect rect, CGFloat inset);
 extern CGRect CGRectInsetBottom(CGRect rect, CGFloat inset);
 
+extern CGRect CGRectMakeSizedCenteredInRect(CGSize size, CGRect rect2);

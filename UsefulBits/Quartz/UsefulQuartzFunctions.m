@@ -69,3 +69,8 @@ CGRect CGRectMakeSized(CGSize size)
 {
   return CGRectStandardize(CGRectMake(0., 0., size.width, size.height));
 }
+
+CGRect CGRectMakeSizedCenteredInRect(CGSize size, CGRect rect2)
+{
+  return CGRectMake(floorf(CGRectGetMidX(rect2) - (size.width / 2)), floorf(CGRectGetMidY(rect2) - (size.height / 2)), size.width, size.height);
+}
