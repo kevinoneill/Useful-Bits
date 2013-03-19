@@ -118,6 +118,8 @@
 		0AEA934014DE609200235D65 /* UBFoundationFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AEA933E14DE609200235D65 /* UBFoundationFunctions.m */; };
 		0AF3ADFC141364FF00E6C6C1 /* NSArray+Zip.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AF3ADFA141364FE00E6C6C1 /* NSArray+Zip.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0AF3ADFD141364FF00E6C6C1 /* NSArray+Zip.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF3ADFB141364FE00E6C6C1 /* NSArray+Zip.m */; };
+		A320F20C16F6C5DB0026BE1C /* HorizontalStackLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = A320F20A16F6C5DB0026BE1C /* HorizontalStackLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A320F20D16F6C5DB0026BE1C /* HorizontalStackLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A320F20B16F6C5DB0026BE1C /* HorizontalStackLayout.m */; };
 		AA1044B5166D5D2F00F91D44 /* UIButton+Buttons.h in Headers */ = {isa = PBXBuildFile; fileRef = AA1044B3166D5D2F00F91D44 /* UIButton+Buttons.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AA1044B6166D5D2F00F91D44 /* UIButton+Buttons.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1044B4166D5D2F00F91D44 /* UIButton+Buttons.m */; };
 /* End PBXBuildFile section */
@@ -237,6 +239,8 @@
 		0AEA933E14DE609200235D65 /* UBFoundationFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBFoundationFunctions.m; sourceTree = "<group>"; };
 		0AF3ADFA141364FE00E6C6C1 /* NSArray+Zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Zip.h"; sourceTree = "<group>"; };
 		0AF3ADFB141364FE00E6C6C1 /* NSArray+Zip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Zip.m"; sourceTree = "<group>"; };
+		A320F20A16F6C5DB0026BE1C /* HorizontalStackLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizontalStackLayout.h; sourceTree = "<group>"; };
+		A320F20B16F6C5DB0026BE1C /* HorizontalStackLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorizontalStackLayout.m; sourceTree = "<group>"; };
 		AA1044B3166D5D2F00F91D44 /* UIButton+Buttons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Buttons.h"; sourceTree = "<group>"; };
 		AA1044B4166D5D2F00F91D44 /* UIButton+Buttons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Buttons.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -263,6 +267,8 @@
 				0A39B93A13E4E96B00D0B638 /* HorizontalFillLayout.m */,
 				0A0158E61414D9560039B4D4 /* VerticalStackLayout.h */,
 				0A0158E71414D9560039B4D4 /* VerticalStackLayout.m */,
+				A320F20A16F6C5DB0026BE1C /* HorizontalStackLayout.h */,
+				A320F20B16F6C5DB0026BE1C /* HorizontalStackLayout.m */,
 				0A9849B41414F77000F85D79 /* ColumnLayout.h */,
 				0A9849B51414F77000F85D79 /* ColumnLayout.m */,
 			);
@@ -522,6 +528,7 @@
 				0AC777B1154AABF90074331C /* UIView+Skin.h in Headers */,
 				0AB5CD321570CAA000D4A1E8 /* UIColor+Luminosity.h in Headers */,
 				AA1044B5166D5D2F00F91D44 /* UIButton+Buttons.h in Headers */,
+				A320F20C16F6C5DB0026BE1C /* HorizontalStackLayout.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -669,6 +676,7 @@
 				0AC777B8154AACA30074331C /* UILabel+Skin.m in Sources */,
 				0AB5CD331570CAA000D4A1E8 /* UIColor+Luminosity.m in Sources */,
 				AA1044B6166D5D2F00F91D44 /* UIButton+Buttons.m in Sources */,
+				A320F20D16F6C5DB0026BE1C /* HorizontalStackLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
