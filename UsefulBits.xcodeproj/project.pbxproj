@@ -7,120 +7,131 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A0158E81414D9560039B4D4 /* VerticalStackLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A0158E61414D9560039B4D4 /* VerticalStackLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0A0158E91414D9560039B4D4 /* VerticalStackLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0158E71414D9560039B4D4 /* VerticalStackLayout.m */; };
-		0A1B719814D76E0900247F46 /* Stack.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A1B719614D76E0900247F46 /* Stack.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0A1B719914D76E0900247F46 /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A1B719714D76E0900247F46 /* Stack.m */; };
-		0A253F7214AC1863003ABC71 /* NSMutableDictionary+ConditionalSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A253F7014AC1863003ABC71 /* NSMutableDictionary+ConditionalSet.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0A253F7314AC1863003ABC71 /* NSMutableDictionary+ConditionalSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A253F7114AC1863003ABC71 /* NSMutableDictionary+ConditionalSet.m */; };
-		0A253FA114AD4B8C003ABC71 /* PasswordManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A253F9F14AD4B8C003ABC71 /* PasswordManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0A253FA214AD4B8C003ABC71 /* PasswordManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A253FA014AD4B8C003ABC71 /* PasswordManager.m */; };
-		0A253FA514AD4C0A003ABC71 /* NSMutableDictionary+PasswordManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A253FA314AD4C0A003ABC71 /* NSMutableDictionary+PasswordManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0A253FA614AD4C0A003ABC71 /* NSMutableDictionary+PasswordManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A253FA414AD4C0A003ABC71 /* NSMutableDictionary+PasswordManager.m */; };
-		0A253FA814AD4E47003ABC71 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A253FA714AD4E47003ABC71 /* Security.framework */; };
-		0A253FAA14AD4E67003ABC71 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A253FA914AD4E67003ABC71 /* QuartzCore.framework */; };
-		0A265A1A146CAEB500C8A317 /* NSDictionary+Types.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A265A18146CAEB500C8A317 /* NSDictionary+Types.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0A265A1B146CAEB500C8A317 /* NSDictionary+Types.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A265A19146CAEB500C8A317 /* NSDictionary+Types.m */; };
-		0A352A8213E6103A008D4A82 /* NSObject+Marker.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A352A8013E6103A008D4A82 /* NSObject+Marker.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0A352A8313E6103A008D4A82 /* NSObject+Marker.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A352A8113E6103A008D4A82 /* NSObject+Marker.m */; };
-		0A39B90A13E4E81100D0B638 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A39B90913E4E81100D0B638 /* Foundation.framework */; };
-		0A39B91013E4E81100D0B638 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0A39B90E13E4E81100D0B638 /* InfoPlist.strings */; };
-		0A39B95D13E4E96B00D0B638 /* Foundation+UsefulBits.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B91B13E4E96B00D0B638 /* Foundation+UsefulBits.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0A39B95E13E4E96B00D0B638 /* NSArray+Access.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B91C13E4E96B00D0B638 /* NSArray+Access.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0A39B95F13E4E96B00D0B638 /* NSArray+Access.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B91D13E4E96B00D0B638 /* NSArray+Access.m */; };
-		0A39B96013E4E96B00D0B638 /* NSArray+Blocks.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B91E13E4E96B00D0B638 /* NSArray+Blocks.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0A39B96113E4E96B00D0B638 /* NSArray+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B91F13E4E96B00D0B638 /* NSArray+Blocks.m */; };
-		0A39B96213E4E96B00D0B638 /* NSDictionary+URLParams.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B92013E4E96B00D0B638 /* NSDictionary+URLParams.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0A39B96313E4E96B00D0B638 /* NSDictionary+URLParams.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B92113E4E96B00D0B638 /* NSDictionary+URLParams.m */; };
-		0A39B96413E4E96B00D0B638 /* NSLock+Blocks.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B92213E4E96B00D0B638 /* NSLock+Blocks.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0A39B96513E4E96B00D0B638 /* NSLock+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B92313E4E96B00D0B638 /* NSLock+Blocks.m */; };
-		0A39B96613E4E96B00D0B638 /* NSObject+Blocks.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B92413E4E96B00D0B638 /* NSObject+Blocks.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0A39B96713E4E96B00D0B638 /* NSObject+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B92513E4E96B00D0B638 /* NSObject+Blocks.m */; };
-		0A39B96813E4E96B00D0B638 /* NSObject+Creation.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B92613E4E96B00D0B638 /* NSObject+Creation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0A39B96913E4E96B00D0B638 /* NSObject+Creation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B92713E4E96B00D0B638 /* NSObject+Creation.m */; };
-		0A39B96A13E4E96B00D0B638 /* NSOperationQueue+WorkerQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B92813E4E96B00D0B638 /* NSOperationQueue+WorkerQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0A39B96B13E4E96B00D0B638 /* NSOperationQueue+WorkerQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B92913E4E96B00D0B638 /* NSOperationQueue+WorkerQueue.m */; };
-		0A39B96C13E4E96B00D0B638 /* NSSet+Blocks.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B92A13E4E96B00D0B638 /* NSSet+Blocks.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0A39B96D13E4E96B00D0B638 /* NSSet+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B92B13E4E96B00D0B638 /* NSSet+Blocks.m */; };
-		0A39B96E13E4E96B00D0B638 /* NSSet+Intersection.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B92C13E4E96B00D0B638 /* NSSet+Intersection.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0A39B96F13E4E96B00D0B638 /* NSSet+Intersection.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B92D13E4E96B00D0B638 /* NSSet+Intersection.m */; };
-		0A39B97013E4E96B00D0B638 /* NSString+URLEncode.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B92E13E4E96B00D0B638 /* NSString+URLEncode.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0A39B97113E4E96B00D0B638 /* NSString+URLEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B92F13E4E96B00D0B638 /* NSString+URLEncode.m */; };
-		0A39B97213E4E96B00D0B638 /* NSURL+Parameters.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B93013E4E96B00D0B638 /* NSURL+Parameters.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0A39B97313E4E96B00D0B638 /* NSURL+Parameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B93113E4E96B00D0B638 /* NSURL+Parameters.m */; };
-		0A39B97413E4E96B00D0B638 /* CustomNavigationBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B93313E4E96B00D0B638 /* CustomNavigationBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0A39B97513E4E96B00D0B638 /* CustomNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B93413E4E96B00D0B638 /* CustomNavigationBar.m */; };
-		0A39B97613E4E96B00D0B638 /* CustomNavigationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B93513E4E96B00D0B638 /* CustomNavigationController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0A39B97713E4E96B00D0B638 /* CustomNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B93613E4E96B00D0B638 /* CustomNavigationController.m */; };
-		0A39B97813E4E96B00D0B638 /* DecoratedView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B93713E4E96B00D0B638 /* DecoratedView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0A39B97913E4E96B00D0B638 /* DecoratedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B93813E4E96B00D0B638 /* DecoratedView.m */; };
-		0A39B97A13E4E96B00D0B638 /* HorizontalFillLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B93913E4E96B00D0B638 /* HorizontalFillLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0A39B97B13E4E96B00D0B638 /* HorizontalFillLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B93A13E4E96B00D0B638 /* HorizontalFillLayout.m */; };
-		0A39B97C13E4E96B00D0B638 /* Layout.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B93B13E4E96B00D0B638 /* Layout.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0A39B97D13E4E96B00D0B638 /* LayoutManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B93C13E4E96B00D0B638 /* LayoutManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0A39B97E13E4E96B00D0B638 /* ManagedLayoutView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B93D13E4E96B00D0B638 /* ManagedLayoutView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0A39B97F13E4E96B00D0B638 /* ManagedLayoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B93E13E4E96B00D0B638 /* ManagedLayoutView.m */; };
-		0A39B98013E4E96B00D0B638 /* UBAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B93F13E4E96B00D0B638 /* UBAlertView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0A39B98113E4E96B00D0B638 /* UBAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B94013E4E96B00D0B638 /* UBAlertView.m */; };
-		0A39B98213E4E96B00D0B638 /* UIApplication+Orientation.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B94113E4E96B00D0B638 /* UIApplication+Orientation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0A39B98313E4E96B00D0B638 /* UIApplication+Orientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B94213E4E96B00D0B638 /* UIApplication+Orientation.m */; };
-		0A39B98413E4E96B00D0B638 /* UIBarButtonItem+Buttons.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B94313E4E96B00D0B638 /* UIBarButtonItem+Buttons.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0A39B98513E4E96B00D0B638 /* UIBarButtonItem+Buttons.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B94413E4E96B00D0B638 /* UIBarButtonItem+Buttons.m */; };
-		0A39B98613E4E96B00D0B638 /* UIControl+Blocks.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B94513E4E96B00D0B638 /* UIControl+Blocks.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0A39B98713E4E96B00D0B638 /* UIControl+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B94613E4E96B00D0B638 /* UIControl+Blocks.m */; };
-		0A39B98813E4E96B00D0B638 /* UIGestureRecognizer+Blocks.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B94713E4E96B00D0B638 /* UIGestureRecognizer+Blocks.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0A39B98913E4E96B00D0B638 /* UIGestureRecognizer+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B94813E4E96B00D0B638 /* UIGestureRecognizer+Blocks.m */; };
-		0A39B98A13E4E96B00D0B638 /* UIImage+Size.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B94913E4E96B00D0B638 /* UIImage+Size.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0A39B98B13E4E96B00D0B638 /* UIImage+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B94A13E4E96B00D0B638 /* UIImage+Size.m */; };
-		0A39B98C13E4E96B00D0B638 /* UIImage+Tint.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B94B13E4E96B00D0B638 /* UIImage+Tint.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0A39B98D13E4E96B00D0B638 /* UIImage+Tint.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B94C13E4E96B00D0B638 /* UIImage+Tint.m */; };
-		0A39B98E13E4E96B00D0B638 /* UIKit+UsefulBits.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B94D13E4E96B00D0B638 /* UIKit+UsefulBits.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0A39B98F13E4E96B00D0B638 /* UINavigationBar+Background.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B94E13E4E96B00D0B638 /* UINavigationBar+Background.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0A39B99013E4E96B00D0B638 /* UINavigationBar+Background.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B94F13E4E96B00D0B638 /* UINavigationBar+Background.m */; };
-		0A39B99113E4E96B00D0B638 /* UIView+Actions.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B95013E4E96B00D0B638 /* UIView+Actions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0A39B99213E4E96B00D0B638 /* UIView+Actions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B95113E4E96B00D0B638 /* UIView+Actions.m */; };
-		0A39B99313E4E96B00D0B638 /* UIView+Decorators.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B95213E4E96B00D0B638 /* UIView+Decorators.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0A39B99413E4E96B00D0B638 /* UIView+Decorators.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B95313E4E96B00D0B638 /* UIView+Decorators.m */; };
-		0A39B99513E4E96B00D0B638 /* UIView+Hierarchy.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B95413E4E96B00D0B638 /* UIView+Hierarchy.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0A39B99613E4E96B00D0B638 /* UIView+Hierarchy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B95513E4E96B00D0B638 /* UIView+Hierarchy.m */; };
-		0A39B99713E4E96B00D0B638 /* UIView+Positioning.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B95613E4E96B00D0B638 /* UIView+Positioning.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0A39B99813E4E96B00D0B638 /* UIView+Positioning.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B95713E4E96B00D0B638 /* UIView+Positioning.m */; };
-		0A39B99913E4E96B00D0B638 /* UIView+Size.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B95813E4E96B00D0B638 /* UIView+Size.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0A39B99A13E4E96B00D0B638 /* UIView+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B95913E4E96B00D0B638 /* UIView+Size.m */; };
-		0A39B99B13E4E96B00D0B638 /* ViewDecorators.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B95A13E4E96B00D0B638 /* ViewDecorators.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0A39B99C13E4E96B00D0B638 /* ViewDecorators.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B95B13E4E96B00D0B638 /* ViewDecorators.m */; };
-		0A39B99D13E4E96B00D0B638 /* UsefulBits.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B95C13E4E96B00D0B638 /* UsefulBits.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0A39B9A013E4EA4A00D0B638 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A39B99F13E4EA4A00D0B638 /* UIKit.framework */; };
-		0A7B0BC6147F7CE1002A32AF /* NSDictionary+Blocks.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A7B0BC4147F7CE1002A32AF /* NSDictionary+Blocks.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0A7B0BC7147F7CE1002A32AF /* NSDictionary+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A7B0BC5147F7CE1002A32AF /* NSDictionary+Blocks.m */; };
-		0A9849B61414F77000F85D79 /* ColumnLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A9849B41414F77000F85D79 /* ColumnLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0A9849B71414F77000F85D79 /* ColumnLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9849B51414F77000F85D79 /* ColumnLayout.m */; };
-		0AA1AA0313E9F65400A3D5A7 /* UsefulQuartzFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AA1AA0113E9F65400A3D5A7 /* UsefulQuartzFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0AA1AA0413E9F65400A3D5A7 /* UsefulQuartzFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA1AA0213E9F65400A3D5A7 /* UsefulQuartzFunctions.m */; };
-		0AA1AA0613E9F69C00A3D5A7 /* Quartz+UsefulBits.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AA1AA0513E9F69C00A3D5A7 /* Quartz+UsefulBits.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0AAF05E513E4F5D800FD753A /* UBMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AAF05E413E4F5D800FD753A /* UBMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0AB5CD321570CAA000D4A1E8 /* UIColor+Luminosity.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AB5CD301570CAA000D4A1E8 /* UIColor+Luminosity.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0AB5CD331570CAA000D4A1E8 /* UIColor+Luminosity.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB5CD311570CAA000D4A1E8 /* UIColor+Luminosity.m */; };
-		0AC777B1154AABF90074331C /* UIView+Skin.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AC777AF154AABF90074331C /* UIView+Skin.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0AC777B2154AABF90074331C /* UIView+Skin.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC777B0154AABF90074331C /* UIView+Skin.m */; };
-		0AC777B8154AACA30074331C /* UILabel+Skin.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC777B6154AACA30074331C /* UILabel+Skin.m */; };
-		0AE0165314A323330061F9F0 /* UIWebView+Blocks.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AE0165114A323330061F9F0 /* UIWebView+Blocks.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0AE0165414A323330061F9F0 /* UIWebView+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE0165214A323330061F9F0 /* UIWebView+Blocks.m */; };
-		0AE3E07E149205C200C45DC9 /* UIColor+Hex.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AE3E07C149205C200C45DC9 /* UIColor+Hex.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0AE3E07F149205C200C45DC9 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE3E07D149205C200C45DC9 /* UIColor+Hex.m */; };
-		0AE3E0831492083100C45DC9 /* NSNumber+Hex.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AE3E0811492083100C45DC9 /* NSNumber+Hex.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0AE3E0841492083100C45DC9 /* NSNumber+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE3E0821492083100C45DC9 /* NSNumber+Hex.m */; };
-		0AE9E44914920EA8006D8985 /* Skin.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AE9E44714920EA8006D8985 /* Skin.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0AE9E44A14920EA8006D8985 /* Skin.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE9E44814920EA8006D8985 /* Skin.m */; };
-		0AE9E4521492E829006D8985 /* NSDictionary+Intersection.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AE9E4501492E829006D8985 /* NSDictionary+Intersection.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0AE9E4531492E829006D8985 /* NSDictionary+Intersection.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE9E4511492E829006D8985 /* NSDictionary+Intersection.m */; };
-		0AEA933F14DE609200235D65 /* UBFoundationFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AEA933D14DE609200235D65 /* UBFoundationFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0AEA934014DE609200235D65 /* UBFoundationFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AEA933E14DE609200235D65 /* UBFoundationFunctions.m */; };
-		0AF3ADFC141364FF00E6C6C1 /* NSArray+Zip.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AF3ADFA141364FE00E6C6C1 /* NSArray+Zip.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0AF3ADFD141364FF00E6C6C1 /* NSArray+Zip.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF3ADFB141364FE00E6C6C1 /* NSArray+Zip.m */; };
-		AA1044B5166D5D2F00F91D44 /* UIButton+Buttons.h in Headers */ = {isa = PBXBuildFile; fileRef = AA1044B3166D5D2F00F91D44 /* UIButton+Buttons.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AA1044B6166D5D2F00F91D44 /* UIButton+Buttons.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1044B4166D5D2F00F91D44 /* UIButton+Buttons.m */; };
+		DD700C58176FFA5500D0BA2D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A39B90913E4E81100D0B638 /* Foundation.framework */; };
+		DD700C63176FFA7C00D0BA2D /* UBFoundationFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AEA933E14DE609200235D65 /* UBFoundationFunctions.m */; };
+		DD700C64176FFA7C00D0BA2D /* NSArray+Access.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B91D13E4E96B00D0B638 /* NSArray+Access.m */; };
+		DD700C65176FFA7C00D0BA2D /* NSArray+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B91F13E4E96B00D0B638 /* NSArray+Blocks.m */; };
+		DD700C66176FFA7C00D0BA2D /* NSDictionary+URLParams.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B92113E4E96B00D0B638 /* NSDictionary+URLParams.m */; };
+		DD700C67176FFA7C00D0BA2D /* NSLock+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B92313E4E96B00D0B638 /* NSLock+Blocks.m */; };
+		DD700C68176FFA7C00D0BA2D /* NSObject+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B92513E4E96B00D0B638 /* NSObject+Blocks.m */; };
+		DD700C69176FFA7C00D0BA2D /* NSObject+Creation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B92713E4E96B00D0B638 /* NSObject+Creation.m */; };
+		DD700C6A176FFA7C00D0BA2D /* NSOperationQueue+WorkerQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B92913E4E96B00D0B638 /* NSOperationQueue+WorkerQueue.m */; };
+		DD700C6B176FFA7C00D0BA2D /* NSSet+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B92B13E4E96B00D0B638 /* NSSet+Blocks.m */; };
+		DD700C6C176FFA7C00D0BA2D /* NSSet+Intersection.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B92D13E4E96B00D0B638 /* NSSet+Intersection.m */; };
+		DD700C6D176FFA7C00D0BA2D /* NSString+URLEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B92F13E4E96B00D0B638 /* NSString+URLEncode.m */; };
+		DD700C6E176FFA7C00D0BA2D /* NSURL+Parameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B93113E4E96B00D0B638 /* NSURL+Parameters.m */; };
+		DD700C6F176FFA7C00D0BA2D /* NSObject+Marker.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A352A8113E6103A008D4A82 /* NSObject+Marker.m */; };
+		DD700C70176FFA7C00D0BA2D /* NSArray+Zip.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF3ADFB141364FE00E6C6C1 /* NSArray+Zip.m */; };
+		DD700C71176FFA7C00D0BA2D /* NSDictionary+Types.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A265A19146CAEB500C8A317 /* NSDictionary+Types.m */; };
+		DD700C72176FFA7C00D0BA2D /* NSDictionary+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A7B0BC5147F7CE1002A32AF /* NSDictionary+Blocks.m */; };
+		DD700C73176FFA7C00D0BA2D /* NSNumber+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE3E0821492083100C45DC9 /* NSNumber+Hex.m */; };
+		DD700C74176FFA7C00D0BA2D /* NSDictionary+Intersection.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE9E4511492E829006D8985 /* NSDictionary+Intersection.m */; };
+		DD700C75176FFA7C00D0BA2D /* NSMutableDictionary+ConditionalSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A253F7114AC1863003ABC71 /* NSMutableDictionary+ConditionalSet.m */; };
+		DD700C76176FFA7C00D0BA2D /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A1B719714D76E0900247F46 /* Stack.m */; };
+		DD700C77176FFA7C00D0BA2D /* Skin.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE9E44814920EA8006D8985 /* Skin.m */; };
+		DD700C78176FFA7C00D0BA2D /* UIView+Skin.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC777B0154AABF90074331C /* UIView+Skin.m */; };
+		DD700C79176FFA7C00D0BA2D /* UILabel+Skin.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC777B6154AACA30074331C /* UILabel+Skin.m */; };
+		DD700C7A176FFA7C00D0BA2D /* UIColor+Luminosity.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB5CD311570CAA000D4A1E8 /* UIColor+Luminosity.m */; };
+		DD700C7B176FFA7C00D0BA2D /* CustomNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B93413E4E96B00D0B638 /* CustomNavigationBar.m */; };
+		DD700C7C176FFA7C00D0BA2D /* CustomNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B93613E4E96B00D0B638 /* CustomNavigationController.m */; };
+		DD700C7D176FFA7C00D0BA2D /* DecoratedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B93813E4E96B00D0B638 /* DecoratedView.m */; };
+		DD700C7E176FFA7C00D0BA2D /* HorizontalFillLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B93A13E4E96B00D0B638 /* HorizontalFillLayout.m */; };
+		DD700C7F176FFA7C00D0BA2D /* VerticalStackLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0158E71414D9560039B4D4 /* VerticalStackLayout.m */; };
+		DD700C80176FFA7C00D0BA2D /* ColumnLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9849B51414F77000F85D79 /* ColumnLayout.m */; };
+		DD700C81176FFA7C00D0BA2D /* ManagedLayoutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B93E13E4E96B00D0B638 /* ManagedLayoutView.m */; };
+		DD700C82176FFA7C00D0BA2D /* UBAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B94013E4E96B00D0B638 /* UBAlertView.m */; };
+		DD700C83176FFA7C00D0BA2D /* UIApplication+Orientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B94213E4E96B00D0B638 /* UIApplication+Orientation.m */; };
+		DD700C84176FFA7C00D0BA2D /* UIButton+Buttons.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1044B4166D5D2F00F91D44 /* UIButton+Buttons.m */; };
+		DD700C85176FFA7C00D0BA2D /* UIBarButtonItem+Buttons.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B94413E4E96B00D0B638 /* UIBarButtonItem+Buttons.m */; };
+		DD700C86176FFA7C00D0BA2D /* UIControl+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B94613E4E96B00D0B638 /* UIControl+Blocks.m */; };
+		DD700C87176FFA7C00D0BA2D /* UIGestureRecognizer+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B94813E4E96B00D0B638 /* UIGestureRecognizer+Blocks.m */; };
+		DD700C88176FFA7C00D0BA2D /* UIImage+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B94A13E4E96B00D0B638 /* UIImage+Size.m */; };
+		DD700C89176FFA7C00D0BA2D /* UIImage+Tint.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B94C13E4E96B00D0B638 /* UIImage+Tint.m */; };
+		DD700C8A176FFA7C00D0BA2D /* UINavigationBar+Background.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B94F13E4E96B00D0B638 /* UINavigationBar+Background.m */; };
+		DD700C8B176FFA7C00D0BA2D /* UIView+Actions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B95113E4E96B00D0B638 /* UIView+Actions.m */; };
+		DD700C8C176FFA7C00D0BA2D /* UIView+Decorators.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B95313E4E96B00D0B638 /* UIView+Decorators.m */; };
+		DD700C8D176FFA7C00D0BA2D /* UIView+Hierarchy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B95513E4E96B00D0B638 /* UIView+Hierarchy.m */; };
+		DD700C8E176FFA7C00D0BA2D /* UIView+Positioning.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B95713E4E96B00D0B638 /* UIView+Positioning.m */; };
+		DD700C8F176FFA7C00D0BA2D /* UIView+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B95913E4E96B00D0B638 /* UIView+Size.m */; };
+		DD700C90176FFA7C00D0BA2D /* ViewDecorators.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B95B13E4E96B00D0B638 /* ViewDecorators.m */; };
+		DD700C91176FFA7C00D0BA2D /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE3E07D149205C200C45DC9 /* UIColor+Hex.m */; };
+		DD700C92176FFA7C00D0BA2D /* UIWebView+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AE0165214A323330061F9F0 /* UIWebView+Blocks.m */; };
+		DD700C93176FFA7C00D0BA2D /* UsefulQuartzFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA1AA0213E9F65400A3D5A7 /* UsefulQuartzFunctions.m */; };
+		DD700C94176FFA7C00D0BA2D /* PasswordManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A253FA014AD4B8C003ABC71 /* PasswordManager.m */; };
+		DD700C95176FFA7C00D0BA2D /* NSMutableDictionary+PasswordManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A253FA414AD4C0A003ABC71 /* NSMutableDictionary+PasswordManager.m */; };
+		DD700C97176FFA9000D0BA2D /* Foundation+UsefulBits.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B91B13E4E96B00D0B638 /* Foundation+UsefulBits.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD700C98176FFA9000D0BA2D /* UBFoundationFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AEA933D14DE609200235D65 /* UBFoundationFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD700C99176FFA9000D0BA2D /* UBMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AAF05E413E4F5D800FD753A /* UBMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD700C9A176FFA9000D0BA2D /* NSArray+Access.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B91C13E4E96B00D0B638 /* NSArray+Access.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD700C9B176FFA9000D0BA2D /* NSArray+Blocks.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B91E13E4E96B00D0B638 /* NSArray+Blocks.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD700C9C176FFA9000D0BA2D /* NSDictionary+URLParams.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B92013E4E96B00D0B638 /* NSDictionary+URLParams.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD700C9D176FFA9000D0BA2D /* NSLock+Blocks.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B92213E4E96B00D0B638 /* NSLock+Blocks.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD700C9E176FFA9000D0BA2D /* NSObject+Blocks.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B92413E4E96B00D0B638 /* NSObject+Blocks.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD700C9F176FFA9000D0BA2D /* NSObject+Creation.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B92613E4E96B00D0B638 /* NSObject+Creation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD700CA0176FFA9000D0BA2D /* NSOperationQueue+WorkerQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B92813E4E96B00D0B638 /* NSOperationQueue+WorkerQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD700CA1176FFA9000D0BA2D /* NSSet+Blocks.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B92A13E4E96B00D0B638 /* NSSet+Blocks.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD700CA2176FFA9000D0BA2D /* NSSet+Intersection.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B92C13E4E96B00D0B638 /* NSSet+Intersection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD700CA3176FFA9000D0BA2D /* NSString+URLEncode.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B92E13E4E96B00D0B638 /* NSString+URLEncode.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD700CA4176FFA9000D0BA2D /* NSURL+Parameters.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B93013E4E96B00D0B638 /* NSURL+Parameters.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD700CA5176FFA9000D0BA2D /* NSObject+Marker.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A352A8013E6103A008D4A82 /* NSObject+Marker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD700CA6176FFA9000D0BA2D /* NSArray+Zip.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AF3ADFA141364FE00E6C6C1 /* NSArray+Zip.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD700CA7176FFA9000D0BA2D /* NSDictionary+Types.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A265A18146CAEB500C8A317 /* NSDictionary+Types.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD700CA8176FFA9000D0BA2D /* NSDictionary+Blocks.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A7B0BC4147F7CE1002A32AF /* NSDictionary+Blocks.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD700CA9176FFA9000D0BA2D /* NSNumber+Hex.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AE3E0811492083100C45DC9 /* NSNumber+Hex.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD700CAA176FFA9000D0BA2D /* NSDictionary+Intersection.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AE9E4501492E829006D8985 /* NSDictionary+Intersection.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD700CAB176FFA9000D0BA2D /* NSMutableDictionary+ConditionalSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A253F7014AC1863003ABC71 /* NSMutableDictionary+ConditionalSet.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD700CAC176FFA9000D0BA2D /* Stack.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A1B719614D76E0900247F46 /* Stack.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD700CAD176FFA9000D0BA2D /* Skin.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AE9E44714920EA8006D8985 /* Skin.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD700CAE176FFA9000D0BA2D /* UIView+Skin.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AC777AF154AABF90074331C /* UIView+Skin.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD700CAF176FFA9000D0BA2D /* UIKit+UsefulBits.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B94D13E4E96B00D0B638 /* UIKit+UsefulBits.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD700CB0176FFA9000D0BA2D /* UIColor+Luminosity.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AB5CD301570CAA000D4A1E8 /* UIColor+Luminosity.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD700CB1176FFA9000D0BA2D /* CustomNavigationBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B93313E4E96B00D0B638 /* CustomNavigationBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD700CB2176FFA9000D0BA2D /* CustomNavigationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B93513E4E96B00D0B638 /* CustomNavigationController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD700CB3176FFA9000D0BA2D /* DecoratedView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B93713E4E96B00D0B638 /* DecoratedView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD700CB4176FFA9000D0BA2D /* Layout.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B93B13E4E96B00D0B638 /* Layout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD700CB5176FFA9000D0BA2D /* LayoutManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B93C13E4E96B00D0B638 /* LayoutManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD700CB6176FFA9000D0BA2D /* HorizontalFillLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B93913E4E96B00D0B638 /* HorizontalFillLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD700CB7176FFA9000D0BA2D /* VerticalStackLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A0158E61414D9560039B4D4 /* VerticalStackLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD700CB8176FFA9000D0BA2D /* ColumnLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A9849B41414F77000F85D79 /* ColumnLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD700CB9176FFA9000D0BA2D /* ManagedLayoutView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B93D13E4E96B00D0B638 /* ManagedLayoutView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD700CBA176FFA9000D0BA2D /* UBAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B93F13E4E96B00D0B638 /* UBAlertView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD700CBB176FFA9000D0BA2D /* UIApplication+Orientation.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B94113E4E96B00D0B638 /* UIApplication+Orientation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD700CBC176FFA9000D0BA2D /* UIButton+Buttons.h in Headers */ = {isa = PBXBuildFile; fileRef = AA1044B3166D5D2F00F91D44 /* UIButton+Buttons.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD700CBD176FFA9000D0BA2D /* UIBarButtonItem+Buttons.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B94313E4E96B00D0B638 /* UIBarButtonItem+Buttons.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD700CBE176FFA9000D0BA2D /* UIControl+Blocks.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B94513E4E96B00D0B638 /* UIControl+Blocks.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD700CBF176FFA9000D0BA2D /* UIGestureRecognizer+Blocks.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B94713E4E96B00D0B638 /* UIGestureRecognizer+Blocks.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD700CC0176FFA9000D0BA2D /* UIImage+Size.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B94913E4E96B00D0B638 /* UIImage+Size.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD700CC1176FFA9000D0BA2D /* UIImage+Tint.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B94B13E4E96B00D0B638 /* UIImage+Tint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD700CC2176FFA9000D0BA2D /* UINavigationBar+Background.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B94E13E4E96B00D0B638 /* UINavigationBar+Background.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD700CC3176FFA9000D0BA2D /* UIView+Actions.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B95013E4E96B00D0B638 /* UIView+Actions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD700CC4176FFA9000D0BA2D /* UIView+Decorators.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B95213E4E96B00D0B638 /* UIView+Decorators.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD700CC5176FFA9000D0BA2D /* UIView+Hierarchy.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B95413E4E96B00D0B638 /* UIView+Hierarchy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD700CC6176FFA9000D0BA2D /* UIView+Positioning.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B95613E4E96B00D0B638 /* UIView+Positioning.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD700CC7176FFA9000D0BA2D /* UIView+Size.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B95813E4E96B00D0B638 /* UIView+Size.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD700CC8176FFA9000D0BA2D /* ViewDecorators.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B95A13E4E96B00D0B638 /* ViewDecorators.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD700CC9176FFA9000D0BA2D /* UIColor+Hex.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AE3E07C149205C200C45DC9 /* UIColor+Hex.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD700CCA176FFA9000D0BA2D /* UIWebView+Blocks.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AE0165114A323330061F9F0 /* UIWebView+Blocks.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD700CCB176FFA9000D0BA2D /* UsefulQuartzFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AA1AA0113E9F65400A3D5A7 /* UsefulQuartzFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD700CCC176FFA9000D0BA2D /* Quartz+UsefulBits.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AA1AA0513E9F69C00A3D5A7 /* Quartz+UsefulBits.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD700CCD176FFA9000D0BA2D /* PasswordManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A253F9F14AD4B8C003ABC71 /* PasswordManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD700CCE176FFA9000D0BA2D /* NSMutableDictionary+PasswordManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A253FA314AD4C0A003ABC71 /* NSMutableDictionary+PasswordManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD700CCF176FFAB000D0BA2D /* UsefulBits.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A39B95C13E4E96B00D0B638 /* UsefulBits.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DD700CD0176FFACE00D0BA2D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A253FA914AD4E67003ABC71 /* QuartzCore.framework */; };
+		DD700CD1176FFAD300D0BA2D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A253FA714AD4E47003ABC71 /* Security.framework */; };
+		DD700CD2176FFAD700D0BA2D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A39B99F13E4EA4A00D0B638 /* UIKit.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DD700C55176FFA5500D0BA2D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0A0158E61414D9560039B4D4 /* VerticalStackLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerticalStackLayout.h; sourceTree = "<group>"; };
@@ -139,10 +150,7 @@
 		0A265A19146CAEB500C8A317 /* NSDictionary+Types.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Types.m"; sourceTree = "<group>"; };
 		0A352A8013E6103A008D4A82 /* NSObject+Marker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Marker.h"; sourceTree = "<group>"; };
 		0A352A8113E6103A008D4A82 /* NSObject+Marker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Marker.m"; sourceTree = "<group>"; };
-		0A39B90613E4E81100D0B638 /* UsefulBits.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework.static; includeInIndex = 0; path = UsefulBits.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A39B90913E4E81100D0B638 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		0A39B90D13E4E81100D0B638 /* UsefulBits-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UsefulBits-Info.plist"; sourceTree = "<group>"; };
-		0A39B90F13E4E81100D0B638 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0A39B91113E4E81100D0B638 /* UsefulBits-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UsefulBits-Prefix.pch"; sourceTree = "<group>"; };
 		0A39B91B13E4E96B00D0B638 /* Foundation+UsefulBits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Foundation+UsefulBits.h"; sourceTree = "<group>"; };
 		0A39B91C13E4E96B00D0B638 /* NSArray+Access.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Access.h"; sourceTree = "<group>"; };
@@ -239,17 +247,18 @@
 		0AF3ADFB141364FE00E6C6C1 /* NSArray+Zip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Zip.m"; sourceTree = "<group>"; };
 		AA1044B3166D5D2F00F91D44 /* UIButton+Buttons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Buttons.h"; sourceTree = "<group>"; };
 		AA1044B4166D5D2F00F91D44 /* UIButton+Buttons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Buttons.m"; sourceTree = "<group>"; };
+		DD700C57176FFA5500D0BA2D /* libUsefulBits.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUsefulBits.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0A39B90113E4E81100D0B638 /* Frameworks */ = {
+		DD700C54176FFA5500D0BA2D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A253FAA14AD4E67003ABC71 /* QuartzCore.framework in Frameworks */,
-				0A253FA814AD4E47003ABC71 /* Security.framework in Frameworks */,
-				0A39B9A013E4EA4A00D0B638 /* UIKit.framework in Frameworks */,
-				0A39B90A13E4E81100D0B638 /* Foundation.framework in Frameworks */,
+				DD700CD2176FFAD700D0BA2D /* UIKit.framework in Frameworks */,
+				DD700CD1176FFAD300D0BA2D /* Security.framework in Frameworks */,
+				DD700CD0176FFACE00D0BA2D /* QuartzCore.framework in Frameworks */,
+				DD700C58176FFA5500D0BA2D /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,7 +301,7 @@
 		0A39B90713E4E81100D0B638 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0A39B90613E4E81100D0B638 /* UsefulBits.framework */,
+				DD700C57176FFA5500D0BA2D /* libUsefulBits.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -324,8 +333,6 @@
 		0A39B90C13E4E81100D0B638 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				0A39B90D13E4E81100D0B638 /* UsefulBits-Info.plist */,
-				0A39B90E13E4E81100D0B638 /* InfoPlist.strings */,
 				0A39B91113E4E81100D0B638 /* UsefulBits-Prefix.pch */,
 			);
 			name = "Supporting Files";
@@ -461,83 +468,81 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		0A39B90213E4E81100D0B638 /* Headers */ = {
+		DD700C96176FFA8300D0BA2D /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A39B95D13E4E96B00D0B638 /* Foundation+UsefulBits.h in Headers */,
-				0A39B95E13E4E96B00D0B638 /* NSArray+Access.h in Headers */,
-				0A39B96013E4E96B00D0B638 /* NSArray+Blocks.h in Headers */,
-				0A39B96213E4E96B00D0B638 /* NSDictionary+URLParams.h in Headers */,
-				0A39B96413E4E96B00D0B638 /* NSLock+Blocks.h in Headers */,
-				0A39B96613E4E96B00D0B638 /* NSObject+Blocks.h in Headers */,
-				0A39B96813E4E96B00D0B638 /* NSObject+Creation.h in Headers */,
-				0A39B96A13E4E96B00D0B638 /* NSOperationQueue+WorkerQueue.h in Headers */,
-				0A39B96C13E4E96B00D0B638 /* NSSet+Blocks.h in Headers */,
-				0A39B96E13E4E96B00D0B638 /* NSSet+Intersection.h in Headers */,
-				0A39B97013E4E96B00D0B638 /* NSString+URLEncode.h in Headers */,
-				0A39B97213E4E96B00D0B638 /* NSURL+Parameters.h in Headers */,
-				0A39B97413E4E96B00D0B638 /* CustomNavigationBar.h in Headers */,
-				0A39B97613E4E96B00D0B638 /* CustomNavigationController.h in Headers */,
-				0A39B97813E4E96B00D0B638 /* DecoratedView.h in Headers */,
-				0A39B97A13E4E96B00D0B638 /* HorizontalFillLayout.h in Headers */,
-				0A39B97C13E4E96B00D0B638 /* Layout.h in Headers */,
-				0A39B97D13E4E96B00D0B638 /* LayoutManager.h in Headers */,
-				0A39B97E13E4E96B00D0B638 /* ManagedLayoutView.h in Headers */,
-				0A39B98013E4E96B00D0B638 /* UBAlertView.h in Headers */,
-				0A39B98213E4E96B00D0B638 /* UIApplication+Orientation.h in Headers */,
-				0A39B98413E4E96B00D0B638 /* UIBarButtonItem+Buttons.h in Headers */,
-				0A39B98613E4E96B00D0B638 /* UIControl+Blocks.h in Headers */,
-				0A39B98813E4E96B00D0B638 /* UIGestureRecognizer+Blocks.h in Headers */,
-				0A39B98A13E4E96B00D0B638 /* UIImage+Size.h in Headers */,
-				0A39B98C13E4E96B00D0B638 /* UIImage+Tint.h in Headers */,
-				0A39B98E13E4E96B00D0B638 /* UIKit+UsefulBits.h in Headers */,
-				0A39B98F13E4E96B00D0B638 /* UINavigationBar+Background.h in Headers */,
-				0A39B99113E4E96B00D0B638 /* UIView+Actions.h in Headers */,
-				0A39B99313E4E96B00D0B638 /* UIView+Decorators.h in Headers */,
-				0A39B99513E4E96B00D0B638 /* UIView+Hierarchy.h in Headers */,
-				0A39B99713E4E96B00D0B638 /* UIView+Positioning.h in Headers */,
-				0A39B99913E4E96B00D0B638 /* UIView+Size.h in Headers */,
-				0A39B99B13E4E96B00D0B638 /* ViewDecorators.h in Headers */,
-				0A39B99D13E4E96B00D0B638 /* UsefulBits.h in Headers */,
-				0AAF05E513E4F5D800FD753A /* UBMacros.h in Headers */,
-				0A352A8213E6103A008D4A82 /* NSObject+Marker.h in Headers */,
-				0AA1AA0313E9F65400A3D5A7 /* UsefulQuartzFunctions.h in Headers */,
-				0AA1AA0613E9F69C00A3D5A7 /* Quartz+UsefulBits.h in Headers */,
-				0AF3ADFC141364FF00E6C6C1 /* NSArray+Zip.h in Headers */,
-				0A0158E81414D9560039B4D4 /* VerticalStackLayout.h in Headers */,
-				0A9849B61414F77000F85D79 /* ColumnLayout.h in Headers */,
-				0A265A1A146CAEB500C8A317 /* NSDictionary+Types.h in Headers */,
-				0A7B0BC6147F7CE1002A32AF /* NSDictionary+Blocks.h in Headers */,
-				0AE3E07E149205C200C45DC9 /* UIColor+Hex.h in Headers */,
-				0AE3E0831492083100C45DC9 /* NSNumber+Hex.h in Headers */,
-				0AE9E44914920EA8006D8985 /* Skin.h in Headers */,
-				0AE9E4521492E829006D8985 /* NSDictionary+Intersection.h in Headers */,
-				0AE0165314A323330061F9F0 /* UIWebView+Blocks.h in Headers */,
-				0A253F7214AC1863003ABC71 /* NSMutableDictionary+ConditionalSet.h in Headers */,
-				0A253FA114AD4B8C003ABC71 /* PasswordManager.h in Headers */,
-				0A253FA514AD4C0A003ABC71 /* NSMutableDictionary+PasswordManager.h in Headers */,
-				0A1B719814D76E0900247F46 /* Stack.h in Headers */,
-				0AEA933F14DE609200235D65 /* UBFoundationFunctions.h in Headers */,
-				0AC777B1154AABF90074331C /* UIView+Skin.h in Headers */,
-				0AB5CD321570CAA000D4A1E8 /* UIColor+Luminosity.h in Headers */,
-				AA1044B5166D5D2F00F91D44 /* UIButton+Buttons.h in Headers */,
+				DD700C97176FFA9000D0BA2D /* Foundation+UsefulBits.h in Headers */,
+				DD700C98176FFA9000D0BA2D /* UBFoundationFunctions.h in Headers */,
+				DD700C99176FFA9000D0BA2D /* UBMacros.h in Headers */,
+				DD700C9A176FFA9000D0BA2D /* NSArray+Access.h in Headers */,
+				DD700C9B176FFA9000D0BA2D /* NSArray+Blocks.h in Headers */,
+				DD700C9C176FFA9000D0BA2D /* NSDictionary+URLParams.h in Headers */,
+				DD700C9D176FFA9000D0BA2D /* NSLock+Blocks.h in Headers */,
+				DD700C9E176FFA9000D0BA2D /* NSObject+Blocks.h in Headers */,
+				DD700C9F176FFA9000D0BA2D /* NSObject+Creation.h in Headers */,
+				DD700CA0176FFA9000D0BA2D /* NSOperationQueue+WorkerQueue.h in Headers */,
+				DD700CA1176FFA9000D0BA2D /* NSSet+Blocks.h in Headers */,
+				DD700CA2176FFA9000D0BA2D /* NSSet+Intersection.h in Headers */,
+				DD700CA3176FFA9000D0BA2D /* NSString+URLEncode.h in Headers */,
+				DD700CA4176FFA9000D0BA2D /* NSURL+Parameters.h in Headers */,
+				DD700CA5176FFA9000D0BA2D /* NSObject+Marker.h in Headers */,
+				DD700CA6176FFA9000D0BA2D /* NSArray+Zip.h in Headers */,
+				DD700CA7176FFA9000D0BA2D /* NSDictionary+Types.h in Headers */,
+				DD700CA8176FFA9000D0BA2D /* NSDictionary+Blocks.h in Headers */,
+				DD700CA9176FFA9000D0BA2D /* NSNumber+Hex.h in Headers */,
+				DD700CAA176FFA9000D0BA2D /* NSDictionary+Intersection.h in Headers */,
+				DD700CAB176FFA9000D0BA2D /* NSMutableDictionary+ConditionalSet.h in Headers */,
+				DD700CAC176FFA9000D0BA2D /* Stack.h in Headers */,
+				DD700CAD176FFA9000D0BA2D /* Skin.h in Headers */,
+				DD700CAE176FFA9000D0BA2D /* UIView+Skin.h in Headers */,
+				DD700CAF176FFA9000D0BA2D /* UIKit+UsefulBits.h in Headers */,
+				DD700CB0176FFA9000D0BA2D /* UIColor+Luminosity.h in Headers */,
+				DD700CB1176FFA9000D0BA2D /* CustomNavigationBar.h in Headers */,
+				DD700CB2176FFA9000D0BA2D /* CustomNavigationController.h in Headers */,
+				DD700CB3176FFA9000D0BA2D /* DecoratedView.h in Headers */,
+				DD700CB4176FFA9000D0BA2D /* Layout.h in Headers */,
+				DD700CB5176FFA9000D0BA2D /* LayoutManager.h in Headers */,
+				DD700CB6176FFA9000D0BA2D /* HorizontalFillLayout.h in Headers */,
+				DD700CB7176FFA9000D0BA2D /* VerticalStackLayout.h in Headers */,
+				DD700CB8176FFA9000D0BA2D /* ColumnLayout.h in Headers */,
+				DD700CB9176FFA9000D0BA2D /* ManagedLayoutView.h in Headers */,
+				DD700CBA176FFA9000D0BA2D /* UBAlertView.h in Headers */,
+				DD700CBB176FFA9000D0BA2D /* UIApplication+Orientation.h in Headers */,
+				DD700CBC176FFA9000D0BA2D /* UIButton+Buttons.h in Headers */,
+				DD700CBD176FFA9000D0BA2D /* UIBarButtonItem+Buttons.h in Headers */,
+				DD700CBE176FFA9000D0BA2D /* UIControl+Blocks.h in Headers */,
+				DD700CBF176FFA9000D0BA2D /* UIGestureRecognizer+Blocks.h in Headers */,
+				DD700CC0176FFA9000D0BA2D /* UIImage+Size.h in Headers */,
+				DD700CC1176FFA9000D0BA2D /* UIImage+Tint.h in Headers */,
+				DD700CC2176FFA9000D0BA2D /* UINavigationBar+Background.h in Headers */,
+				DD700CC3176FFA9000D0BA2D /* UIView+Actions.h in Headers */,
+				DD700CC4176FFA9000D0BA2D /* UIView+Decorators.h in Headers */,
+				DD700CC5176FFA9000D0BA2D /* UIView+Hierarchy.h in Headers */,
+				DD700CC6176FFA9000D0BA2D /* UIView+Positioning.h in Headers */,
+				DD700CC7176FFA9000D0BA2D /* UIView+Size.h in Headers */,
+				DD700CC8176FFA9000D0BA2D /* ViewDecorators.h in Headers */,
+				DD700CC9176FFA9000D0BA2D /* UIColor+Hex.h in Headers */,
+				DD700CCA176FFA9000D0BA2D /* UIWebView+Blocks.h in Headers */,
+				DD700CCB176FFA9000D0BA2D /* UsefulQuartzFunctions.h in Headers */,
+				DD700CCC176FFA9000D0BA2D /* Quartz+UsefulBits.h in Headers */,
+				DD700CCD176FFA9000D0BA2D /* PasswordManager.h in Headers */,
+				DD700CCE176FFA9000D0BA2D /* NSMutableDictionary+PasswordManager.h in Headers */,
+				DD700CCF176FFAB000D0BA2D /* UsefulBits.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		0A39B90513E4E81100D0B638 /* UsefulBits */ = {
+		DD700C56176FFA5500D0BA2D /* UsefulBits */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0A39B91413E4E81100D0B638 /* Build configuration list for PBXNativeTarget "UsefulBits" */;
+			buildConfigurationList = DD700C60176FFA5500D0BA2D /* Build configuration list for PBXNativeTarget "UsefulBits" */;
 			buildPhases = (
-				0A39B8FF13E4E81100D0B638 /* ShellScript */,
-				0A39B90013E4E81100D0B638 /* Sources */,
-				0A39B90113E4E81100D0B638 /* Frameworks */,
-				0A39B90213E4E81100D0B638 /* Headers */,
-				0A39B90313E4E81100D0B638 /* Resources */,
-				0A39B90413E4E81100D0B638 /* ShellScript */,
+				DD700C53176FFA5500D0BA2D /* Sources */,
+				DD700C54176FFA5500D0BA2D /* Frameworks */,
+				DD700C55176FFA5500D0BA2D /* CopyFiles */,
+				DD700C96176FFA8300D0BA2D /* Headers */,
 			);
 			buildRules = (
 			);
@@ -545,8 +550,8 @@
 			);
 			name = UsefulBits;
 			productName = UsefulBits;
-			productReference = 0A39B90613E4E81100D0B638 /* UsefulBits.framework */;
-			productType = "com.apple.product-type.framework.static";
+			productReference = DD700C57176FFA5500D0BA2D /* libUsefulBits.a */;
+			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
@@ -568,122 +573,71 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0A39B90513E4E81100D0B638 /* UsefulBits */,
+				DD700C56176FFA5500D0BA2D /* UsefulBits */,
 			);
 		};
 /* End PBXProject section */
 
-/* Begin PBXResourcesBuildPhase section */
-		0A39B90313E4E81100D0B638 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0A39B91013E4E81100D0B638 /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		0A39B8FF13E4E81100D0B638 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "set -e\n\nset +u\nif [[ $UFW_MASTER_SCRIPT_RUNNING ]]\nthen\n    # Nothing for the slave script to do\n    exit 0\nfi\nset -u\n\nif [[ \"$SDK_NAME\" =~ ([A-Za-z]+) ]]\nthen\n    UFW_SDK_PLATFORM=${BASH_REMATCH[1]}\nelse\n    echo \"Could not find platform name from SDK_NAME: $SDK_NAME\"\n    exit 1\nfi\n\nif [[ \"$SDK_NAME\" =~ ([0-9]+.*$) ]]\nthen\n\tUFW_SDK_VERSION=${BASH_REMATCH[1]}\nelse\n    echo \"Could not find sdk version  from SDK_NAME: $SDK_NAME\"\n    exit 1\nfi\n\nif [[ \"$UFW_SDK_PLATFORM\" = \"iphoneos\" ]]\nthen\n    UFW_OTHER_PLATFORM=iphonesimulator\nelse\n    UFW_OTHER_PLATFORM=iphoneos\nfi\n\nif [[ \"$BUILT_PRODUCTS_DIR\" =~ (.*)$UFW_SDK_PLATFORM$ ]]\nthen\n    UFW_OTHER_BUILT_PRODUCTS_DIR=\"${BASH_REMATCH[1]}${UFW_OTHER_PLATFORM}\"\nelse\n    echo \"Could not find $UFW_SDK_PLATFORM in $BUILT_PRODUCTS_DIR\"\n    exit 1\nfi\n\n\n# Short-circuit if all binaries are up to date\n\nif [[ -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]] && \\\n   [[ -f \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]] && \\\n   [[ ! \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -nt \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]]\n   [[ -f \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]] && \\\n   [[ -f \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]] && \\\n   [[ ! \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -nt \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]]\nthen\n    exit 0\nfi\n\n\n# Clean other platform if needed\n\nif [[ ! -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]]\nthen\n\techo \"Platform \\\"$UFW_SDK_PLATFORM\\\" was cleaned recently. Cleaning \\\"$UFW_OTHER_PLATFORM\\\" as well\"\n\techo xcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" clean\n\txcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" clean\nfi\n\n\n# Make sure we are building from fresh binaries\n\nrm -rf \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\nrm -rf \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\nrm -rf \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\nrm -rf \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\n";
-		};
-		0A39B90413E4E81100D0B638 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "set -e\n\nset +u\nif [[ $UFW_MASTER_SCRIPT_RUNNING ]]\nthen\n    # Nothing for the slave script to do\n    exit 0\nfi\nset -u\nexport UFW_MASTER_SCRIPT_RUNNING=1\n\n\n# Functions\n\n## List files in the specified directory, storing to the specified array.\n#\n# @param $1 The path to list\n# @param $2 The name of the array to fill\n#\n##\nlist_files ()\n{\n    filelist=$(ls \"$1\")\n    while read line\n    do\n        eval \"$2[\\${#$2[*]}]=\\\"\\$line\\\"\"\n    done <<< \"$filelist\"\n}\n\n\n# Sanity check\n\nif [[ ! -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]]\nthen\n    echo \"Framework target \\\"${TARGET_NAME}\\\" had no source files to build from. Make sure your source files have the correct target membership\"\n    exit 1\nfi\n\n\n# Gather information\n\nif [[ \"$SDK_NAME\" =~ ([A-Za-z]+) ]]\nthen\n    UFW_SDK_PLATFORM=${BASH_REMATCH[1]}\nelse\n    echo \"Could not find platform name from SDK_NAME: $SDK_NAME\"\n    exit 1\nfi\n\nif [[ \"$SDK_NAME\" =~ ([0-9]+.*$) ]]\nthen\n    UFW_SDK_VERSION=${BASH_REMATCH[1]}\nelse\n    echo \"Could not find sdk version from SDK_NAME: $SDK_NAME\"\n    exit 1\nfi\n\nif [[ \"$UFW_SDK_PLATFORM\" = \"iphoneos\" ]]\nthen\n    UFW_OTHER_PLATFORM=iphonesimulator\nelse\n    UFW_OTHER_PLATFORM=iphoneos\nfi\n\nif [[ \"$BUILT_PRODUCTS_DIR\" =~ (.*)$UFW_SDK_PLATFORM$ ]]\nthen\n    UFW_OTHER_BUILT_PRODUCTS_DIR=\"${BASH_REMATCH[1]}${UFW_OTHER_PLATFORM}\"\nelse\n    echo \"Could not find $UFW_SDK_PLATFORM in $BUILT_PRODUCTS_DIR\"\n    exit 1\nfi\n\n\n# Short-circuit if all binaries are up to date.\n# We already checked the other platform in the prerun script.\n\nif [[ -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]] && [[ -f \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]] && [[ ! \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -nt \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]]\nthen\n    exit 0\nfi\n\n\n# Make sure the other platform gets built\n\necho \"Build other platform\"\n\necho xcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" $ACTION\nxcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" $ACTION\n\n\n# Build the fat static library binary\n\necho \"Create universal static library\"\n\necho \"$PLATFORM_DEVELOPER_BIN_DIR/libtool\" -static \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -o \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\"\n\"$PLATFORM_DEVELOPER_BIN_DIR/libtool\" -static \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -o \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\"\n\necho mv \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\" \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\nmv \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\" \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\n\n\n# Build embedded framework structure\n\necho \"Build Embedded Framework\"\n\necho rm -rf \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\nrm -rf \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\necho mkdir -p \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources\"\nmkdir -p \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources\"\necho cp -a \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/\"\ncp -a \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/\"\n\ndeclare -a UFW_FILE_LIST\nlist_files \"${BUILT_PRODUCTS_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}\" UFW_FILE_LIST\nfor filename in \"${UFW_FILE_LIST[@]}\"\ndo\n    if [[ \"${filename}\" != \"Info.plist\" ]] && [[ ! \"${filename}\" =~ .*\\.lproj$ ]]\n    then\n        echo ln -sf \"../${WRAPPER_NAME}/Resources/${filename}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources/${filename}\"\n        ln -sf \"../${WRAPPER_NAME}/Resources/${filename}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources/${filename}\"\n    fi\ndone\n\n\n# Replace other platform's framework with a copy of this one (so that both have the same universal binary)\n\necho \"Copy from $UFW_SDK_PLATFORM to $UFW_OTHER_PLATFORM\"\n\necho rm -rf \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\nrm -rf \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\necho cp -a \"${BUILD_DIR}/${CONFIGURATION}-${UFW_SDK_PLATFORM}\" \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\ncp -a \"${BUILD_DIR}/${CONFIGURATION}-${UFW_SDK_PLATFORM}\" \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		0A39B90013E4E81100D0B638 /* Sources */ = {
+		DD700C53176FFA5500D0BA2D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A39B95F13E4E96B00D0B638 /* NSArray+Access.m in Sources */,
-				0A39B96113E4E96B00D0B638 /* NSArray+Blocks.m in Sources */,
-				0A39B96313E4E96B00D0B638 /* NSDictionary+URLParams.m in Sources */,
-				0A39B96513E4E96B00D0B638 /* NSLock+Blocks.m in Sources */,
-				0A39B96713E4E96B00D0B638 /* NSObject+Blocks.m in Sources */,
-				0A39B96913E4E96B00D0B638 /* NSObject+Creation.m in Sources */,
-				0A39B96B13E4E96B00D0B638 /* NSOperationQueue+WorkerQueue.m in Sources */,
-				0A39B96D13E4E96B00D0B638 /* NSSet+Blocks.m in Sources */,
-				0A39B96F13E4E96B00D0B638 /* NSSet+Intersection.m in Sources */,
-				0A39B97113E4E96B00D0B638 /* NSString+URLEncode.m in Sources */,
-				0A39B97313E4E96B00D0B638 /* NSURL+Parameters.m in Sources */,
-				0A39B97513E4E96B00D0B638 /* CustomNavigationBar.m in Sources */,
-				0A39B97713E4E96B00D0B638 /* CustomNavigationController.m in Sources */,
-				0A39B97913E4E96B00D0B638 /* DecoratedView.m in Sources */,
-				0A39B97B13E4E96B00D0B638 /* HorizontalFillLayout.m in Sources */,
-				0A39B97F13E4E96B00D0B638 /* ManagedLayoutView.m in Sources */,
-				0A39B98113E4E96B00D0B638 /* UBAlertView.m in Sources */,
-				0A39B98313E4E96B00D0B638 /* UIApplication+Orientation.m in Sources */,
-				0A39B98513E4E96B00D0B638 /* UIBarButtonItem+Buttons.m in Sources */,
-				0A39B98713E4E96B00D0B638 /* UIControl+Blocks.m in Sources */,
-				0A39B98913E4E96B00D0B638 /* UIGestureRecognizer+Blocks.m in Sources */,
-				0A39B98B13E4E96B00D0B638 /* UIImage+Size.m in Sources */,
-				0A39B98D13E4E96B00D0B638 /* UIImage+Tint.m in Sources */,
-				0A39B99013E4E96B00D0B638 /* UINavigationBar+Background.m in Sources */,
-				0A39B99213E4E96B00D0B638 /* UIView+Actions.m in Sources */,
-				0A39B99413E4E96B00D0B638 /* UIView+Decorators.m in Sources */,
-				0A39B99613E4E96B00D0B638 /* UIView+Hierarchy.m in Sources */,
-				0A39B99813E4E96B00D0B638 /* UIView+Positioning.m in Sources */,
-				0A39B99A13E4E96B00D0B638 /* UIView+Size.m in Sources */,
-				0A39B99C13E4E96B00D0B638 /* ViewDecorators.m in Sources */,
-				0A352A8313E6103A008D4A82 /* NSObject+Marker.m in Sources */,
-				0AA1AA0413E9F65400A3D5A7 /* UsefulQuartzFunctions.m in Sources */,
-				0AF3ADFD141364FF00E6C6C1 /* NSArray+Zip.m in Sources */,
-				0A0158E91414D9560039B4D4 /* VerticalStackLayout.m in Sources */,
-				0A9849B71414F77000F85D79 /* ColumnLayout.m in Sources */,
-				0A265A1B146CAEB500C8A317 /* NSDictionary+Types.m in Sources */,
-				0A7B0BC7147F7CE1002A32AF /* NSDictionary+Blocks.m in Sources */,
-				0AE3E07F149205C200C45DC9 /* UIColor+Hex.m in Sources */,
-				0AE3E0841492083100C45DC9 /* NSNumber+Hex.m in Sources */,
-				0AE9E44A14920EA8006D8985 /* Skin.m in Sources */,
-				0AE9E4531492E829006D8985 /* NSDictionary+Intersection.m in Sources */,
-				0AE0165414A323330061F9F0 /* UIWebView+Blocks.m in Sources */,
-				0A253F7314AC1863003ABC71 /* NSMutableDictionary+ConditionalSet.m in Sources */,
-				0A253FA214AD4B8C003ABC71 /* PasswordManager.m in Sources */,
-				0A253FA614AD4C0A003ABC71 /* NSMutableDictionary+PasswordManager.m in Sources */,
-				0A1B719914D76E0900247F46 /* Stack.m in Sources */,
-				0AEA934014DE609200235D65 /* UBFoundationFunctions.m in Sources */,
-				0AC777B2154AABF90074331C /* UIView+Skin.m in Sources */,
-				0AC777B8154AACA30074331C /* UILabel+Skin.m in Sources */,
-				0AB5CD331570CAA000D4A1E8 /* UIColor+Luminosity.m in Sources */,
-				AA1044B6166D5D2F00F91D44 /* UIButton+Buttons.m in Sources */,
+				DD700C63176FFA7C00D0BA2D /* UBFoundationFunctions.m in Sources */,
+				DD700C64176FFA7C00D0BA2D /* NSArray+Access.m in Sources */,
+				DD700C65176FFA7C00D0BA2D /* NSArray+Blocks.m in Sources */,
+				DD700C66176FFA7C00D0BA2D /* NSDictionary+URLParams.m in Sources */,
+				DD700C67176FFA7C00D0BA2D /* NSLock+Blocks.m in Sources */,
+				DD700C68176FFA7C00D0BA2D /* NSObject+Blocks.m in Sources */,
+				DD700C69176FFA7C00D0BA2D /* NSObject+Creation.m in Sources */,
+				DD700C6A176FFA7C00D0BA2D /* NSOperationQueue+WorkerQueue.m in Sources */,
+				DD700C6B176FFA7C00D0BA2D /* NSSet+Blocks.m in Sources */,
+				DD700C6C176FFA7C00D0BA2D /* NSSet+Intersection.m in Sources */,
+				DD700C6D176FFA7C00D0BA2D /* NSString+URLEncode.m in Sources */,
+				DD700C6E176FFA7C00D0BA2D /* NSURL+Parameters.m in Sources */,
+				DD700C6F176FFA7C00D0BA2D /* NSObject+Marker.m in Sources */,
+				DD700C70176FFA7C00D0BA2D /* NSArray+Zip.m in Sources */,
+				DD700C71176FFA7C00D0BA2D /* NSDictionary+Types.m in Sources */,
+				DD700C72176FFA7C00D0BA2D /* NSDictionary+Blocks.m in Sources */,
+				DD700C73176FFA7C00D0BA2D /* NSNumber+Hex.m in Sources */,
+				DD700C74176FFA7C00D0BA2D /* NSDictionary+Intersection.m in Sources */,
+				DD700C75176FFA7C00D0BA2D /* NSMutableDictionary+ConditionalSet.m in Sources */,
+				DD700C76176FFA7C00D0BA2D /* Stack.m in Sources */,
+				DD700C77176FFA7C00D0BA2D /* Skin.m in Sources */,
+				DD700C78176FFA7C00D0BA2D /* UIView+Skin.m in Sources */,
+				DD700C79176FFA7C00D0BA2D /* UILabel+Skin.m in Sources */,
+				DD700C7A176FFA7C00D0BA2D /* UIColor+Luminosity.m in Sources */,
+				DD700C7B176FFA7C00D0BA2D /* CustomNavigationBar.m in Sources */,
+				DD700C7C176FFA7C00D0BA2D /* CustomNavigationController.m in Sources */,
+				DD700C7D176FFA7C00D0BA2D /* DecoratedView.m in Sources */,
+				DD700C7E176FFA7C00D0BA2D /* HorizontalFillLayout.m in Sources */,
+				DD700C7F176FFA7C00D0BA2D /* VerticalStackLayout.m in Sources */,
+				DD700C80176FFA7C00D0BA2D /* ColumnLayout.m in Sources */,
+				DD700C81176FFA7C00D0BA2D /* ManagedLayoutView.m in Sources */,
+				DD700C82176FFA7C00D0BA2D /* UBAlertView.m in Sources */,
+				DD700C83176FFA7C00D0BA2D /* UIApplication+Orientation.m in Sources */,
+				DD700C84176FFA7C00D0BA2D /* UIButton+Buttons.m in Sources */,
+				DD700C85176FFA7C00D0BA2D /* UIBarButtonItem+Buttons.m in Sources */,
+				DD700C86176FFA7C00D0BA2D /* UIControl+Blocks.m in Sources */,
+				DD700C87176FFA7C00D0BA2D /* UIGestureRecognizer+Blocks.m in Sources */,
+				DD700C88176FFA7C00D0BA2D /* UIImage+Size.m in Sources */,
+				DD700C89176FFA7C00D0BA2D /* UIImage+Tint.m in Sources */,
+				DD700C8A176FFA7C00D0BA2D /* UINavigationBar+Background.m in Sources */,
+				DD700C8B176FFA7C00D0BA2D /* UIView+Actions.m in Sources */,
+				DD700C8C176FFA7C00D0BA2D /* UIView+Decorators.m in Sources */,
+				DD700C8D176FFA7C00D0BA2D /* UIView+Hierarchy.m in Sources */,
+				DD700C8E176FFA7C00D0BA2D /* UIView+Positioning.m in Sources */,
+				DD700C8F176FFA7C00D0BA2D /* UIView+Size.m in Sources */,
+				DD700C90176FFA7C00D0BA2D /* ViewDecorators.m in Sources */,
+				DD700C91176FFA7C00D0BA2D /* UIColor+Hex.m in Sources */,
+				DD700C92176FFA7C00D0BA2D /* UIWebView+Blocks.m in Sources */,
+				DD700C93176FFA7C00D0BA2D /* UsefulQuartzFunctions.m in Sources */,
+				DD700C94176FFA7C00D0BA2D /* PasswordManager.m in Sources */,
+				DD700C95176FFA7C00D0BA2D /* NSMutableDictionary+PasswordManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		0A39B90E13E4E81100D0B638 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0A39B90F13E4E81100D0B638 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		0A39B91213E4E81100D0B638 /* Debug */ = {
@@ -729,33 +683,25 @@
 			};
 			name = Release;
 		};
-		0A39B91513E4E81100D0B638 /* Debug */ = {
+		DD700C61176FFA5500D0BA2D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				FRAMEWORK_VERSION = A;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UsefulBits/UsefulBits-Prefix.pch";
-				INFOPLIST_FILE = "UsefulBits/UsefulBits-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = framework;
+				PUBLIC_HEADERS_FOLDER_PATH = include/UsefulBits;
 			};
 			name = Debug;
 		};
-		0A39B91613E4E81100D0B638 /* Release */ = {
+		DD700C62176FFA5500D0BA2D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				FRAMEWORK_VERSION = A;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UsefulBits/UsefulBits-Prefix.pch";
-				INFOPLIST_FILE = "UsefulBits/UsefulBits-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = framework;
+				PUBLIC_HEADERS_FOLDER_PATH = include/UsefulBits;
 			};
 			name = Release;
 		};
@@ -771,11 +717,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0A39B91413E4E81100D0B638 /* Build configuration list for PBXNativeTarget "UsefulBits" */ = {
+		DD700C60176FFA5500D0BA2D /* Build configuration list for PBXNativeTarget "UsefulBits" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0A39B91513E4E81100D0B638 /* Debug */,
-				0A39B91613E4E81100D0B638 /* Release */,
+				DD700C61176FFA5500D0BA2D /* Debug */,
+				DD700C62176FFA5500D0BA2D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
