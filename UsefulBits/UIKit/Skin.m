@@ -479,6 +479,27 @@ static UIFont *resolve_font(NSString *name, CGFloat size)
   }
 }
 
+- (UIImage *)deviceSpecificImageNamed:(NSString *)name;
+{
+  if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone && [UIScreen mainScreen].bounds.size.height == 568.)
+  {
+    NSString *new_name = nil;
+    NSString *extension = [name pathExtension];
+    if ([extension length] > 0)
+    {
+      new_name = [name stringByReplacingOccurrencesOfString:[NSString stringWithFormat:@".%@", extension] withString:[NSString stringWithFormat:@"-568h.%@", extension]];
+    }
+    else
+    {
+      new_name = [name stringByAppendingString:@"-568h"];
+    }
+
+    return [UIImage imageNamed:new_name] ?: [UIImage imageNamed:name];
+  }
+
+  return [UIImage imageNamed:name];
+}
+
 - (UIImage *)imageNamed:(NSString *)name;
 {
   NSParameterAssert(nil != name && [name length] > 0);
@@ -491,16 +512,28 @@ static UIFont *resolve_font(NSString *name, CGFloat size)
     if ([value isKindOfClass:[NSString class]])
     {
       NSString *image_path = value;
-      image = [UIImage imageNamed:image_path];
+      image = [self deviceSpecificImageNamed:image_path];
     }
     else // KAO - Assumes a dictionary
     {
       NSString *image_path = [value objectForKey:@"name"];
-      NSNumber *hcap = [value objectForKey:@"horizontal-cap"];
-      NSNumber *vcap = [value objectForKey:@"vertical-cap"];
-
-      image = [[UIImage imageNamed:image_path] stretchableImageWithLeftCapWidth:[hcap integerValue]
-                                                                   topCapHeight:[vcap integerValue]];
+      NSNumber *top_cap = [value objectForKey:@"top-cap"];
+      NSNumber *left_cap = [value objectForKey:@"left-cap"];
+      NSNumber *bottom_cap = [value objectForKey:@"bottom-cap"];
+      NSNumber *right_cap = [value objectForKey:@"right-cap"];
+      
+      image = [self deviceSpecificImageNamed:image_path];
+      if (nil == top_cap)
+      {
+        NSNumber *hcap = [value objectForKey:@"horizontal-cap"];
+        NSNumber *vcap = [value objectForKey:@"vertical-cap"];
+        image = [image stretchableImageWithLeftCapWidth:[hcap integerValue] topCapHeight:[vcap integerValue]];
+      }
+      else
+      {
+        UIEdgeInsets insets = UIEdgeInsetsMake([top_cap floatValue], [left_cap floatValue], [bottom_cap floatValue], [right_cap floatValue]);
+        image = [image resizableImageWithCapInsets:insets];
+      }
     }
 
     if (nil != image)
