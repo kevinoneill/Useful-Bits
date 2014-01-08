@@ -35,5 +35,6 @@
 + (UIButton *)buttonWithImageNamed:(NSString *)name action:(void (^) (id sender))action;
 
 + (UIButton *)buttonWithImage:(UIImage *)image action:(void (^) (id sender))action;
++ (UIButton *)buttonWithImage:(UIImage *)image highlightImage:(UIImage *)highlightImage action:(void (^) (id sender))action;
 
 @end

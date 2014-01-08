@@ -58,4 +58,18 @@
 }
 
 
++ (UIButton *)buttonWithImage:(UIImage *)image highlightImage:(UIImage *)highlightImage action:(void (^) (id sender))action;
+{
+  UIButton *button = [self buttonWithImage:image action:action];
+  
+  if (nil != highlightImage)
+  {
+    [button setImage:highlightImage forState:UIControlStateHighlighted];
+    [button setAdjustsImageWhenHighlighted:NO];
+  }
+  
+  return button;
+}
+
+
 @end
