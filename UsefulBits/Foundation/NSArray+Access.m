@@ -28,6 +28,8 @@
 
 #import "NSArray+Access.h"
 
+#import "NSArray+Blocks.h"
+
 @implementation NSArray (Access)
 
 - (id)first;
@@ -68,6 +70,13 @@
 - (NSArray *)reverse;
 {
   return [[self reverseObjectEnumerator] allObjects];
+}
+
+- (NSArray *)flatten;
+{
+  return [self filter:^BOOL(id item) {
+    return item == [NSNull null];
+  }];
 }
 
 @end

@@ -47,5 +47,16 @@
   return [self arrayForKey:key default:[NSArray array]];
 }
 
+- (NSDictionary *)dictionaryForKey:(id)key default:(NSDictionary *)defaultValue;
+{
+  return [self objectForKey:key ofType:[NSDictionary class] default:defaultValue];
+}
+
+- (NSDictionary *)dictionaryForKey:(id)key;
+{
+  return [self dictionaryForKey:key default:[NSDictionary dictionary]];
+}
+
+
 
 @end

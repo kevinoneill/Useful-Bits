@@ -42,5 +42,6 @@
 - (BOOL)isEmpty;
 
 - (NSArray *)reverse;
+- (NSArray *)flatten;
 
 @end

@@ -19,4 +19,7 @@
 - (NSArray *)arrayForKey:(id)key default:(NSArray *)defaultValue;
 - (NSArray *)arrayForKey:(id)key;
 
+- (NSDictionary *)dictionaryForKey:(id)key default:(NSDictionary *)defaultValue;
+- (NSDictionary *)dictionaryForKey:(id)key;
+
 @end

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6138413ABC83A11079E9C8B6 /* NSString+Extract.m in Sources */ = {isa = PBXBuildFile; fileRef = 61384F72A81300FDB0605B91 /* NSString+Extract.m */; };
+		613843170A359BAA9B2C12B8 /* NSString+Extract.h in Headers */ = {isa = PBXBuildFile; fileRef = 61384DE05C332BDE76A1CD0F /* NSString+Extract.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DD700C58176FFA5500D0BA2D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A39B90913E4E81100D0B638 /* Foundation.framework */; };
 		DD700C63176FFA7C00D0BA2D /* UBFoundationFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AEA933E14DE609200235D65 /* UBFoundationFunctions.m */; };
 		DD700C64176FFA7C00D0BA2D /* NSArray+Access.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A39B91D13E4E96B00D0B638 /* NSArray+Access.m */; };
@@ -245,6 +247,8 @@
 		0AEA933E14DE609200235D65 /* UBFoundationFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBFoundationFunctions.m; sourceTree = "<group>"; };
 		0AF3ADFA141364FE00E6C6C1 /* NSArray+Zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Zip.h"; sourceTree = "<group>"; };
 		0AF3ADFB141364FE00E6C6C1 /* NSArray+Zip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Zip.m"; sourceTree = "<group>"; };
+		61384DE05C332BDE76A1CD0F /* NSString+Extract.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extract.h"; sourceTree = "<group>"; };
+		61384F72A81300FDB0605B91 /* NSString+Extract.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extract.m"; sourceTree = "<group>"; };
 		AA1044B3166D5D2F00F91D44 /* UIButton+Buttons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Buttons.h"; sourceTree = "<group>"; };
 		AA1044B4166D5D2F00F91D44 /* UIButton+Buttons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Buttons.m"; sourceTree = "<group>"; };
 		DD700C57176FFA5500D0BA2D /* libUsefulBits.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUsefulBits.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -383,6 +387,8 @@
 				0A253F7114AC1863003ABC71 /* NSMutableDictionary+ConditionalSet.m */,
 				0A1B719614D76E0900247F46 /* Stack.h */,
 				0A1B719714D76E0900247F46 /* Stack.m */,
+				61384DE05C332BDE76A1CD0F /* NSString+Extract.h */,
+				61384F72A81300FDB0605B91 /* NSString+Extract.m */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -529,6 +535,7 @@
 				DD700CCD176FFA9000D0BA2D /* PasswordManager.h in Headers */,
 				DD700CCE176FFA9000D0BA2D /* NSMutableDictionary+PasswordManager.h in Headers */,
 				DD700CCF176FFAB000D0BA2D /* UsefulBits.h in Headers */,
+				613843170A359BAA9B2C12B8 /* NSString+Extract.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -634,6 +641,7 @@
 				DD700C93176FFA7C00D0BA2D /* UsefulQuartzFunctions.m in Sources */,
 				DD700C94176FFA7C00D0BA2D /* PasswordManager.m in Sources */,
 				DD700C95176FFA7C00D0BA2D /* NSMutableDictionary+PasswordManager.m in Sources */,
+				6138413ABC83A11079E9C8B6 /* NSString+Extract.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -692,6 +700,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = include/UsefulBits;
 				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Vendor/Useful-Bits\"/**";
 			};
 			name = Debug;
 		};
@@ -704,6 +713,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = include/UsefulBits;
 				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Vendor/Useful-Bits\"/**";
 			};
 			name = Release;
 		};
