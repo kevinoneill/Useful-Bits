@@ -58,15 +58,15 @@
   return self;
 }
 
-- (void)layout:(UIView *)view action:(void (^) (UIView *subview, CGRect subviewFrame))action;
+- (void)layout:(UIView *)view bounds:(CGRect)bounds action:(void (^) (UIView *subview, CGRect subviewFrame))action;
 {
   if ([[view subviews] count] == 0) return;
   
-  CGRect content_bounds = UIEdgeInsetsInsetRect([view bounds], [self contentInsets]);
+  CGRect content_bounds = UIEdgeInsetsInsetRect(bounds, [self contentInsets]);
   CGFloat width = CGRectGetWidth(content_bounds);
   
   CGFloat subview_height = [[[[view subviews] trunk] reduce: ^ id (id height, id subview) {
-    CGSize subview_size = [subview sizeThatFits:CGSizeMake(width, 0.)];
+    CGSize subview_size = [subview sizeThatFits:CGSizeMake(width, 0)];
     CGRect subview_frame = CGRectMake(CGRectGetMinX(content_bounds), [height floatValue], width, subview_size.height);
     
     action(subview, subview_frame);
@@ -87,7 +87,7 @@
 {
   __block CGRect bounds = CGRectZero;
 
-  [self layout:view action:^(UIView *subview, CGRect subviewFrame) {
+  [self layout:view bounds:CGRectMake(0, 0, size.width, size.height) action:^(UIView *subview, CGRect subviewFrame) {
     bounds = CGRectUnion(bounds, subviewFrame);
   }];
   
@@ -97,9 +97,9 @@
 
 - (void)layoutSubviews:(UIView *)view
 {
-  [self layout:view action:^(UIView *subview, CGRect subviewFrame) {
+  [self layout:view bounds:[view bounds] action:^(UIView *subview, CGRect subviewFrame) {
     [subview setFrame:subviewFrame];
-  }]; 
+  }];
 }
 
 @end
