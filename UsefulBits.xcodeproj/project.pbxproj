@@ -120,6 +120,8 @@
 		0AF3ADFD141364FF00E6C6C1 /* NSArray+Zip.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AF3ADFB141364FE00E6C6C1 /* NSArray+Zip.m */; };
 		A320F20C16F6C5DB0026BE1C /* HorizontalStackLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = A320F20A16F6C5DB0026BE1C /* HorizontalStackLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A320F20D16F6C5DB0026BE1C /* HorizontalStackLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A320F20B16F6C5DB0026BE1C /* HorizontalStackLayout.m */; };
+		A331738118D016D800F169A4 /* UIApplication+ActivityIndicatorManagement.h in Headers */ = {isa = PBXBuildFile; fileRef = A331737F18D016D800F169A4 /* UIApplication+ActivityIndicatorManagement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A331738218D016D800F169A4 /* UIApplication+ActivityIndicatorManagement.m in Sources */ = {isa = PBXBuildFile; fileRef = A331738018D016D800F169A4 /* UIApplication+ActivityIndicatorManagement.m */; };
 		AA1044B5166D5D2F00F91D44 /* UIButton+Buttons.h in Headers */ = {isa = PBXBuildFile; fileRef = AA1044B3166D5D2F00F91D44 /* UIButton+Buttons.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AA1044B6166D5D2F00F91D44 /* UIButton+Buttons.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1044B4166D5D2F00F91D44 /* UIButton+Buttons.m */; };
 /* End PBXBuildFile section */
@@ -241,6 +243,8 @@
 		0AF3ADFB141364FE00E6C6C1 /* NSArray+Zip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Zip.m"; sourceTree = "<group>"; };
 		A320F20A16F6C5DB0026BE1C /* HorizontalStackLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizontalStackLayout.h; sourceTree = "<group>"; };
 		A320F20B16F6C5DB0026BE1C /* HorizontalStackLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorizontalStackLayout.m; sourceTree = "<group>"; };
+		A331737F18D016D800F169A4 /* UIApplication+ActivityIndicatorManagement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+ActivityIndicatorManagement.h"; sourceTree = "<group>"; };
+		A331738018D016D800F169A4 /* UIApplication+ActivityIndicatorManagement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+ActivityIndicatorManagement.m"; sourceTree = "<group>"; };
 		AA1044B3166D5D2F00F91D44 /* UIButton+Buttons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Buttons.h"; sourceTree = "<group>"; };
 		AA1044B4166D5D2F00F91D44 /* UIButton+Buttons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Buttons.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -438,6 +442,8 @@
 				0AE3E07D149205C200C45DC9 /* UIColor+Hex.m */,
 				0AE0165114A323330061F9F0 /* UIWebView+Blocks.h */,
 				0AE0165214A323330061F9F0 /* UIWebView+Blocks.m */,
+				A331737F18D016D800F169A4 /* UIApplication+ActivityIndicatorManagement.h */,
+				A331738018D016D800F169A4 /* UIApplication+ActivityIndicatorManagement.m */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -525,6 +531,7 @@
 				0A253FA514AD4C0A003ABC71 /* NSMutableDictionary+PasswordManager.h in Headers */,
 				0A1B719814D76E0900247F46 /* Stack.h in Headers */,
 				0AEA933F14DE609200235D65 /* UBFoundationFunctions.h in Headers */,
+				A331738118D016D800F169A4 /* UIApplication+ActivityIndicatorManagement.h in Headers */,
 				0AC777B1154AABF90074331C /* UIView+Skin.h in Headers */,
 				0AB5CD321570CAA000D4A1E8 /* UIColor+Luminosity.h in Headers */,
 				AA1044B5166D5D2F00F91D44 /* UIButton+Buttons.h in Headers */,
@@ -653,6 +660,7 @@
 				0A39B99413E4E96B00D0B638 /* UIView+Decorators.m in Sources */,
 				0A39B99613E4E96B00D0B638 /* UIView+Hierarchy.m in Sources */,
 				0A39B99813E4E96B00D0B638 /* UIView+Positioning.m in Sources */,
+				A331738218D016D800F169A4 /* UIApplication+ActivityIndicatorManagement.m in Sources */,
 				0A39B99A13E4E96B00D0B638 /* UIView+Size.m in Sources */,
 				0A39B99C13E4E96B00D0B638 /* ViewDecorators.m in Sources */,
 				0A352A8313E6103A008D4A82 /* NSObject+Marker.m in Sources */,
