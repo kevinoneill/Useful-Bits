@@ -14,7 +14,7 @@
 {
   NSScanner *scanner = [NSScanner scannerWithString:hexString];
   
-  NSUInteger value;
+  unsigned value;
   if ([scanner scanHexInt:&value]) 
   {
     return [NSNumber numberWithInteger:value]; 
