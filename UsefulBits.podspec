@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 
-  s.name         = "Useful-Bits"
+  s.name         = "UsefulBits"
   s.version      = "1.0"
   s.summary      = "A Collection of Useful Cocoa and UIKit Bits"
 
@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios
   
   s.source       = { :git => "https://github.com/kevinoneill/Useful-Bits.git", :tag => "#{s.version}" }
-  s.source_files  = "UsefulBits"
+  s.source_files  = "UsefulBits/**/*.{h,m}"
 
   s.resource  = "UsefulBits/custom-navigation.xib"
 

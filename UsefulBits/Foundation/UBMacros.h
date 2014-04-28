@@ -38,9 +38,17 @@
 #define UBRELEASE_DEADBABE(INSTANCE__) { [INSTANCE__ release]; *((uint *) &INSTANCE__) = 0xDEADBABE; }
 
 #if IS_DEBUG
-#define UBRELEASE(INSTANCE__) UBRELEASE_DEADBABE(INSTANCE__)
+# define UBRELEASE(INSTANCE__) UBRELEASE_DEADBABE(INSTANCE__)
 #else
-#define UBRELEASE(INSTANCE__) UBRELEASE_NIL(INSTANCE__)
+# define UBRELEASE(INSTANCE__) UBRELEASE_NIL(INSTANCE__)
+#endif
+
+#if isDEBUG
+# define DLOG(_format_, ...) NSLog((@"%s - %d - " _format_), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+# define DLOG_SHORT(_format_, ...) NSLog(_format_, ##__VA_ARGS__);
+#else  
+# define DLOG(...) do { } while (0);
+# define DLOG_SHORT(_format_, ...) do { } while (0);
 #endif
 
 #define UBSWAP_INSTANCE_RETAIN(DESTINATION__, SOURCE__) \
