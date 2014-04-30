@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A9F3B1B1910D633005A5487 /* NSObject+Values.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A9F3B191910D633005A5487 /* NSObject+Values.h */; };
+		0A9F3B1C1910D633005A5487 /* NSObject+Values.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9F3B1A1910D633005A5487 /* NSObject+Values.m */; };
 		6138413ABC83A11079E9C8B6 /* NSString+Extract.m in Sources */ = {isa = PBXBuildFile; fileRef = 61384F72A81300FDB0605B91 /* NSString+Extract.m */; };
 		613843170A359BAA9B2C12B8 /* NSString+Extract.h in Headers */ = {isa = PBXBuildFile; fileRef = 61384DE05C332BDE76A1CD0F /* NSString+Extract.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DD700C58176FFA5500D0BA2D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A39B90913E4E81100D0B638 /* Foundation.framework */; };
@@ -224,6 +226,8 @@
 		0A7B0BC5147F7CE1002A32AF /* NSDictionary+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Blocks.m"; sourceTree = "<group>"; };
 		0A9849B41414F77000F85D79 /* ColumnLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColumnLayout.h; sourceTree = "<group>"; };
 		0A9849B51414F77000F85D79 /* ColumnLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColumnLayout.m; sourceTree = "<group>"; };
+		0A9F3B191910D633005A5487 /* NSObject+Values.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Values.h"; sourceTree = "<group>"; };
+		0A9F3B1A1910D633005A5487 /* NSObject+Values.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Values.m"; sourceTree = "<group>"; };
 		0AA1AA0113E9F65400A3D5A7 /* UsefulQuartzFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsefulQuartzFunctions.h; sourceTree = "<group>"; };
 		0AA1AA0213E9F65400A3D5A7 /* UsefulQuartzFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsefulQuartzFunctions.m; sourceTree = "<group>"; };
 		0AA1AA0513E9F69C00A3D5A7 /* Quartz+UsefulBits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Quartz+UsefulBits.h"; sourceTree = "<group>"; };
@@ -361,6 +365,8 @@
 				0A39B92513E4E96B00D0B638 /* NSObject+Blocks.m */,
 				0A39B92613E4E96B00D0B638 /* NSObject+Creation.h */,
 				0A39B92713E4E96B00D0B638 /* NSObject+Creation.m */,
+				0A9F3B191910D633005A5487 /* NSObject+Values.h */,
+				0A9F3B1A1910D633005A5487 /* NSObject+Values.m */,
 				0A39B92813E4E96B00D0B638 /* NSOperationQueue+WorkerQueue.h */,
 				0A39B92913E4E96B00D0B638 /* NSOperationQueue+WorkerQueue.m */,
 				0A39B92A13E4E96B00D0B638 /* NSSet+Blocks.h */,
@@ -503,6 +509,7 @@
 				DD700CAD176FFA9000D0BA2D /* Skin.h in Headers */,
 				DD700CAE176FFA9000D0BA2D /* UIView+Skin.h in Headers */,
 				DD700CAF176FFA9000D0BA2D /* UIKit+UsefulBits.h in Headers */,
+				0A9F3B1B1910D633005A5487 /* NSObject+Values.h in Headers */,
 				DD700CB0176FFA9000D0BA2D /* UIColor+Luminosity.h in Headers */,
 				DD700CB1176FFA9000D0BA2D /* CustomNavigationBar.h in Headers */,
 				DD700CB2176FFA9000D0BA2D /* CustomNavigationController.h in Headers */,
@@ -597,6 +604,7 @@
 				DD700C67176FFA7C00D0BA2D /* NSLock+Blocks.m in Sources */,
 				DD700C68176FFA7C00D0BA2D /* NSObject+Blocks.m in Sources */,
 				DD700C69176FFA7C00D0BA2D /* NSObject+Creation.m in Sources */,
+				0A9F3B1C1910D633005A5487 /* NSObject+Values.m in Sources */,
 				DD700C6A176FFA7C00D0BA2D /* NSOperationQueue+WorkerQueue.m in Sources */,
 				DD700C6B176FFA7C00D0BA2D /* NSSet+Blocks.m in Sources */,
 				DD700C6C176FFA7C00D0BA2D /* NSSet+Intersection.m in Sources */,
