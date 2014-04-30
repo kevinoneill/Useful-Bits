@@ -43,10 +43,10 @@
 # define UBRELEASE(INSTANCE__) UBRELEASE_NIL(INSTANCE__)
 #endif
 
-#if isDEBUG
+#if IS_DEBUG
 # define DLOG(_format_, ...) NSLog((@"%s - %d - " _format_), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
 # define DLOG_SHORT(_format_, ...) NSLog(_format_, ##__VA_ARGS__);
-#else  
+#else
 # define DLOG(...) do { } while (0);
 # define DLOG_SHORT(_format_, ...) do { } while (0);
 #endif
