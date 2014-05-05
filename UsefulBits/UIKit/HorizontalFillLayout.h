@@ -38,8 +38,8 @@ enum  HorizontalFillLayoutResizeOption {
 typedef enum HorizontalFillLayoutResizeOption HorizontalFillLayoutManagerResizeOption;
 
 @interface HorizontalFillLayout : NSObject <LayoutManager>
-{
-}
+
+- (id)initWithOption:(HorizontalFillLayoutManagerResizeOption)option;
 
 @property (nonatomic, assign) HorizontalFillLayoutManagerResizeOption resizeOption;
 

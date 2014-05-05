@@ -37,6 +37,16 @@
 
 @synthesize resizeOption = resizeOption_;
 
+- (id)initWithOption:(HorizontalFillLayoutManagerResizeOption)option;
+{
+  if ((self = [super init]))
+  {
+    resizeOption_ = option;
+  }
+
+  return self;
+}
+
 - (CGSize)sizeThatFits:(CGSize)size view:(UIView *)view;
 {
   return size;
@@ -48,7 +58,7 @@
   CGFloat subview_width = floorf(CGRectGetWidth([view bounds]) / [[view subviews] count]);
 
   CGSize requested_subview_size = CGSizeMake(subview_width, subview_height);
-  
+
   [[view subviews] eachWithIndex:^ (id subview, NSUInteger position) {
     CGRect cell_frame = CGRectMake(subview_width * position, 0, requested_subview_size.width, requested_subview_size.height);
 
@@ -60,7 +70,7 @@
         [subview setFrame:CGRectMake(0, 0, subview_size.width, subview_size.height)];
         break;
       }
-        
+
       case HorizontalFillLayoutManagerResizeOptionSize:
       {
         [subview setFrame:cell_frame];
@@ -71,7 +81,7 @@
       default:
         break;
     }
-    
+
     [subview centerInRect:cell_frame];
   }];
 }
