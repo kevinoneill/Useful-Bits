@@ -30,6 +30,8 @@
 
 @interface UIView (Positioning)
 
+- (void)setOrigin:(CGPoint)origin;
+
 - (void)centerInRect:(CGRect)rect;
 - (void)centerVerticallyInRect:(CGRect)rect;
 - (void)centerHorizontallyInRect:(CGRect)rect;

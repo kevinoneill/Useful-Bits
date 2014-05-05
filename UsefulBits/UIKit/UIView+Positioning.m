@@ -31,6 +31,12 @@
 
 @implementation UIView (Positioning)
 
+- (void)setOrigin:(CGPoint)origin;
+{
+  CGSize size = [self size];
+  [self setFrame:CGRectMake(origin.x, origin.y, size.width, size.height)];
+}
+
 - (void)centerInRect:(CGRect)rect;
 {
   [self setCenter:CGPointMake(floorf(CGRectGetMidX(rect)) + ((int)floorf([self width]) % 2 ? .5 : 0) , floorf(CGRectGetMidY(rect)) + ((int)floorf([self height]) % 2 ? .5 : 0))];
@@ -63,7 +69,7 @@
 {
     // for now, could use screen relative positions.
   NSAssert([self superview] == [view superview], @"views must have the same parent");
-  
+
   [self setCenter:CGPointMake([view center].x,
                               floorf(padding + CGRectGetMaxY([view frame]) + ([self height] / 2)))];
 }
