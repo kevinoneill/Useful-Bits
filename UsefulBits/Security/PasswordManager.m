@@ -12,66 +12,130 @@
 
 #import "NSMutableDictionary+PasswordManager.h"
 
+@interface PasswordManager ()
+
+@property (nonatomic, assign) BOOL synchronized;
+
+@end
+
 @implementation PasswordManager
 
 static NSString *kServiceName = @"ub-password-manager";
 
-+ (BOOL)storePassword:(NSString *)password forAccount:(NSString *)account;
++ (PasswordManager *)synchronized;
 {
-  NSParameterAssert(nil != account);
-  NSParameterAssert(nil != password);
-  
-	NSMutableDictionary *query = [NSMutableDictionary passwordQueryForService:kServiceName account:account];
-  
+  static dispatch_once_t shared_initialized;
+  static PasswordManager *shared_instance = nil;
+
+  dispatch_once(&shared_initialized, ^ {
+    shared_instance = [[PasswordManager alloc] initWithSynchronization:YES];
+  });
+
+  return shared_instance;
+}
+
++ (PasswordManager *)local;
+{
+  static dispatch_once_t shared_initialized;
+  static PasswordManager *shared_instance = nil;
+
+  dispatch_once(&shared_initialized, ^ {
+    shared_instance = [[PasswordManager alloc] initWithSynchronization:NO];
+  });
+
+  return shared_instance;
+}
+
+- (instancetype)init;
+{
+  return [self initWithSynchronization:NO];
+}
+
+- (instancetype)initWithSynchronization:(BOOL)synchronized;
+{
+  if ((self = [super init]))
+  {
+    _synchronized = synchronized;
+  }
+
+  return self;
+}
+
+- (NSMutableDictionary *)queryAccount:(NSString *)account {
+  return [NSMutableDictionary passwordQueryForService:kServiceName account:account synchronize:_synchronized];
+}
+
+- (BOOL)storePassword:(NSString *)password forAccount:(NSString *)account;
+{
+  return [self storeToken:[password dataUsingEncoding:NSUTF8StringEncoding] forAccount:account];
+}
+
+- (BOOL)storeToken:(NSData *)token forAccount:(NSString *)account
+{
+  NSParameterAssert([account length] > 0);
+  NSParameterAssert(nil != token);
+
+  NSMutableDictionary *query = [self queryAccount:account];
+
   switch (SecItemCopyMatching((CFDictionaryRef)query, NULL))
   {
     case errSecItemNotFound:
     {
-      [query setObject:[password dataUsingEncoding:NSUTF8StringEncoding]
+      [query setObject:token
                 forKey:kSecValueData];
-      
-			return SecItemAdd((CFDictionaryRef)query, NULL) == errSecSuccess;
-      break;
-    } 
+
+      return SecItemAdd((CFDictionaryRef)query, NULL) == errSecSuccess;
+    }
     case errSecSuccess:
     {
-      NSDictionary *update = [NSDictionary dictionaryWithObject:[password dataUsingEncoding:NSUTF8StringEncoding] 
+      NSDictionary *update = [NSDictionary dictionaryWithObject:token
                                                          forKey:(id)kSecValueData];
-      
+
       return SecItemUpdate((CFDictionaryRef)query, (CFDictionaryRef)update) == errSecSuccess;
-      break;
     }
     default:
       break;
   }
-  
+
   return NO;
 }
 
-+ (NSString *)passwordForAccount:(NSString *)account;
+- (NSString *)passwordForAccount:(NSString *)account;
 {
-	NSMutableDictionary *query = [NSMutableDictionary passwordQueryForService:kServiceName account:account];
-	[query setObject:(id)kCFBooleanTrue forKey:(id)kSecReturnData];
-	
-	NSData *data = nil;
-	OSStatus result = SecItemCopyMatching((CFDictionaryRef)query, (CFTypeRef *)&data);
-  
-	if (result == errSecSuccess)
+  NSData *token = [self tokenForAccount:account];
+  return token != nil ? [[[NSString alloc] initWithData:token encoding:NSUTF8StringEncoding] autorelease] : nil;
+}
+
+- (NSData *)tokenForAccount:(NSString *)account;
+{
+  NSParameterAssert([account length] > 0);
+
+  NSMutableDictionary *query = [self queryAccount:account];
+  [query setObject:(id)kCFBooleanTrue forKey:(id)kSecReturnData];
+
+  NSData *data = nil;
+  OSStatus result = SecItemCopyMatching((CFDictionaryRef)query, (CFTypeRef *)&data);
+
+  if (result == errSecSuccess)
   {
-		NSString *password = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    [data release];
-    
-		return [password autorelease];
+    return [data autorelease];
   }
-	
+
   return nil;
 }
 
-+ (BOOL)removePasswordForAccount:(NSString *)account;
+- (BOOL)removeTokenForAccount:(NSString *)account;
 {
-  NSMutableDictionary *query = [NSMutableDictionary passwordQueryForService:kServiceName account:account];
+  NSParameterAssert([account length] > 0);
+
+  NSMutableDictionary *query = [self queryAccount:account];
 
   return SecItemDelete((CFDictionaryRef)query) == errSecSuccess;
+}
+
+- (BOOL)removePasswordForAccount:(NSString *)account;
+{
+  return [self removeTokenForAccount:account];
 }
 
 @end

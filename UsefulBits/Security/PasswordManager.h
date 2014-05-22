@@ -10,8 +10,17 @@
 
 @interface PasswordManager : NSObject
 
-+ (BOOL)storePassword:(NSString *)password forAccount:(NSString *)account;
-+ (NSString *)passwordForAccount:(NSString *)account;
-+ (BOOL)removePasswordForAccount:(NSString *)account;
++ (PasswordManager *)synchronized;
++ (PasswordManager *)local;
+
+
+- (BOOL)storeToken:(NSData *)token forAccount:(NSString *)account;
+- (BOOL)storePassword:(NSString *)password forAccount:(NSString *)account;
+
+- (NSData *)tokenForAccount:(NSString *)account;
+- (NSString *)passwordForAccount:(NSString *)account;
+
+- (BOOL)removeTokenForAccount:(NSString *)account;
+- (BOOL)removePasswordForAccount:(NSString *)account;
 
 @end

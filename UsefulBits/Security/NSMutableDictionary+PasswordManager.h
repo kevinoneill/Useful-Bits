@@ -10,6 +10,7 @@
 
 @interface NSMutableDictionary (PasswordManager)
 
-+ (id)passwordQueryForService:(NSString *)service account:(NSString *)account;
++ (NSMutableDictionary *)passwordQueryForService:(NSString *)service account:(NSString *)account;
++ (NSMutableDictionary *)passwordQueryForService:(NSString *)service account:(NSString *)account synchronize:(BOOL)synchronize;
 
 @end

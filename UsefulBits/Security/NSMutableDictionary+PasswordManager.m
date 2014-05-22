@@ -12,7 +12,7 @@
 
 @implementation NSMutableDictionary (PasswordManager)
 
-+ (id)passwordQueryForService:(NSString *)service account:(NSString *)account;
++ (NSMutableDictionary *)passwordQueryForService:(NSString *)service account:(NSString *)account synchronize:(BOOL)synchronize;
 {
   NSParameterAssert(nil != service);
   NSParameterAssert(nil != account);
@@ -21,7 +21,13 @@
           service, (id)kSecAttrService,
           account, (id)kSecAttrAccount,
           (id)kSecClassGenericPassword, (id)kSecClass,
+          @(synchronize), (id)kSecAttrSynchronizable,
           nil];
+}
+
++ (NSMutableDictionary *)passwordQueryForService:(NSString *)service account:(NSString *)account;
+{
+  return [self passwordQueryForService:service account:account synchronize:NO];
 }
 
 @end
