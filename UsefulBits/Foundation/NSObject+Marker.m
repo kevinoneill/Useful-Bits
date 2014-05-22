@@ -53,17 +53,14 @@ static char markers_key;
 {
   @synchronized(self)
   {
-    @synchronized(self)
+    NSMutableSet *markers = [self ubMarkers_];
+    if (nil == markers)
     {
-      NSMutableSet *markers = [self ubMarkers_];
-      if (nil == markers)
-      {
-        markers = [NSMutableSet setWithCapacity:3];
-        [self setUBMarkers_:markers];
-      }
-      
-      [markers addObject:marker];
+      markers = [NSMutableSet setWithCapacity:3];
+      [self setUBMarkers_:markers];
     }
+
+    [markers addObject:marker];
   }
 }
 
