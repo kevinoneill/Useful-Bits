@@ -514,14 +514,14 @@ static UIFont *resolve_font(NSString *name, CGFloat size)
       NSString *image_path = value;
       image = [self deviceSpecificImageNamed:image_path];
     }
-    else // KAO - Assumes a dictionary
+    else if ([value isKindOfClass:[NSDictionary class]])
     {
       NSString *image_path = [value objectForKey:@"name"];
       NSNumber *top_cap = [value objectForKey:@"top-cap"];
       NSNumber *left_cap = [value objectForKey:@"left-cap"];
       NSNumber *bottom_cap = [value objectForKey:@"bottom-cap"];
       NSNumber *right_cap = [value objectForKey:@"right-cap"];
-      
+
       image = [self deviceSpecificImageNamed:image_path];
       if (nil == top_cap)
       {
