@@ -88,4 +88,9 @@
   [self addTarget:target action:@selector(invokeAction:) forControlEvents:controlEvents];
 }
 
+- (void) onTouchUpInside:(void(^)(id sender))handler
+{
+  [self addEventHandler:handler forControlEvents:UIControlEventTouchUpInside];
+}
+
 @end

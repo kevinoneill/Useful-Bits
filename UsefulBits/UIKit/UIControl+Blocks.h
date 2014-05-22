@@ -32,4 +32,6 @@
 
 - (void)addEventHandler:(void(^)(id sender))handler forControlEvents:(UIControlEvents)controlEvents;
 
+- (void)onTouchUpInside:(void(^)(id sender))handler;
+
 @end
