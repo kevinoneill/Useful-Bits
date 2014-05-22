@@ -10,4 +10,6 @@
 
 @interface NSArray (Sorting)
 
+- (NSArray *)sortedAlphabetically;
+
 @end

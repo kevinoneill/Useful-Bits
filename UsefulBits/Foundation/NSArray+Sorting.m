@@ -10,4 +10,9 @@
 
 @implementation NSArray (Sorting)
 
+- (NSArray *)sortedAlphabetically;
+{
+  return [self sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+}
+
 @end

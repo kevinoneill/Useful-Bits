@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0A9F3B1B1910D633005A5487 /* NSObject+Values.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A9F3B191910D633005A5487 /* NSObject+Values.h */; };
 		0A9F3B1C1910D633005A5487 /* NSObject+Values.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9F3B1A1910D633005A5487 /* NSObject+Values.m */; };
+		0ABC829B192092D90074659B /* NSArray+Sorting.h in Headers */ = {isa = PBXBuildFile; fileRef = 0ABC8299192092D90074659B /* NSArray+Sorting.h */; };
+		0ABC829C192092D90074659B /* NSArray+Sorting.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ABC829A192092D90074659B /* NSArray+Sorting.m */; };
 		6138413ABC83A11079E9C8B6 /* NSString+Extract.m in Sources */ = {isa = PBXBuildFile; fileRef = 61384F72A81300FDB0605B91 /* NSString+Extract.m */; };
 		613843170A359BAA9B2C12B8 /* NSString+Extract.h in Headers */ = {isa = PBXBuildFile; fileRef = 61384DE05C332BDE76A1CD0F /* NSString+Extract.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DD700C58176FFA5500D0BA2D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A39B90913E4E81100D0B638 /* Foundation.framework */; };
@@ -234,6 +236,8 @@
 		0AAF05E413E4F5D800FD753A /* UBMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBMacros.h; sourceTree = "<group>"; };
 		0AB5CD301570CAA000D4A1E8 /* UIColor+Luminosity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Luminosity.h"; sourceTree = "<group>"; };
 		0AB5CD311570CAA000D4A1E8 /* UIColor+Luminosity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Luminosity.m"; sourceTree = "<group>"; };
+		0ABC8299192092D90074659B /* NSArray+Sorting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Sorting.h"; sourceTree = "<group>"; };
+		0ABC829A192092D90074659B /* NSArray+Sorting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Sorting.m"; sourceTree = "<group>"; };
 		0AC777AF154AABF90074331C /* UIView+Skin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Skin.h"; sourceTree = "<group>"; };
 		0AC777B0154AABF90074331C /* UIView+Skin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Skin.m"; sourceTree = "<group>"; };
 		0AC777B6154AACA30074331C /* UILabel+Skin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Skin.m"; sourceTree = "<group>"; };
@@ -395,6 +399,8 @@
 				0A1B719714D76E0900247F46 /* Stack.m */,
 				61384DE05C332BDE76A1CD0F /* NSString+Extract.h */,
 				61384F72A81300FDB0605B91 /* NSString+Extract.m */,
+				0ABC8299192092D90074659B /* NSArray+Sorting.h */,
+				0ABC829A192092D90074659B /* NSArray+Sorting.m */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -540,6 +546,7 @@
 				DD700CCB176FFA9000D0BA2D /* UsefulQuartzFunctions.h in Headers */,
 				DD700CCC176FFA9000D0BA2D /* Quartz+UsefulBits.h in Headers */,
 				DD700CCD176FFA9000D0BA2D /* PasswordManager.h in Headers */,
+				0ABC829B192092D90074659B /* NSArray+Sorting.h in Headers */,
 				DD700CCE176FFA9000D0BA2D /* NSMutableDictionary+PasswordManager.h in Headers */,
 				DD700CCF176FFAB000D0BA2D /* UsefulBits.h in Headers */,
 				613843170A359BAA9B2C12B8 /* NSString+Extract.h in Headers */,
@@ -620,6 +627,7 @@
 				DD700C76176FFA7C00D0BA2D /* Stack.m in Sources */,
 				DD700C77176FFA7C00D0BA2D /* Skin.m in Sources */,
 				DD700C78176FFA7C00D0BA2D /* UIView+Skin.m in Sources */,
+				0ABC829C192092D90074659B /* NSArray+Sorting.m in Sources */,
 				DD700C79176FFA7C00D0BA2D /* UILabel+Skin.m in Sources */,
 				DD700C7A176FFA7C00D0BA2D /* UIColor+Luminosity.m in Sources */,
 				DD700C7B176FFA7C00D0BA2D /* CustomNavigationBar.m in Sources */,
