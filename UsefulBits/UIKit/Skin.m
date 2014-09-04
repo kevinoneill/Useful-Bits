@@ -20,16 +20,17 @@ static const CGFloat kDefaultFontSize = 14.0;
 
 @interface Skin ()
 
-- (id)initWithSkins:(NSArray *)skins;
+- (id)initWithBundle:(NSBundle *)bundle skins:(NSArray *)skins;
 
 @property (nonatomic, copy) NSString *section;
 @property (nonatomic, copy) NSDictionary *configuration;
+@property (nonatomic, retain) NSBundle *bundle;
 
 @property (nonatomic, copy) NSCache *colors;
 @property (nonatomic, copy) NSCache *images;
 @property (nonatomic, copy) NSCache *fonts;
 
-- (NSString *)valueForName:(NSString *)name inPart:(NSString *)section;
+- (id)valueForName:(NSString *)name inPart:(NSString *)section;
 
 @end
 
@@ -212,6 +213,7 @@ static NSDictionary *expand_paths (NSBundle *bundle, NSString *section, NSString
     if ([value isKindOfClass:[NSString class]] && !([value hasPrefix:kReferencePrefix] || [value hasPrefix:kHexPrefix]))
     {
       NSString *path = expand_path(bundle, section, part, value);
+      // KAO warn if image can't be found
       [expanded setObject:path forKey:key];
     }
     else if ([value isKindOfClass:[NSDictionary class]])
@@ -237,12 +239,6 @@ static NSDictionary *expand_paths (NSBundle *bundle, NSString *section, NSString
   return skin_for_section(section);
 }
 
-@synthesize section = section_;
-@synthesize configuration = configuration_;
-
-@synthesize colors = colors_;
-@synthesize images = images_;
-@synthesize fonts = fonts_;
 
 - (id)init;
 {
@@ -253,16 +249,16 @@ static NSDictionary *expand_paths (NSBundle *bundle, NSString *section, NSString
 {
   if ((self = [super init]))
   {
-    section_ = [section copy];
+    _section = [section copy];
 
-    colors_ = [[NSCache alloc] init];
-    images_ = [[NSCache alloc] init];
-    fonts_ = [[NSCache alloc] init];
+    _colors = [[NSCache alloc] init];
+    _images = [[NSCache alloc] init];
+    _fonts = [[NSCache alloc] init];
 
     NSString *skin_name = [[[NSBundle mainBundle] infoDictionary] stringForKey:@"skin-name" default:@"skin"];
-    NSBundle *bundle = [NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:skin_name ofType:@"bundle"]];
+    _bundle = [[NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:skin_name ofType:@"bundle"]] retain];
 
-    NSString *configuration_path = [bundle pathForResource:@"configuration"
+    NSString *configuration_path = [_bundle pathForResource:@"configuration"
                                                      ofType:@"plist"
                                                 inDirectory:path_for_section(section)];
 
@@ -270,7 +266,7 @@ static NSDictionary *expand_paths (NSBundle *bundle, NSString *section, NSString
     NSMutableDictionary *local_configuration = [NSMutableDictionary dictionaryWithContentsOfFile:configuration_path];
     for (NSString *part in [NSArray arrayWithObjects:@"images", @"colors", nil])
     {
-      [local_configuration setObject:expand_paths(bundle, section, part, [local_configuration objectForKey:part])
+      [local_configuration setObject:expand_paths(_bundle, section, part, [local_configuration objectForKey:part])
                               forKey:part];
     }
 
@@ -290,27 +286,28 @@ static NSDictionary *expand_paths (NSBundle *bundle, NSString *section, NSString
       skin_configuration = merge_configurations(parent_configuration, local_configuration);
     }
 
-    configuration_ = [resolve_references(skin_configuration) copy];
+    _configuration = [resolve_references(skin_configuration) copy];
   }
 
   return self;
 }
 
-- (id)initWithSkins:(NSArray *)skins;
+- (id)initWithBundle:(NSBundle *)bundle skins:(NSArray *)skins;
 {
   if ((self = [super init]))
   {
-    section_ = [merged_section_name(skins) copy];
+    _bundle = [bundle retain];
+    _section = [merged_section_name(skins) copy];
 
-    colors_ = [[NSCache alloc] init];
-    images_ = [[NSCache alloc] init];
-    fonts_ = [[NSCache alloc] init];
+    _colors = [[NSCache alloc] init];
+    _images = [[NSCache alloc] init];
+    _fonts = [[NSCache alloc] init];
 
     NSDictionary *configuration = [[skins rest] reduce:^id(NSDictionary *configuration, Skin *skin) {
       return merge_configurations(configuration, [skin configuration]);
     } initial:[[skins first] configuration]];
 
-    configuration_ = [resolve_references(configuration) copy];
+    _configuration = [resolve_references(configuration) copy];
   }
 
   return self;
@@ -318,12 +315,13 @@ static NSDictionary *expand_paths (NSBundle *bundle, NSString *section, NSString
 
 - (void)dealloc;
 {
-  [colors_ release];
-  [images_ release];
-  [fonts_ release];
+  [_colors release];
+  [_images release];
+  [_fonts release];
 
-  [section_ release];
-  [configuration_ release];
+  [_section release];
+  [_configuration release];
+  [_bundle release];
 
   [super dealloc];
 }
@@ -433,7 +431,7 @@ static UIFont *resolve_font(NSString *name, CGFloat size)
 
 - (UIColor *)colorNamed:(NSString *)name;
 {
-  UIColor *color = [colors_ objectForKey:name];
+  UIColor *color = [_colors objectForKey:name];
 
   if (nil == color)
   {
@@ -453,7 +451,7 @@ static UIFont *resolve_font(NSString *name, CGFloat size)
       }
     }
 
-    [colors_ setObject:color forKey:name];
+    [_colors setObject:color forKey:name];
   }
 
   return color;
@@ -504,15 +502,19 @@ static UIFont *resolve_font(NSString *name, CGFloat size)
 {
   NSParameterAssert(nil != name && [name length] > 0);
 
-  UIImage *image = [images_ objectForKey:name];
+  UIImage *image = [_images objectForKey:name];
   if (nil == image)
   {
     id value = [self valueForName:name inPart:@"images"];
 
-    if ([value isKindOfClass:[NSString class]])
+    if (nil == value)
     {
-      NSString *image_path = value;
-      image = [self deviceSpecificImageNamed:image_path];
+      NSString *path = expand_path([self bundle] , [self section], @"images", [name stringByAppendingString:@".png"]);
+      image = [self deviceSpecificImageNamed:path];
+    }
+    else if ([value isKindOfClass:[NSString class]])
+    {
+      image = [self deviceSpecificImageNamed:value];
     }
     else if ([value isKindOfClass:[NSDictionary class]])
     {
@@ -538,7 +540,7 @@ static UIFont *resolve_font(NSString *name, CGFloat size)
 
     if (nil != image)
     {
-      [images_ setObject:image forKey:name];
+      [_images setObject:image forKey:name];
     }
   }
 
@@ -547,7 +549,7 @@ static UIFont *resolve_font(NSString *name, CGFloat size)
 
 #pragma mark - Utilities
 
-- (NSString *)valueForName:(NSString *)name inPart:(NSString *)part;
+- (id)valueForName:(NSString *)name inPart:(NSString *)part;
 {
   return value_for_name([self configuration], name, part);
 }
@@ -560,7 +562,7 @@ static UIFont *resolve_font(NSString *name, CGFloat size)
   Skin *result = cached_skin_for_cache(section);
   if (nil == result)
   {
-    result = [[[Skin alloc] initWithSkins:skins] autorelease];
+    result = [[[Skin alloc] initWithBundle:[self bundle] skins:skins] autorelease];
     cache_skin(result);
   }
 

@@ -28,6 +28,8 @@
 
 #import "UIView+Hierarchy.h"
 
+#import "NSArray+Access.h"
+#import "NSArray+Blocks.h"
 
 @implementation UIView (Hierarchy)
 
@@ -61,6 +63,16 @@
   {
     [subview removeFromSuperview];
   }
+}
+
+- (UIView *)firstSubview:(BOOL (^)(id item))test;
+{
+  return [[self subviews] first:test];
+}
+
+- (UIView *)firstDescendantView:(BOOL (^)(id item))test;
+{
+  return [[[self subviews] flatten] first:test];
 }
 
 @end

@@ -36,4 +36,7 @@
 - (void)addSubviews:(NSArray *)views;
 - (void)removeSubviews;
 
+- (UIView *)firstSubview:(BOOL (^)(id item))test;
+- (UIView *)firstDescendantView:(BOOL (^)(id item))test;
+
 @end

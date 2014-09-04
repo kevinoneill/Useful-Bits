@@ -46,4 +46,5 @@
 #import <UsefulBits/NSDictionary+Intersection.h>
 #import <UsefulBits/NSMutableDictionary+ConditionalSet.h>
 #import <UsefulBits/NSString+Extract.h>
+#import <UsefulBits/NSObject+Values.h>
 

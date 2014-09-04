@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0A9F3B1B1910D633005A5487 /* NSObject+Values.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A9F3B191910D633005A5487 /* NSObject+Values.h */; };
 		0A9F3B1C1910D633005A5487 /* NSObject+Values.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9F3B1A1910D633005A5487 /* NSObject+Values.m */; };
+		0AA7432E193693A8003CDD5F /* UIWindow+Hooks.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AA7432C193693A8003CDD5F /* UIWindow+Hooks.h */; };
+		0AA7432F193693A8003CDD5F /* UIWindow+Hooks.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA7432D193693A8003CDD5F /* UIWindow+Hooks.m */; };
 		0ABC829B192092D90074659B /* NSArray+Sorting.h in Headers */ = {isa = PBXBuildFile; fileRef = 0ABC8299192092D90074659B /* NSArray+Sorting.h */; };
 		0ABC829C192092D90074659B /* NSArray+Sorting.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ABC829A192092D90074659B /* NSArray+Sorting.m */; };
 		6138413ABC83A11079E9C8B6 /* NSString+Extract.m in Sources */ = {isa = PBXBuildFile; fileRef = 61384F72A81300FDB0605B91 /* NSString+Extract.m */; };
@@ -233,6 +235,8 @@
 		0AA1AA0113E9F65400A3D5A7 /* UsefulQuartzFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsefulQuartzFunctions.h; sourceTree = "<group>"; };
 		0AA1AA0213E9F65400A3D5A7 /* UsefulQuartzFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsefulQuartzFunctions.m; sourceTree = "<group>"; };
 		0AA1AA0513E9F69C00A3D5A7 /* Quartz+UsefulBits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Quartz+UsefulBits.h"; sourceTree = "<group>"; };
+		0AA7432C193693A8003CDD5F /* UIWindow+Hooks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+Hooks.h"; sourceTree = "<group>"; };
+		0AA7432D193693A8003CDD5F /* UIWindow+Hooks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+Hooks.m"; sourceTree = "<group>"; };
 		0AAF05E413E4F5D800FD753A /* UBMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBMacros.h; sourceTree = "<group>"; };
 		0AB5CD301570CAA000D4A1E8 /* UIColor+Luminosity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Luminosity.h"; sourceTree = "<group>"; };
 		0AB5CD311570CAA000D4A1E8 /* UIColor+Luminosity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Luminosity.m"; sourceTree = "<group>"; };
@@ -457,6 +461,8 @@
 				0AE3E07D149205C200C45DC9 /* UIColor+Hex.m */,
 				0AE0165114A323330061F9F0 /* UIWebView+Blocks.h */,
 				0AE0165214A323330061F9F0 /* UIWebView+Blocks.m */,
+				0AA7432C193693A8003CDD5F /* UIWindow+Hooks.h */,
+				0AA7432D193693A8003CDD5F /* UIWindow+Hooks.m */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -538,6 +544,7 @@
 				DD700CC3176FFA9000D0BA2D /* UIView+Actions.h in Headers */,
 				DD700CC4176FFA9000D0BA2D /* UIView+Decorators.h in Headers */,
 				DD700CC5176FFA9000D0BA2D /* UIView+Hierarchy.h in Headers */,
+				0AA7432E193693A8003CDD5F /* UIWindow+Hooks.h in Headers */,
 				DD700CC6176FFA9000D0BA2D /* UIView+Positioning.h in Headers */,
 				DD700CC7176FFA9000D0BA2D /* UIView+Size.h in Headers */,
 				DD700CC8176FFA9000D0BA2D /* ViewDecorators.h in Headers */,
@@ -617,6 +624,7 @@
 				DD700C6C176FFA7C00D0BA2D /* NSSet+Intersection.m in Sources */,
 				DD700C6D176FFA7C00D0BA2D /* NSString+URLEncode.m in Sources */,
 				DD700C6E176FFA7C00D0BA2D /* NSURL+Parameters.m in Sources */,
+				0AA7432F193693A8003CDD5F /* UIWindow+Hooks.m in Sources */,
 				DD700C6F176FFA7C00D0BA2D /* NSObject+Marker.m in Sources */,
 				DD700C70176FFA7C00D0BA2D /* NSArray+Zip.m in Sources */,
 				DD700C71176FFA7C00D0BA2D /* NSDictionary+Types.m in Sources */,

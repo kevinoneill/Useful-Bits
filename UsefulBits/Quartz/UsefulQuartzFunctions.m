@@ -67,7 +67,7 @@ CGRect CGRectInsetBottom(CGRect rect, CGFloat inset)
 
 CGRect CGRectMakeSized(CGSize size)
 {
-  return CGRectStandardize(CGRectMake(0., 0., size.width, size.height));
+  return CGRectStandardize(CGRectMake(0, 0, size.width, size.height));
 }
 
 CGRect CGRectMakeSizedCenteredInRect(CGSize size, CGRect rect2)

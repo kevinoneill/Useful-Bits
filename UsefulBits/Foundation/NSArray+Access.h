@@ -30,7 +30,7 @@
 
 @interface NSArray (Access)
 
-- (NSArray *)take:(NSInteger)count;
+- (NSArray *)take:(NSUInteger)count;
 
 - (id)first;
 - (id)last;
