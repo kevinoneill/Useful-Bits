@@ -184,9 +184,9 @@ static NSDictionary *resolve_references(NSDictionary *source)
   return resolved;
 }
 
-static inline NSString *bundle_relative_path(NSString *full_path)
+static inline NSString *bundle_relative_path(NSBundle *bundle, NSString *full_path)
 {
-  NSUInteger min_length = [[[NSBundle mainBundle] resourcePath] length] + 1;
+  NSUInteger min_length = [[bundle resourcePath] length] + 1;
 
   return [full_path length] >= min_length ? [full_path substringFromIndex:min_length] : nil;
 }
@@ -203,7 +203,7 @@ static inline NSString* expand_path(NSBundle *bundle, NSString *section, NSStrin
   NSString *section_path = [path_for_section(section) stringByAppendingPathComponent:part];
   NSString *resource_path = [bundle pathForResource:value ofType:nil inDirectory:section_path];
 
-  return bundle_relative_path(resource_path);
+  return bundle_relative_path(bundle, resource_path);
 }
 
 static NSDictionary *expand_paths (NSBundle *bundle, NSString *section, NSString *part, NSDictionary *configuration)
@@ -444,7 +444,7 @@ static UIFont *resolve_font(NSString *name, CGFloat size)
     }
     else
     {
-      UIImage *image = [UIImage imageNamed:value];
+      UIImage *image = [self bundleImageNamed:value];
       if (nil != image)
       {
         color = [UIColor colorWithPatternImage:image];
@@ -492,10 +492,16 @@ static UIFont *resolve_font(NSString *name, CGFloat size)
       new_name = [name stringByAppendingString:@"-568h"];
     }
 
-    return [UIImage imageNamed:new_name] ?: [UIImage imageNamed:name];
+    return [self bundleImageNamed:new_name] ?: [self bundleImageNamed:name];
   }
 
-  return [UIImage imageNamed:name];
+  return [self bundleImageNamed:name];
+}
+
+- (UIImage *)bundleImageNamed:(NSString *)name
+{
+  NSString *bundle_name = [[[self bundle] bundlePath] lastPathComponent];
+  return [UIImage imageNamed:[bundle_name stringByAppendingPathComponent:name]];
 }
 
 - (UIImage *)imageNamed:(NSString *)name;

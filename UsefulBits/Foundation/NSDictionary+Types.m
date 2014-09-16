@@ -17,6 +17,12 @@
   return [value isKindOfClass:type] ? value : defaultValue;
 }
 
+- (id)objectForKey:(id)key default:(id)defaultValue;
+{
+  id value = self[key];
+  return  value ?: defaultValue;
+}
+
 - (NSString *)stringForKey:(id)key default:(NSString *)defaultValue;
 {
   return [self objectForKey:key ofType:[NSString class] default:defaultValue];

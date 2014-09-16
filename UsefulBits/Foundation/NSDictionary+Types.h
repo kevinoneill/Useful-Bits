@@ -11,6 +11,9 @@
 @interface NSDictionary (Types)
 
 - (NSString *)stringForKey:(id)key;
+
+- (id)objectForKey:(id)key default:(id)defaultValue;
+
 - (NSString *)stringForKey:(id)key default:(NSString *)defaultValue;
 
 - (NSNumber *)numberForKey:(id)key default:(NSNumber *)defaultValue;
