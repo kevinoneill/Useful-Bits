@@ -33,4 +33,5 @@
 - (void)setObject:(id)object forKey:(id)key when:(BOOL (^) (id value, id key))when;
 - (void)setObjectWhenNotNil:(id)object forKey:(id)key;
 
+- (id)objectForKey:(id)key missing:(id (^)(id key))missing;
 @end

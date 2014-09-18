@@ -34,7 +34,7 @@
 {
   if (when(object, key))
   {
-    [self setObject:object forKey:key];
+    self[key] = object;
   }
 }
 
@@ -43,6 +43,18 @@
   [self setObject:object forKey:key when:^BOOL(id value, id key) {
     return nil != value;
   }];
+}
+
+- (id)objectForKey:(id)key missing:(id (^) (id key))missing;
+{
+  id value = self[key];
+  if (nil == value)
+  {
+    value = missing(key);
+    self[key] = value;
+  }
+
+  return value;
 }
 
 @end

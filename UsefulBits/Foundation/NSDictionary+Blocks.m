@@ -42,7 +42,7 @@
 
     if (value)
     {
-      [result setObject:value forKey:key];
+      result[key] = value;
     }
     else
     {
@@ -52,7 +52,7 @@
       }
       else
       {
-        [result setObject:[NSNull null] forKey:key];
+        result[key] = [NSNull null];
       }
     }
   }];
@@ -67,7 +67,7 @@
 
 - (void)withValueForKey:(id)key meetingCondition:(BOOL (^) (id value))condition do:(void (^) (id value))action default:(void (^) (void))default_action;
 {
-  id value = [self objectForKey:key];
+  id value = self[key];
 
   if (condition(value))
   {
@@ -156,7 +156,7 @@
   [self enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
     if (filter(key, obj))
     {
-      [result setObject:obj forKey:key];
+      result[key] = obj;
     }
   }];
 

@@ -12,7 +12,7 @@
 
 - (id)objectForKey:(id)key ofType:(Class)type default:(id)defaultValue;
 {
-  id value = [self objectForKey:key];
+  id value = self[key];
 
   return [value isKindOfClass:type] ? value : defaultValue;
 }
